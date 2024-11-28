@@ -23,6 +23,18 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      {/* 풀스크린 섹션 */}
+      <section className={styles.heroSection}>
+        <div className={styles.heroOverlay}>
+          <h1 className={styles.heroTitle}>HIF</h1>
+          <p className={styles.heroSubtitle}>
+            HUFS Institute of Finance
+          </p>
+        </div>
+      </section>
+
+      {/* 내부 콘텐츠 */}
       <div
         className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
       >

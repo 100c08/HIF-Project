@@ -1,3 +1,4 @@
+/* 기존 스타일 유지 */
 .page {
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
@@ -165,4 +166,34 @@ a.secondary {
   .logo {
     filter: invert();
   }
+}
+
+/* 추가된 스타일 */
+
+/* 풀스크린 섹션 */
+.heroSection {
+  position: relative;
+  height: 100vh; /* 화면 전체 높이 */
+  background: url("/home.gif") no-repeat center center/cover; /* 배경 이미지 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
