@@ -20,7 +20,7 @@ export default function Header() {
       <div className={styles.logoContainer}>
         <Link href="/">
           <Image
-            src="/logo_white.png"
+            src="/logo_white.PNG"
             alt="HIF Logo"
             className={styles.logoImage}
             width={40}
