@@ -168,8 +168,6 @@ a.secondary {
   }
 }
 
-/* 추가된 스타일 */
-
 /* 풀스크린 섹션 */
 .heroSection {
   position: relative;
@@ -196,4 +194,32 @@ a.secondary {
 .heroSubtitle {
   font-size: 1.5rem;
   margin-top: 1rem;
+}
+
+/* Fullpage.js 네비게이션 스타일 */
+.fp-controlArrow, .fp-tooltip, .fp-slidesNav {
+  color: white !important; /* 네비게이션 인디케이터 색상 흰색 */
+}
+
+.fp-controlArrow.fp-prev,
+.fp-controlArrow.fp-next {
+  border-color: white !important; /* 화살표 색상 흰색 */
+}
+
+.fp-controlArrow.fp-prev:hover,
+.fp-controlArrow.fp-next:hover {
+  color: #ccc !important; /* 화살표 호버 시 색상 */
+}
+
+/* 푸터 섹션 스타일 */
+.footerSection {
+  background: #000; /* 푸터 배경색 */
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+  height: auto; /* 높이를 컨텐츠에 맞춤 */
+  z-index: 9999;
+  border-top: 1px solid #333;
+  position: relative; /* Fullpage.js에서 독립적인 스크롤 */
+  overflow: hidden; /* 스크롤 충돌 방지 */
 }

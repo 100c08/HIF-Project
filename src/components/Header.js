@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@/styles/Header.module.css";
+import styles from "../styles/Header.module.css";
 
 export default function Header() {
   const [visibleDropdown, setVisibleDropdown] = useState(null);
