@@ -171,18 +171,21 @@ a.secondary {
 /* 풀스크린 섹션 */
 .heroSection {
   position: relative;
-  height: 100vh; /* 화면 전체 높이 */
-  background: url("/home.gif") no-repeat center center/cover; /* 배경 이미지 */
+  height: 100vh;
+  background: url("/home.gif") no-repeat center center/cover;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;  /* center에서 flex-start로 변경 */
   align-items: center;
   overflow: hidden;
 }
 
 .heroOverlay {
-  text-align: center;
+  text-align: left;
   color: #fff;
-  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 5%; /* 왼쪽 여백 추가 */
 }
 
 .heroTitle {

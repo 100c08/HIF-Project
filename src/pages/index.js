@@ -5,6 +5,7 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import Footer from "../components/Footer";
 import styles from "../styles/Home.module.css";
 import { useEffect } from "react";
+import Section1 from '../components/Home/Section1'; 
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -62,8 +63,7 @@ export default function Home() {
           <ReactFullpage.Wrapper>
             <div className={`section ${styles.heroSection}`}>
               <div className={styles.heroOverlay}>
-                <h1 className={styles.heroTitle}>Section 1</h1>
-                <p className={styles.heroSubtitle}>HUFS Institute of Finance</p>
+                <Section1 />
               </div>
             </div>
 
@@ -105,3 +105,4 @@ export default function Home() {
     </>
   );
 }
+
