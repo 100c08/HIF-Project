@@ -2,25 +2,69 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Header.module.css";
+import localFont from "next/font/local";
+
+const playfairDisplay = localFont({
+  src: "../pages/fonts/PlayfairDisplay-Regular.woff",
+  variable: "--font-playfair"
+});
 
 export default function Header() {
-  const [visibleDropdown, setVisibleDropdown] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleMouseEnter = (menu) => {
-    setVisibleDropdown(menu);
+  const handleMouseEnter = () => {
+    setIsMenuOpen(true);
   };
 
   const handleMouseLeave = () => {
-    setVisibleDropdown(null);
+    setIsMenuOpen(false);
   };
 
+  const menuItems = [
+    {
+      title: "ABOUT US",
+      menu: "about",
+      items: [
+        { label: "Introduction", href: "/introduction" },
+        { label: "Greetings", href: "/greetings" },
+      ],
+    },
+    {
+      title: "ACTIVITIES",
+      menu: "activities",
+      items: [
+        { label: "Regular Session", href: "/regular-session" },
+        { label: "공모전", href: "/competition", className: styles.koreanText },
+        { label: "Research", href: "/research" },
+        { label: "DS/AI", href: "/ds-ai" },
+      ],
+    },
+    {
+      title: "MEMBERS",
+      menu: "members",
+      href: "/members",
+      items: [],
+    },
+    {
+      title: "JOIN US",
+      menu: "join",
+      items: [
+        { label: "Recruiting", href: "/recruiting" },
+        { label: "FAQ", href: "/faq" },
+      ],
+    },
+  ];
+
   return (
-    <header className={styles.header}>
-      {/* 로고 */}
+    <header 
+      className={`${styles.header} ${isMenuOpen ? styles.menuOpen : ''} ${playfairDisplay.variable}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className={styles.logoContainer}>
         <Link href="/">
           <Image
-            src="/logo_white.PNG"
+            src="/white_no.svg"
             alt="HIF Logo"
             className={styles.logoImage}
             width={40}
@@ -29,67 +73,27 @@ export default function Header() {
         </Link>
       </div>
 
-      {/* 네비게이션 메뉴 */}
-      <nav>
+      <nav className={styles.nav}>
         <ul className={styles.navMenu}>
-          {[
-            {
-              title: "ABOUT US",
-              menu: "about",
-              items: [
-                { label: "INTRODUCTION", href: "/introduction" },
-                { label: "GREETINGS", href: "/greetings" },
-              ],
-            },
-            {
-              title: "ACTIVITIES",
-              menu: "activities",
-              items: [
-                { label: "EDUCATION", href: "/education" },
-                { label: "INDUSTRIAL COLLABORATION", href: "/collaboration" },
-                { label: "NETWORKING", href: "/networking" },
-              ],
-            },
-            {
-              title: "OUR PEOPLE",
-              menu: "people",
-              items: [
-                { label: "MEMBERS", href: "/members" },
-                { label: "ALUMNI MESSAGE", href: "/alumni" },
-              ],
-            },
-            {
-              title: "JOIN US",
-              menu: "join",
-              items: [
-                { label: "PROCESS", href: "/process" },
-                { label: "FAQ", href: "/faq" },
-                { label: "NOTICE", href: "/notice" },
-              ],
-            },
-          ].map(({ title, menu, items }) => (
-            <li
-              key={menu}
-              className={styles.navItem}
-              onMouseEnter={() => handleMouseEnter(menu)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <Link href="#" className={styles.navLink}>
-                {title} <span className={styles.dropdownArrow}>▼</span>
+          {menuItems.map(({ title, menu, items, href }) => (
+            <li key={menu} className={styles.navItem}>
+              <Link href={href || "#"} className={styles.navLink}>
+                {title}
               </Link>
-              <ul
-                className={`${styles.dropdownMenu} ${
-                  visibleDropdown === menu ? styles.show : ""
-                }`}
-              >
-                {items.map(({ label, href }) => (
-                  <li key={label} className={styles.dropdownItem}>
-                    <Link href={href} className={styles.dropdownLink}>
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              {items.length > 0 && (
+                <ul className={styles.dropdownMenu}>
+                  {items.map(({ label, href, className }) => (
+                    <li key={label} className={styles.dropdownItem}>
+                      <Link 
+                        href={href} 
+                        className={`${styles.dropdownLink} ${className || ''}`}
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
         </ul>
