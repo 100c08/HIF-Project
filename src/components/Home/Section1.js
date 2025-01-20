@@ -1,9 +1,44 @@
+import { useRef, useEffect } from 'react';
+import localFont from "next/font/local";
 import styles from '../../styles/Home/Section1.module.css';
 import Link from 'next/link';
 
+const playfairDisplay = localFont({
+  src: "../../pages/fonts/PlayfairDisplay-Regular.woff",
+  variable: "--font-playfair"
+});
+
 const Section1 = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.addEventListener('timeupdate', () => {
+        const timeLeft = videoRef.current.duration - videoRef.current.currentTime;
+        if (timeLeft < 1) {
+          videoRef.current.style.opacity = '0';
+          setTimeout(() => {
+            videoRef.current.currentTime = 0;
+            videoRef.current.style.opacity = '1';
+          }, 500);
+        }
+      });
+    }
+  }, []);
+
   return (
-    <div className={styles.wrapper}>  {/* 새로운 wrapper div 추가 */}
+    <div className={`${styles.wrapper} ${playfairDisplay.variable}`}>
+      <video 
+        ref={videoRef}
+        className={styles.backgroundVideo}
+        autoPlay 
+        muted 
+        playsInline
+        loop
+      >
+        <source src="/FinanceCenter.mp4" type="video/mp4" />
+      </video>
+      
       <div className={styles.content}>
         <div className={styles.textContainer}>
           <h1 className={`${styles.title} ${styles.fadeUpAnimation1}`}>

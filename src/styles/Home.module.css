@@ -172,9 +172,9 @@ a.secondary {
 .heroSection {
   position: relative;
   height: 100vh;
-  background: url("/home.gif") no-repeat center center/cover;
+  background: #000000; /* 검정색 배경으로 변경 */
   display: flex;
-  justify-content: flex-start;  /* center에서 flex-start로 변경 */
+  justify-content: flex-start;
   align-items: center;
   overflow: hidden;
 }

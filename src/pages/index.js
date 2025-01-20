@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Footer from "../components/Footer";
 import styles from "../styles/Home.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Section1 from '../components/Home/Section1'; 
 
 const geistSans = localFont({
@@ -17,8 +17,14 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const playfairDisplay = localFont({
+  src: "./fonts/PlayfairDisplay-Regular.woff",
+  variable: "--font-playfair",
+});
 
 export default function Home() {
+  const [isFooterActive, setIsFooterActive] = useState(false);  // useState 추가
+
   const hideNavigatorFooterItem = () => {
     const navigator = document.querySelector("#fp-nav > ul")
     const footerItem = navigator.children[navigator.children.length - 1]
@@ -59,8 +65,17 @@ export default function Home() {
         touchSensitivity={5} // 터치 감도 조정
         licenseKey={process.env.NEXT_PUBLIC_FULLPAGE_LICENSE_KEY}
         credits={false}
+        afterLoad={(origin, destination) => {
+          console.log('Section loaded:', destination.index); // 디버깅용
+          if (destination.index === 5) { // 푸터가 6번째 섹션
+            console.log('Footer section activated'); // 디버깅용
+            setIsFooterActive(true);
+          } else {
+            setIsFooterActive(false);
+          }
+        }}
         render={() => (
-          <ReactFullpage.Wrapper>
+          <ReactFullpage.Wrapper className ={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>
             <div className={`section ${styles.heroSection}`}>
               <div className={styles.heroOverlay}>
                 <Section1 />
@@ -96,8 +111,8 @@ export default function Home() {
             </div>
 
             {/* 푸터 섹션 */}
-            <div className={`section fp-auto-height ${styles.footerSection}`}>
-              <Footer />
+            <div className={`section fp-auto-height ${styles.footerSection}`} style={{ backgroundColor: '#000' }}>
+             <Footer isActive={isFooterActive} />
             </div>
           </ReactFullpage.Wrapper>
         )}

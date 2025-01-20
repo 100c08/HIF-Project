@@ -1,0 +1,71 @@
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 2rem 1rem 0;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .contentWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+  
+  .leftContent {
+    max-width: 50%;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); /* 타이밍 함수 수정 및 시간 단축 */
+    will-change: transform, opacity;
+  }
+  
+  .rightContent {
+    text-align: left;
+    max-width: 50%;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); /* 타이밍 함수 수정 및 시간 단축 */
+    will-change: transform, opacity;
+  }
+  
+  .leftContent.active,
+  .rightContent.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hif {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .infoRow {
+    display: flex;
+    margin-bottom: 0.5rem;
+  }
+  
+  .label {
+    min-width: 80px;
+    font-weight: bold;
+  }
+  
+  .copyright {
+    text-align: center;
+    color: #aaa;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid #333;
+  }
