@@ -58,7 +58,7 @@ const Section1 = () => {
               download="YFL_2024_Fall_Application.txt"
               className={styles.button}
             >
-              2024 - Fall Recruiting 지원서 다운로드
+              2025 - Spring Recruiting 지원서 다운로드
             </a>
           </div>
         </div>
