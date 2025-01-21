@@ -4,6 +4,7 @@ import { useState } from 'react';
 import styles from '../styles/Members.module.css';
 import localFont from "next/font/local";
 
+
 const playfairDisplay = localFont({
   src: "./fonts/PlayfairDisplay-Regular.woff",
   variable: "--font-playfair"
@@ -275,7 +276,7 @@ const membersData = {
 
 export default function Members() {
     const [selectedGen, setSelectedGen] = useState(null);
-  
+    
     const scrollToGeneration = (gen) => {
       setSelectedGen(gen);
       const element = document.getElementById(gen);
@@ -283,7 +284,7 @@ export default function Members() {
     };
   
     return (
-        <div className={`${playfairDisplay.variable} ${palatino.variable}`}> 
+      <div className={`${playfairDisplay.variable} ${palatino.variable}`}>
         <Head>
           <title>Members | HIF</title>
           <meta property="og:title" content="Members | HIF" />
