@@ -11,12 +11,20 @@ const playfairDisplay = localFont({
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [visibleDropdown, setVisibleDropdown] = useState(null);
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (menu) => {
+    setVisibleDropdown(menu);
     setIsMenuOpen(true);
   };
 
   const handleMouseLeave = () => {
+    setVisibleDropdown(null);
+    setIsMenuOpen(false);
+  };
+
+  const handleLinkClick = () => {
+    setVisibleDropdown(null);
     setIsMenuOpen(false);
   };
 
@@ -24,9 +32,10 @@ export default function Header() {
     {
       title: "ABOUT US",
       menu: "about",
+      href: "/about/introduction",
       items: [
-        { label: "Introduction", href: "/introduction" },
-        { label: "Greetings", href: "/greetings" },
+        { label: "Introduction", href: "/about/introduction" },
+        { label: "Greetings", href: "/about/greetings" },
       ],
     },
     {
@@ -58,7 +67,6 @@ export default function Header() {
   return (
     <header 
       className={`${styles.header} ${isMenuOpen ? styles.menuOpen : ''} ${playfairDisplay.variable}`}
-      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div className={styles.logoContainer}>
@@ -73,20 +81,30 @@ export default function Header() {
         </Link>
       </div>
 
+
       <nav className={styles.nav}>
         <ul className={styles.navMenu}>
           {menuItems.map(({ title, menu, items, href }) => (
-            <li key={menu} className={styles.navItem}>
-              <Link href={href || "#"} className={styles.navLink}>
+            <li 
+              key={menu} 
+              className={styles.navItem}
+              onMouseEnter={() => handleMouseEnter(menu)}
+            >
+              <Link 
+                href={href || "#"} 
+                className={styles.navLink}
+                onClick={handleLinkClick}  // 클릭 핸들러 추가
+              >
                 {title}
               </Link>
               {items.length > 0 && (
-                <ul className={styles.dropdownMenu}>
+                <ul className={`${styles.dropdownMenu} ${visibleDropdown === menu ? styles.show : ''}`}>
                   {items.map(({ label, href, className }) => (
                     <li key={label} className={styles.dropdownItem}>
                       <Link 
                         href={href} 
                         className={`${styles.dropdownLink} ${className || ''}`}
+                        onClick={handleLinkClick}  // 클릭 핸들러 추가
                       >
                         {label}
                       </Link>

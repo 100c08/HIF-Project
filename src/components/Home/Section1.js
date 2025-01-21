@@ -13,15 +13,22 @@ const Section1 = () => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.addEventListener('timeupdate', () => {
-        const timeLeft = videoRef.current.duration - videoRef.current.currentTime;
-        if (timeLeft < 1) {
-          videoRef.current.style.opacity = '0';
-          setTimeout(() => {
-            videoRef.current.currentTime = 0;
-            videoRef.current.style.opacity = '1';
-          }, 500);
-        }
+      // loadedmetadata 이벤트를 사용하여 비디오가 로드된 후에 처리
+      videoRef.current.addEventListener('loadedmetadata', () => {
+        videoRef.current.addEventListener('timeupdate', () => {
+          if (videoRef.current) {  // null 체크 추가
+            const timeLeft = videoRef.current.duration - videoRef.current.currentTime;
+            if (timeLeft < 1) {
+              videoRef.current.style.opacity = '0';
+              setTimeout(() => {
+                if (videoRef.current) {  // null 체크 추가
+                  videoRef.current.currentTime = 0;
+                  videoRef.current.style.opacity = '1';
+                }
+              }, 1000);
+            }
+          }
+        });
       });
     }
   }, []);
