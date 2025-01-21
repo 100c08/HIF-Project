@@ -13,9 +13,9 @@ export default function Footer() {
       <div className={styles.footerContent}>
         <nav className={styles.footerNav}>
           <Link href="/about/introduction">ABOUT US</Link>
-          <Link href="/activities">ACTIVITIES</Link>
+          <Link href="/activities/regular-session">ACTIVITIES</Link>
           <Link href="/members">MEMBERS</Link>
-          <Link href="/join-us">JOIN US</Link>
+          <Link href="/join/recruiting">JOIN US</Link>
         </nav>
 
         <div className={styles.centerSection}>

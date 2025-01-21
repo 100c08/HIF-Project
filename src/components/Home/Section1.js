@@ -56,7 +56,7 @@ const Section1 = () => {
           </p>
           
           <div className={`${styles.buttonContainer} ${styles.fadeUpAnimation3}`}>
-            <Link href="/recruiting" className={styles.button}>
+            <Link href="/join/recruiting" className={styles.button}>
               Recruiting
             </Link>
             

@@ -41,11 +41,12 @@ export default function Header() {
     {
       title: "ACTIVITIES",
       menu: "activities",
+      href: "/activities/regular-session",
       items: [
-        { label: "Regular Session", href: "/regular-session" },
-        { label: "공모전", href: "/competition", className: styles.koreanText },
-        { label: "Research", href: "/research" },
-        { label: "DS/AI", href: "/ds-ai" },
+        { label: "Regular Session", href: "/activities/regular-session" },
+        { label: "공모전", href: "/activities/competition", className: styles.koreanText },
+        { label: "Research", href: "/activities/research" },
+        { label: "DS/AI", href: "https://hif-dsai.github.io/", isExternal: true },
       ],
     },
     {
@@ -57,9 +58,10 @@ export default function Header() {
     {
       title: "JOIN US",
       menu: "join",
+      href: "/join/recruiting",
       items: [
-        { label: "Recruiting", href: "/recruiting" },
-        { label: "FAQ", href: "/faq" },
+        { label: "Recruiting", href: "/join/recruiting" },
+        { label: "FAQ", href: "/join/faq" },
       ],
     },
   ];
@@ -81,7 +83,6 @@ export default function Header() {
         </Link>
       </div>
 
-
       <nav className={styles.nav}>
         <ul className={styles.navMenu}>
           {menuItems.map(({ title, menu, items, href }) => (
@@ -91,23 +92,51 @@ export default function Header() {
               onMouseEnter={() => handleMouseEnter(menu)}
             >
               <Link 
-                href={href || "#"} 
+                href={href}
                 className={styles.navLink}
-                onClick={handleLinkClick}  // 클릭 핸들러 추가
+                onClick={handleLinkClick}
               >
                 {title}
               </Link>
               {items.length > 0 && (
                 <ul className={`${styles.dropdownMenu} ${visibleDropdown === menu ? styles.show : ''}`}>
-                  {items.map(({ label, href, className }) => (
+                  {items.map(({ label, href, className, isExternal }) => (
                     <li key={label} className={styles.dropdownItem}>
-                      <Link 
-                        href={href} 
-                        className={`${styles.dropdownLink} ${className || ''}`}
-                        onClick={handleLinkClick}  // 클릭 핸들러 추가
-                      >
-                        {label}
-                      </Link>
+                      {isExternal ? (
+                        <a 
+                          href={href}
+                          className={`${styles.dropdownLink} ${className || ''}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={handleLinkClick}
+                        >
+                          {label}
+                          <svg 
+                            className={styles.externalLinkIcon}
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                          </svg>
+                        </a>
+                      ) : (
+                        <Link 
+                          href={href} 
+                          className={`${styles.dropdownLink} ${className || ''}`}
+                          onClick={handleLinkClick}
+                        >
+                          {label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
