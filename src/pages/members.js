@@ -9,6 +9,11 @@ const playfairDisplay = localFont({
   variable: "--font-playfair"
 });
 
+const palatino = localFont({
+  src: "./fonts/palatino-regular.woff",
+  variable: "--font-palatino"
+});
+
 const generations = [
   "15th Generation", "14th Generation", "13th Generation", 
   "12th Generation", "11th Generation", "10th Generation",
@@ -278,7 +283,7 @@ export default function Members() {
     };
   
     return (
-      <div className={playfairDisplay.variable}>
+        <div className={`${playfairDisplay.variable} ${palatino.variable}`}> 
         <Head>
           <title>Members | HIF</title>
           <meta property="og:title" content="Members | HIF" />

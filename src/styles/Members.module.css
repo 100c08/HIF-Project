@@ -1,7 +1,7 @@
 .heroSection {
     height: 450px;
     position: relative;
-    background-image: url('/background.gif');
+    background-image: url('/members.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -89,14 +89,26 @@
     padding: 0.8rem 1.5rem;
     border-radius: 30px;
     color: #fff;
-    font-family: var(--font-playfair);
+    font-family: var(--font-palatino);  /* 폰트 변경 */
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
     transition: all 0.3s ease;
+    transform: translateY(0);
   }
   
-  .genButton:hover,
+  .genButton:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+  }
+  
   .genButton.selected {
-    background: rgba(255, 255, 255, 0.2);
+    background: #fff;
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
   }
   
   .membersList {
@@ -109,7 +121,7 @@
   
   .generationTitle {
     color: #fff;
-    font-family: var(--font-playfair);
+    font-family: var(--font-palatino);  /* 폰트 변경 */
     font-size: 2rem;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
