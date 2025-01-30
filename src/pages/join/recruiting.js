@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from '../../styles/join/Recruiting.module.css';
 import localFont from "next/font/local";
 
@@ -34,7 +35,41 @@ export default function Recruiting() {
         {/* Main Content */}
         <div className={styles.mainContent}>
           <div className={styles.contentSection}>
-            {/* 여기에 실제 콘텐츠가 들어갈 예정 */}
+            <h2 className={styles.recruitingTitle}>16th Recruiting</h2>
+            <div className={styles.underline}></div>
+            <p className={styles.recruitingDesc}>
+              HIF is looking for...
+            </p>
+
+            <div className={styles.circleContainer}>
+                <div className={`${styles.circleItem} ${styles.fadeInFirst}`}>
+                    <div className={styles.circleWrapper}>
+                        <Image src="/H.svg" alt="H" width={250} height={250} />
+                        <h3 className={`${styles.pointTitle} ${styles.heartColor}`}>Heart</h3>
+                        <p className={styles.circleText}>
+                            배우고자하는 열정과 의지가 뛰어나신 분
+                        </p>
+                    </div>
+                </div>
+                <div className={`${styles.circleItem} ${styles.fadeInSecond}`}>
+                    <div className={styles.circleWrapper}>
+                        <Image src="/I.svg" alt="I" width={250} height={250} />
+                        <h3 className={`${styles.pointTitle} ${styles.interactionColor}`}>Interaction</h3>
+                        <p className={styles.circleText}>
+                            열린 자세로 타인과 의견을 교환하며 교류하실 분
+                        </p>
+                    </div>
+                </div>
+                <div className={`${styles.circleItem} ${styles.fadeInThird}`}>
+                    <div className={styles.circleWrapper}>
+                        <Image src="/F.svg" alt="F" width={250} height={250} />
+                        <h3 className={`${styles.pointTitle} ${styles.financeColor}`}>Finance</h3>
+                        <p className={styles.circleText}>
+                            금융권에 대한 관심이 높으신 분
+                        </p>
+                    </div>
+                </div>
+            </div>
           </div>
         </div>
       </div>

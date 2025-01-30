@@ -74,6 +74,68 @@
     padding: 2rem 0;
   }
   
+  .recruitingTitle {
+    text-align: center;
+    font-size: 3rem;
+    color: #000000;
+    font-family: var(--font-playfair);
+    margin-bottom: 1rem;
+    font-weight: normal;
+  }
+  
+  .underline {
+    width: 50px;
+    height: 2px;
+    background-color: #004556;
+    margin: 0 auto 2rem;
+  }
+  
+  .recruitingDesc {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+    font-family: var(--font-playfair);
+    color: #333;
+    font-style: italic;
+  }
+  
+  .circleContainer {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+  }
+  
+  .circleItem {
+    display: flex;
+    align-items: center;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  .fadeInFirst {
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.5s;
+  }
+  
+  .fadeInSecond {
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.7s;
+  }
+  
+  .fadeInThird {
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.9s;
+  }
+  
+  @media (max-width: 768px) {
+    .circleContainer {
+        gap: 2rem;
+    }
+  }
+  
   @keyframes slideUp {
     from {
       opacity: 0;
@@ -84,3 +146,49 @@
       transform: translateY(0);
     }
   }
+  
+  @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+
+.circleWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pointTitle {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.heartColor {
+    color: #282C37;
+}
+
+.interactionColor {
+    color: #9BAEC8;
+}
+
+.financeColor {
+    color: #012D56;
+}
+
+.circleText {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    max-width: 250px;
+    word-break: keep-all;
+}
