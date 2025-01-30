@@ -102,7 +102,7 @@ export default function Section4() {
         playsInline
         loop
       >
-        <source src="/Section4.mp4" type="video/mp4" />
+        <source src="/section4.mp4" type="video/mp4" />
       </video>
 
       <div className={`${styles.container} ${animationStarted ? styles.animate : ''}`}>

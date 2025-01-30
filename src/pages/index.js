@@ -81,8 +81,16 @@ export default function Home() {
         onLeave={(origin, destination, direction) => {
           if (destination.index === 1) {  // Section2로 이동 시작할 때
             document.documentElement.setAttribute('data-section', '2');
+            const items = document.querySelectorAll('#fp-nav > ul > li > a > span');
+            items.forEach(item => {
+              item.style.cssText = 'background: #000000; transition: background 0.8s ease';
+            });
           } else if (origin.index === 1) {  // Section2에서 다른 섹션으로 이동 시작할 때
             document.documentElement.setAttribute('data-section', '');
+            const items = document.querySelectorAll('#fp-nav > ul > li > a > span');
+            items.forEach(item => {
+              item.style.cssText = 'background: #ffffff; transition: background 0.8s ease';
+            });
           }
         }}
         afterLoad={(origin, destination) => {
