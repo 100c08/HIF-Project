@@ -34,6 +34,7 @@
 .logoImage {
   width: 40px;
   height: auto;
+  transition: all 0.8s ease;
 }
 
 .nav {
@@ -57,7 +58,7 @@
   text-decoration: none;
   font-family: var(--font-playfair);
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: all 0.8s ease;
 }
 
 .navLink:hover {
@@ -95,7 +96,7 @@
   text-decoration: none;
   font-family: var(--font-playfair);
   font-size: 0.9rem;
-  transition: color 0.3s ease;
+  transition: all 0.8s ease;
 }
 
 .koreanText {
@@ -112,4 +113,24 @@
 
 .dropdownLink:hover {
   color: #ccc;
+}
+
+/* 메뉴가 열렸을 때의 스타일 */
+.header.menuOpen .navLink,
+.header.menuOpen .dropdownLink {
+  color: #fff !important; /* Section2에서도 흰색 유지 */
+}
+
+.header.menuOpen .logoImage {
+  filter: none !important; /* Section2에서도 원래 로고 색상 유지 */
+}
+
+/* Section2에서의 스타일 (메뉴가 닫혀있을 때만 적용) */
+:root[data-section="2"] .header:not(.menuOpen) .navLink,
+:root[data-section="2"] .header:not(.menuOpen) .dropdownLink {
+  color: #000;
+}
+
+:root[data-section="2"] .header:not(.menuOpen) .logoImage {
+  filter: invert(1);
 }

@@ -78,8 +78,15 @@ export default function Home() {
         touchSensitivity={5}
         licenseKey={process.env.NEXT_PUBLIC_FULLPAGE_LICENSE_KEY}
         credits={false}
+        onLeave={(origin, destination, direction) => {
+          if (destination.index === 1) {  // Section2로 이동 시작할 때
+            document.documentElement.setAttribute('data-section', '2');
+          } else if (origin.index === 1) {  // Section2에서 다른 섹션으로 이동 시작할 때
+            document.documentElement.setAttribute('data-section', '');
+          }
+        }}
         afterLoad={(origin, destination) => {
-          if (destination.index === 1) {  // Section2
+          if (destination.index === 1) {
             setSection2Active(true);
           } else {
             setSection2Active(false);
@@ -98,17 +105,15 @@ export default function Home() {
           }
         }}
         render={({ state, fullpageApi }) => (
-          <ReactFullpage.Wrapper className ={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>
+          <ReactFullpage.Wrapper className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>
             <div className={`section ${styles.heroSection}`}>
               <div className={styles.heroOverlay}>
                 <Section1 />
               </div>
             </div>
 
-            <div className={`section ${styles.heroSection}`}>
-              <div className={styles.heroOverlay}>
-                <Section2 isActive={section2Active} />
-              </div>
+            <div className="section">
+              <Section2 isActive={section2Active} />
             </div>
 
             <div className={`section ${styles.heroSection}`}>
