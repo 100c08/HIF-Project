@@ -12,6 +12,8 @@ export default function Document() {
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-kopub@1.0/kopubbatang.min.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanummyeongjo.css" />
       </Head>
       <body>
         <Main />

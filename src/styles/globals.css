@@ -1,3 +1,4 @@
+
 /* 기본 스타일 */
 body {
   margin: 0;
@@ -23,6 +24,7 @@ a {
 .text-center {
   text-align: center;
 }
+
 
 /* Pretendard Variable Font 설정 */
 @font-face {

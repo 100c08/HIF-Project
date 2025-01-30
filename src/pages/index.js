@@ -5,7 +5,10 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import Footer from "../components/Footer";
 import styles from "../styles/Home.module.css";
 import { useEffect, useState } from "react";
-import Section1 from '../components/Home/Section1'; 
+import Section1 from '../components/Home/Section1';
+import Section2 from '../components/Home/Section2';
+import Section4 from '../components/Home/Section4';
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,7 +26,9 @@ const playfairDisplay = localFont({
 });
 
 export default function Home() {
-  const [isFooterActive, setIsFooterActive] = useState(false);  // useState 추가
+  const [section2Active, setSection2Active] = useState(false);
+  const [section4Active, setSection4Active] = useState(false);
+  const [isFooterActive, setIsFooterActive] = useState(false);
 
   const hideNavigatorFooterItem = () => {
     const navigator = document.querySelector("#fp-nav > ul")
@@ -41,9 +46,15 @@ export default function Home() {
   }
 
   useEffect(() => {
-    hideNavigatorFooterItem()
-    modifyNavigatorStyle()
-  }, [])
+    const cleanup = () => {
+      // 필요한 경우 스타일 초기화 로직
+    };
+    
+    hideNavigatorFooterItem();
+    modifyNavigatorStyle();
+    
+    return cleanup;
+  }, []);
 
 
   return (
@@ -59,24 +70,34 @@ export default function Home() {
 
       {/* 인디케이터 네비게이션 (Fullpage.js 내장 네비게이션 사용) */}
       <ReactFullpage
-        navigation={true} // Fullpage.js 내장 네비게이션 활성화
-        fitToSection={true} // 섹션을 화면에 맞추도록 설정
-        fitToSectionDelay={500} // 섹션 전환 딜레이
-        scrollingSpeed={800} // 스크롤 전환 속도 최적화
-        scrollOverflow={true} // 섹션 내용 스크롤 허용
-        touchSensitivity={5} // 터치 감도 조정
+        navigation={true}
+        fitToSection={true}
+        fitToSectionDelay={500}
+        scrollingSpeed={800}
+        scrollOverflow={true}
+        touchSensitivity={5}
         licenseKey={process.env.NEXT_PUBLIC_FULLPAGE_LICENSE_KEY}
         credits={false}
         afterLoad={(origin, destination) => {
-          console.log('Section loaded:', destination.index); // 디버깅용
-          if (destination.index === 5) { // 푸터가 6번째 섹션
-            console.log('Footer section activated'); // 디버깅용
+          if (destination.index === 1) {  // Section2
+            setSection2Active(true);
+          } else {
+            setSection2Active(false);
+          }
+          
+          if (destination.index === 3) {  // Section4
+            setSection4Active(true);
+          } else {
+            setSection4Active(false);
+          }
+
+          if (destination.index === 5) {  // Footer
             setIsFooterActive(true);
           } else {
             setIsFooterActive(false);
           }
         }}
-        render={() => (
+        render={({ state, fullpageApi }) => (
           <ReactFullpage.Wrapper className ={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>
             <div className={`section ${styles.heroSection}`}>
               <div className={styles.heroOverlay}>
@@ -86,8 +107,7 @@ export default function Home() {
 
             <div className={`section ${styles.heroSection}`}>
               <div className={styles.heroOverlay}>
-                <h1 className={styles.heroTitle}>Section 2</h1>
-                <p className={styles.heroSubtitle}>HUFS Institute of Finance</p>
+                <Section2 isActive={section2Active} />
               </div>
             </div>
 
@@ -98,11 +118,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className={`section ${styles.heroSection}`}>
-              <div className={styles.heroOverlay}>
-                <h1 className={styles.heroTitle}>Section 4</h1>
-                <p className={styles.heroSubtitle}>HUFS Institute of Finance</p>
-              </div>
+            <div className="section">
+              <Section4 isActive={section4Active} />
             </div>
 
             <div className={`section ${styles.heroSection}`}>

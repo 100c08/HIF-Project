@@ -1,0 +1,187 @@
+.wrapper {
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    overflow: hidden;  /* 추가 */
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 80px;
+    max-width: 1024px;
+    width: 100%;
+  }
+  
+  .titleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .title {
+    margin-left: auto;
+    font-family: var(--font-playfair);
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    text-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.2),
+      0 0 40px rgba(0, 0, 0, 0.6);  /* 검은색 그림자 추가 */
+  }
+  
+  /* 텍스트 뒤에 블러 효과를 주는 가상 요소 추가 */
+  .title::after {
+    content: 'Achievements';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    color: rgba(0, 0, 0, 0.4);
+    filter: blur(10px);
+    transform: translateY(2px);  /* 약간 아래로 이동 */
+  }
+
+  .styledLine {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .stats {
+    text-align: center;
+    position: relative;
+    font-family: 'Nanum Myeongjo';
+  }
+  
+  .statItem {
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* 텍스트 간격 축소 */
+    align-items: center;
+  }
+  
+  .number {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
+                 0 0 40px rgba(255, 255, 255, 0.2),
+                 0 0 60px rgba(255, 255, 255, 0.1);
+    font-family: var(--font-iropke);
+  }
+  
+  .label {
+    /* font-family: var(--font-iropke); */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3),
+                 0 0 30px rgba(255, 255, 255, 0.2); /* 레이블에도 네온 효과 추가 */
+    font-size: 2.5rem; /* 레이블 크기 조정 */
+  }
+  
+  .glowEffect::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%; /* 발광 효과 영역 축소 */
+    height: 110%;
+    pointer-events: none;
+  }
+
+  .recentAwards {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .recentAwardsTitle {
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    font-family: 'Nanum Myeongjo';
+    opacity: 0.8;
+  }
+  
+  .awardsList {
+    font-size: 1rem;
+    opacity: 0.7;
+    font-family: 'Nanum Myeongjo';
+  }
+  
+  .viewMore {
+    font-style: italic;
+    opacity: 0.7;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    padding: 0;
+    font-family: var(--font-iropke);
+  }
+
+  /* 기존 스타일은 유지하고 아래 내용을 추가합니다 */
+
+@keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* 각 요소들의 기본 상태 설정 */
+  .fadeUpAnimation1,
+  .fadeUpAnimation2,
+  .fadeUpAnimation3,
+  .fadeUpAnimation4,
+  .fadeUpAnimation5 {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  /* animate 클래스가 있을 때만 애니메이션 실행 */
+  .animate .fadeUpAnimation1 {
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.1s;
+  }
+  
+  .animate .fadeUpAnimation2 {
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.3s;
+  }
+  
+  .animate .fadeUpAnimation3 {
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.5s;
+  }
+  
+  .animate .fadeUpAnimation4 {
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.7s;
+  }
+  
+  .animate .fadeUpAnimation5 {
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.9s;
+  }
+
+  /* 배경 비디오 스타일 추가 */
+  .backgroundVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    transition: opacity 1s ease;
+  }
