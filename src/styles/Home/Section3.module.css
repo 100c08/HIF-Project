@@ -220,7 +220,7 @@
   left: 50%;
   top: 0;
   width: 1px;
-  height: 500px;  /* 400px에서 500px로 증가 */
+  height: 400px;  /* 400px에서 500px로 증가 */
   opacity: 0;
   background: linear-gradient(
     to bottom,
