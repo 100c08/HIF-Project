@@ -88,8 +88,9 @@ export default function Header() {
   useEffect(() => {
     const isMainPage = router.pathname === '/';
     const isMembersPage = router.pathname.includes('/members');
+    const isAwardsPage = router.pathname === '/activities/competition';
 
-    if (!isMainPage && !isMembersPage) {
+    if (!isMainPage && !isMembersPage && !isAwardsPage) {
       setIsScrolled(false);
     }
 
@@ -97,7 +98,7 @@ export default function Header() {
       if (isMainPage) {
         const scrolled = window.scrollY > 50;
         setIsScrolled(scrolled);
-      } else if (isMembersPage) {
+      } else if (isMembersPage || isAwardsPage) {
         setIsScrolled(false);
       } else {
         const heroSection = document.querySelector('[class*="heroSection"]');
