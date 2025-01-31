@@ -14,7 +14,7 @@ export default function Header() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [visibleDropdown, setVisibleDropdown] = useState(null);
-  const [isWhiteBackground, setIsWhiteBackground] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const handleMouseEnter = (menu) => {
     setVisibleDropdown(menu);
@@ -29,6 +29,18 @@ export default function Header() {
   const handleLinkClick = () => {
     setVisibleDropdown(null);
     setIsMenuOpen(false);
+  };
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    
+    if (router.pathname === '/') {
+      if (window.fullpage_api) {
+        window.fullpage_api.moveTo(1);
+      }
+    } else {
+      router.push('/#1');
+    }
   };
 
   const menuItems = [
@@ -70,22 +82,25 @@ export default function Header() {
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (router.pathname === '/members' || router.pathname === '/activities/competition') {
-        setIsWhiteBackground(false);
-        return;
-      }
+    const isMainPage = router.pathname === '/';
+    const isMembersPage = router.pathname.includes('/members');
 
-      if (router.pathname === '/') {
+    if (!isMainPage && !isMembersPage) {
+      setIsScrolled(false);
+    }
+
+    const handleScroll = () => {
+      if (isMainPage) {
         const scrolled = window.scrollY > 50;
-        setIsWhiteBackground(scrolled);
+        setIsScrolled(scrolled);
+      } else if (isMembersPage) {
+        setIsScrolled(false);
       } else {
         const heroSection = document.querySelector('[class*="heroSection"]');
         if (heroSection) {
-          const heroBottom = heroSection.getBoundingClientRect().bottom;
-          setIsWhiteBackground(heroBottom < 0);
-        } else {
-          setIsWhiteBackground(true);
+          const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+          const scrolled = window.scrollY > (heroBottom - 100);
+          setIsScrolled(scrolled);
         }
       }
     };
@@ -102,34 +117,31 @@ export default function Header() {
       setVisibleDropdown(null);
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     router.events.on('routeChangeStart', handleRouteChange);
-
-    if (router.pathname !== '/') {
-      handleRouteChange();
-    }
-    handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       router.events.off('routeChangeStart', handleRouteChange);
     };
-  }, [router]);
+  }, [router.pathname]);
+
+  const headerClass = `${styles.header} ${
+    isScrolled ? styles.scrolled : ''
+  } ${router.pathname.includes('/members') ? styles.darkHeader : ''}`;
 
   return (
     <header 
-      className={`
-        ${styles.header} 
+      className={`${headerClass} 
         ${isMenuOpen ? styles.menuOpen : ''} 
-        ${playfairDisplay.variable} 
-        ${isWhiteBackground ? styles.whiteBackground : ''}
-        ${(router.pathname === '/members' || router.pathname === '/activities/competition') ? styles.darkHeader : ''}
+        ${playfairDisplay.variable}
       `}
       style={{ transition: 'background-color 0.8s ease, color 0.8s ease' }}
       onMouseLeave={handleMouseLeave}
     >
       <div className={styles.logoContainer}>
-        <Link href="/">
+        <Link href="/" onClick={handleLogoClick}>
           <Image
             src="/white_no.svg"
             alt="HIF Logo"

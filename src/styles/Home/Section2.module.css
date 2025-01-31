@@ -50,12 +50,12 @@
 .titleGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 1.5rem;
 }
 
 .mainTitle {
   font-family: "Adamina";
-  font-size: 7rem;
+  font-size: 6.5rem;
   font-weight: normal;
   margin: 0;
   line-height: 1;
@@ -65,7 +65,7 @@
 
 .subTitle {
   font-family: 'Nanum Myeongjo';
-  font-size: 4rem;
+  font-size: 3.7rem;
   font-weight: normal;
   margin: 0;
   line-height: 1;
@@ -84,7 +84,7 @@
   font-family: 'Nanum Myeongjo';
   font-size: 1.2rem;
   margin-top: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   opacity: 0;
   transform: translateY(30px);
   line-height: 1.4;
