@@ -12,9 +12,18 @@ const playfairDisplay = localFont({
 
 export default function RegularSession() {
   const [selectedImage, setSelectedImage] = useState(null);
-  const sectionRef = useRef(null);
+  const marketInsightRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // 페이지 마운트 시 바로 visible 상태를 false로 설정
+    setIsVisible(false);
+    
+    // 약간의 지연 후 visible로 변경
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -26,13 +35,14 @@ export default function RegularSession() {
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (marketInsightRef.current) {
+      observer.observe(marketInsightRef.current);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      clearTimeout(timer);
+      if (marketInsightRef.current) {
+        observer.unobserve(marketInsightRef.current);
       }
     };
   }, []);
@@ -53,13 +63,11 @@ export default function RegularSession() {
         <meta name="description" content="HIF Regular Session page" />
       </Head>
 
-      {/* Hero Section */}
       <div className={styles.heroSection}>
         <div className={styles.heroOverlay} />
         <h1 className={styles.heroTitle}>
           Regular Session
         </h1>
-        {/* Breadcrumb Navigation */}
         <div className={styles.breadcrumb}>
           <Link href="/" className={styles.breadcrumbLink}>ACTIVITIES</Link>
           <span className={styles.separator}>/</span>
@@ -67,10 +75,8 @@ export default function RegularSession() {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className={styles.mainContent}>
         <div className={styles.contentSection}>
-          {/* Seminar 섹션 */}
           <h2 className={styles.sectionTitle}>Seminar</h2>
           
           <p className={styles.description}>
@@ -79,32 +85,66 @@ export default function RegularSession() {
             금융과 경제 분야에 있어 <strong>학술 역량을 배양하는 핵심 활동</strong>입니다.
           </p>
 
-          <div className={styles.seminarGrid} ref={sectionRef}>
-            <div className={`${styles.seminarItem} ${styles.topPosition}`}>
+          <div className={`${styles.seminarGrid} ${isVisible ? styles.visible : ''}`}>
+            <div className={`${styles.seminarItem}`}>
               <div className={styles.imageWrapper}>
                 <Image 
-                  src="/Seminar1.png" 
+                  src="/Seminar1.jpeg" 
                   alt="Seminar 1" 
-                  width={600}
-                  height={400}
+                  width={400}
+                  height={560}
                   className={styles.seminarImage}
-                  onClick={() => handleImageClick("/Seminar1.png")}
+                  onClick={() => handleImageClick("/Seminar1.jpeg")}
+                  quality={100}
                   priority
+                  sizes="(max-width: 768px) 100vw, 400px"
                 />
               </div>
+              <a href="/[2024.10.03 세미나 A조] 크레딧 일부 발췌.pdf" 
+                 download 
+                 className={styles.downloadLink}>
+                세미나 자료 보기
+              </a>
             </div>
-            <div className={`${styles.seminarItem} ${styles.bottomPosition}`}>
+            <div className={`${styles.seminarItem}`}>
               <div className={styles.imageWrapper}>
                 <Image 
-                  src="/Seminar2.png" 
+                  src="/Seminar2.jpeg" 
                   alt="Seminar 2" 
-                  width={600}
-                  height={400}
+                  width={400}
+                  height={560}
                   className={styles.seminarImage}
-                  onClick={() => handleImageClick("/Seminar2.png")}
+                  onClick={() => handleImageClick("/Seminar2.jpeg")}
+                  quality={100}
                   priority
+                  sizes="(max-width: 768px) 100vw, 400px"
                 />
               </div>
+              <a href="/[2024.04.04 세미나 A조] SPAC투자 일부 발췌.pdf" 
+                 download 
+                 className={styles.downloadLink}>
+                세미나 자료 보기
+              </a>
+            </div>
+            <div className={`${styles.seminarItem}`}>
+              <div className={styles.imageWrapper}>
+                <Image 
+                  src="/Seminar3.jpeg" 
+                  alt="Seminar 3" 
+                  width={400}
+                  height={560}
+                  className={styles.seminarImage}
+                  onClick={() => handleImageClick("/Seminar3.jpeg")}
+                  quality={100}
+                  priority
+                  sizes="(max-width: 768px) 100vw, 400px"
+                />
+              </div>
+              <a href="/[2024.05.16 세미나 A조] 환리스크 관리 일부 발췌.pdf" 
+                 download 
+                 className={styles.downloadLink}>
+                세미나 자료 보기
+              </a>
             </div>
           </div>
 
@@ -124,7 +164,7 @@ export default function RegularSession() {
             이를 통해 매크로 시황, 포트폴리오 전략 등 다양한 금융분야의 인사이트를 습득할 수 있습니다.
           </p>
 
-          <div className={styles.newsGrid} ref={sectionRef}>
+          <div className={styles.newsGrid} ref={marketInsightRef}>
             <div className={`${styles.newsItem} ${styles.topPosition}`}>
               <Image 
                 src="/news1.png" 
@@ -155,7 +195,7 @@ export default function RegularSession() {
                 전체 보고서 보기
               </a>
             </div>
-            <div className={`${styles.newsItem} ${styles.topPosition}`}>
+            <div className={styles.newsItem}>
               <Image 
                 src="/news3.png" 
                 alt="Finance News 3" 
@@ -164,13 +204,13 @@ export default function RegularSession() {
                 className={styles.newsImage} 
                 onClick={() => handleImageClick("/news3.png")} 
               />
-              <a href="/[2024.10.29, 14.5기 방창현] 10월 5주차.pdf" 
+              <a href="/[2024.04.30] 15기 김범진_HMM 영구채.pdf" 
                  download 
                  className={styles.downloadLink}>
                 전체 보고서 보기
               </a>
             </div>
-            <div className={`${styles.newsItem} ${styles.bottomPosition}`}>
+            <div className={styles.newsItem}>
               <Image 
                 src="/news4.png" 
                 alt="Finance News 4" 
@@ -179,7 +219,7 @@ export default function RegularSession() {
                 className={styles.newsImage} 
                 onClick={() => handleImageClick("/news4.png")} 
               />
-              <a href="/[2024.04.30] 15기 김범진_HMM 영구채.pdf" 
+              <a href="/[2024.10.29, 14.5기 방창현] 10월 5주차.pdf" 
                  download 
                  className={styles.downloadLink}>
                 전체 보고서 보기
@@ -204,19 +244,18 @@ export default function RegularSession() {
         </div>
       </div>
 
-      {/* 이미지 모달 */}
       {selectedImage && (
         <div className={styles.modal} onClick={closeModal}>
           <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
-            <button className={styles.closeButton} onClick={closeModal}>
-              ×
-            </button>
+            <button className={styles.closeButton} onClick={closeModal}>×</button>
             <Image 
               src={selectedImage} 
-              alt="Enlarged news" 
-              width={800} 
-              height={1000} 
+              alt="Enlarged seminar" 
+              width={1200}
+              height={1680}
               className={styles.modalImage}
+              quality={100}
+              sizes="100vw"
             />
           </div>
         </div>

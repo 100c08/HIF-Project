@@ -1,14 +1,15 @@
 .header {
-  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  transition: all 0.3s ease;
-  background: transparent;
+  transition: color 0.8s ease;
+  background: transparent;  /* 배경 투명하게 */
 }
 
 .header::before {
@@ -93,13 +94,13 @@
   transform: translateX(-50%);
   list-style: none;
   margin: 0;
-  padding: 1.5rem 0; /* 상하 패딩 증가 */
+  padding: 1rem 0 1.5rem;  /* 상단 1rem, 하단 1.5rem으로 여백 조정 */
   min-width: 180px;
   text-align: center;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
-  margin-top: 0.5rem; /* 상위 메뉴와의 간격 조정 */
+  margin-top: 0.5rem;
 }
 
 .menuOpen .dropdownMenu {
@@ -209,4 +210,25 @@
 
 :root[data-section="2"] .dropdownLink {
   color: #000;
+}
+
+/* 기존 스타일에 추가 */
+.logoImage {
+  transition: filter 0.8s ease;
+}
+
+.navLink {
+  transition: color 0.8s ease;
+}
+
+.whiteBackground {
+  color: #000000;
+  transition: color 0.8s ease;
+  background: transparent;  /* 배경 투명하게 */
+}
+
+/* data-section 속성에 따른 스타일 - 배경색 제거 */
+:root[data-section="2"] .header,
+:root[data-section="4"] .header {
+  color: #000000;
 }

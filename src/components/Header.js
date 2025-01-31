@@ -84,14 +84,37 @@ export default function Header() {
         if (heroSection) {
           const heroBottom = heroSection.getBoundingClientRect().bottom;
           setIsWhiteBackground(heroBottom < 0);
+        } else {
+          setIsWhiteBackground(true);
         }
       }
     };
 
-    handleScroll();
+    const handleRouteChange = () => {
+      document.documentElement.removeAttribute('data-section');
+      
+      const logo = document.querySelector('.logoImage');
+      if (logo) {
+        logo.style.filter = 'brightness(0) invert(1)';
+      }
+
+      setIsMenuOpen(false);
+      setVisibleDropdown(null);
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [router.pathname]);
+    router.events.on('routeChangeStart', handleRouteChange);
+
+    if (router.pathname !== '/') {
+      handleRouteChange();
+    }
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [router]);
 
   return (
     <header 
@@ -102,6 +125,7 @@ export default function Header() {
         ${isWhiteBackground ? styles.whiteBackground : ''}
         ${(router.pathname === '/members' || router.pathname === '/activities/competition') ? styles.darkHeader : ''}
       `}
+      style={{ transition: 'background-color 0.8s ease, color 0.8s ease' }}
       onMouseLeave={handleMouseLeave}
     >
       <div className={styles.logoContainer}>

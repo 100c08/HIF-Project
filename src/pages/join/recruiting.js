@@ -101,7 +101,7 @@ export default function Recruiting() {
               />
               
               <p className={styles.finalMessage}>
-                한국외국어대학교 최고의 금융학회 금융연구회에서<br />
+                대한민국 최고의 금융학회 금융연구회에서<br />
                 잠재력을 발휘하고 미래 금융인으로 성장하실 분을 찾습니다.
               </p>
 

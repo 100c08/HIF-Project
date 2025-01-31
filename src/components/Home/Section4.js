@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import localFont from "next/font/local";
 import styles from '../../styles/Home/Section4.module.css';
+import Link from 'next/link';
 
 const playfairDisplay = localFont({
   src: "../../pages/fonts/PlayfairDisplay-Regular.woff",
@@ -131,13 +132,15 @@ export default function Section4() {
 
         <div className={`${styles.recentAwards} ${styles.fadeUpAnimation5}`}>
           <div className={styles.titleWrapper}>
-            <div className={styles.recentAwardsTitle}>최근 3개년 수상내역</div>
+            <div className={styles.recentAwardsTitle}>최근 수상내역</div>
             <div className={styles.styledLine} />
           </div>
           <div className={styles.awardsList}>
-            2024 DB 이노베이션 챌린지 대상, 핀서치 대상, 2023 DB금융경제공모전 가작 2회, 2022 CFA Research challenge
+            2024 DB 이노베이션챌린지 공모전 대상(1위), 2024 리서치 아카데미아 장려, 2024 산업통상자원부 공공데이터 활용 아이디어 공모전 대상(장관상), 2024 DB 금융경제 공모전 가작 2회
           </div>
-          <button className={styles.viewMore}>view more</button>
+          <Link href="/activities/competition" className={styles.viewMore}>
+            view more
+          </Link>
         </div>
       </div>
     </div>

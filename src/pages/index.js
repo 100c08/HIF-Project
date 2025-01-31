@@ -9,7 +9,6 @@ import Section1 from '../components/Home/Section1';
 import Section2 from '../components/Home/Section2';
 import Section4 from '../components/Home/Section4';
 
-
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -30,37 +29,38 @@ export default function Home() {
   const [section4Active, setSection4Active] = useState(false);
   const [isFooterActive, setIsFooterActive] = useState(false);
 
-  const hideNavigatorFooterItem = () => {
-    const navigator = document.querySelector("#fp-nav > ul")
-    const footerItem = navigator.children[navigator.children.length - 1]
-
-    footerItem.style.cssText = 'display: none'
-  }
-
-  const modifyNavigatorStyle = () => {
-    const items = document.querySelectorAll('#fp-nav > ul > li > a > span')
-
-    items.forEach(item => {
-      item.style.cssText = 'background: #ffffff'
-    })
-  }
-
   useEffect(() => {
-    const cleanup = () => {
-      // 필요한 경우 스타일 초기화 로직
-    };
-    
-    hideNavigatorFooterItem();
-    modifyNavigatorStyle();
-    
-    return cleanup;
-  }, []);
+    // 푸터 네비게이터 아이템 숨기기
+    const navigator = document.querySelector("#fp-nav > ul");
+    if (navigator) {
+      const footerItem = navigator.children[navigator.children.length - 1];
+      if (footerItem) {
+        footerItem.style.display = 'none';
+      }
+    }
 
+    // 초기 네비게이터 스타일 설정
+    const items = document.querySelectorAll('#fp-nav > ul > li > a > span');
+    items.forEach(item => {
+      item.style.background = '#ffffff';
+    });
+
+    // 페이지 언마운트 시 스타일 초기화
+    return () => {
+      const logo = document.querySelector('.logoImage');
+      if (logo) {
+        logo.style.filter = 'brightness(1)';
+      }
+      items.forEach(item => {
+        item.style.background = '#ffffff';
+      });
+    };
+  }, []);
 
   return (
     <>
       <Head>
-       <title>금융연구회 | HUFS Institute of Finance</title>
+        <title>금융연구회 | HUFS Institute of Finance</title>
         <meta property="og:title" content="금융연구회 | HUFS Institute of Finance" />
         <meta property="og:description" content="HUFS Institute of Finance - Where Vision Meets Finance" />
         <meta property="og:type" content="website" />
@@ -68,7 +68,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* 인디케이터 네비게이션 (Fullpage.js 내장 네비게이션 사용) */}
       <ReactFullpage
         navigation={true}
         fitToSection={true}
@@ -79,50 +78,31 @@ export default function Home() {
         licenseKey={process.env.NEXT_PUBLIC_FULLPAGE_LICENSE_KEY}
         credits={false}
         onLeave={(origin, destination, direction) => {
-          if (destination.index === 1) {  // Section2로 이동 시작할 때
-            document.documentElement.setAttribute('data-section', '2');
-            const items = document.querySelectorAll('#fp-nav > ul > li > a > span');
-            const logo = document.querySelector('.logoImage'); // 로고 이미지 선택
-            
+          const items = document.querySelectorAll('#fp-nav > ul > li > a > span');
+          const logo = document.querySelector('.logoImage');
+          
+          if (destination.index === 1 || destination.index === 3) {
+            document.documentElement.setAttribute('data-section', destination.index === 1 ? '2' : '4');
             items.forEach(item => {
               item.style.cssText = 'background: #000000; transition: background 0.8s ease';
             });
-            
             if (logo) {
               logo.style.cssText = 'filter: brightness(0); transition: filter 0.8s ease';
             }
-          } else if (origin.index === 1) {  // Section2에서 다른 섹션으로 이동 시작할 때
-            document.documentElement.setAttribute('data-section', '');
-            const items = document.querySelectorAll('#fp-nav > ul > li > a > span');
-            const logo = document.querySelector('.logoImage');
-            
+          } else {
+            document.documentElement.removeAttribute('data-section');
             items.forEach(item => {
               item.style.cssText = 'background: #ffffff; transition: background 0.8s ease';
             });
-            
             if (logo) {
               logo.style.cssText = 'filter: brightness(1); transition: filter 0.8s ease';
             }
           }
         }}
         afterLoad={(origin, destination) => {
-          if (destination.index === 1) {
-            setSection2Active(true);
-          } else {
-            setSection2Active(false);
-          }
-          
-          if (destination.index === 3) {  // Section4
-            setSection4Active(true);
-          } else {
-            setSection4Active(false);
-          }
-
-          if (destination.index === 5) {  // Footer
-            setIsFooterActive(true);
-          } else {
-            setIsFooterActive(false);
-          }
+          setSection2Active(destination.index === 1);
+          setSection4Active(destination.index === 3);
+          setIsFooterActive(destination.index === 5);
         }}
         render={({ state, fullpageApi }) => (
           <ReactFullpage.Wrapper className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>
@@ -154,9 +134,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 푸터 섹션 */}
             <div className={`section fp-auto-height ${styles.footerSection}`} style={{ backgroundColor: '#000' }}>
-             <Footer isActive={isFooterActive} />
+              <Footer isActive={isFooterActive} />
             </div>
           </ReactFullpage.Wrapper>
         )}

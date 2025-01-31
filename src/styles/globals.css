@@ -1,4 +1,3 @@
-
 /* 기본 스타일 */
 body {
   margin: 0;
@@ -25,13 +24,23 @@ a {
   text-align: center;
 }
 
-
 /* Pretendard Variable Font 설정 */
 @font-face {
   font-family: "Pretendard";
   src: url("/fonts/PretendardVariable.woff2") format("woff2");
   font-weight: 100 900; /* 가변 폰트의 굵기 범위 설정 */
   font-style: normal;
+}
+
+/* Adamina Font 설정 */
+@font-face {
+    font-family: "Adamina";
+    src: url("https://db.onlinewebfonts.com/t/e0f81b2dfe31389464af2d8ebf3b0c13.eot");
+    src: url("https://db.onlinewebfonts.com/t/e0f81b2dfe31389464af2d8ebf3b0c13.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/e0f81b2dfe31389464af2d8ebf3b0c13.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/e0f81b2dfe31389464af2d8ebf3b0c13.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/e0f81b2dfe31389464af2d8ebf3b0c13.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/e0f81b2dfe31389464af2d8ebf3b0c13.svg#Adamina")format("svg");
 }
 
 /* 글로벌 폰트 적용 */
