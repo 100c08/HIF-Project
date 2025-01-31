@@ -39,7 +39,11 @@ export default function Header() {
         window.fullpage_api.moveTo(1);
       }
     } else {
-      router.push('/#1');
+      router.push('/').then(() => {
+        if (window.fullpage_api) {
+          window.fullpage_api.moveTo(1);
+        }
+      });
     }
   };
 

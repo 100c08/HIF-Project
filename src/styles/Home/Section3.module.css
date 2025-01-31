@@ -232,12 +232,6 @@
 
 .animate .divider {
   animation: lineDown 1.4s cubic-bezier(0.12, 1, 0.4, 1) forwards 1.5s;  
-  /* 
-    cubic-bezier 값 수정:
-    - 첫 번째 값(0.16 → 0.12): 초반 가속도 증가
-    - 세 번째 값(0.3 → 0.4): 감속 구간 확대
-    이렇게 하면 더 빠르게 시작했다가 끝부분에서 더 오래 감속됨
-  */
 }
 
 /* 설명 텍스트 애니메이션 */
