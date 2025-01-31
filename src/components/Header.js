@@ -118,7 +118,7 @@ export default function Header() {
       onMouseLeave={handleMouseLeave}
     >
       <div className={styles.logoContainer}>
-        <a href="/" onClick={handleLogoClick}>
+        <Link href="/" onClick={handleLogoClick}>
           <Image
             src="/white_no.svg"
             alt="HIF Logo"
@@ -126,7 +126,7 @@ export default function Header() {
             width={50}
             height={50}
           />
-        </a>
+        </Link>
       </div>
 
       <nav className={styles.nav}>
