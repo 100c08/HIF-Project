@@ -33,7 +33,7 @@
 
 .horizontalLine {
   width: 40vw;
-  height: 1px;
+  height: 2px;
   background-color: #000;
   margin-bottom: 2rem;
   opacity: 0;
@@ -168,19 +168,6 @@
 .animate .fadeUpAnimation5 {
   animation: fadeUp 0.8s ease forwards;
   animation-delay: 1.1s;
-}
-
-.logoWrapper {
-  margin-top: 2.5rem;
-  opacity: 0;
-  transform: translateY(30px);
-  display: flex;
-  justify-content: flex-start;
-}
-
-.logo {
-  width: 60px;
-  height: 60px;
 }
 
 .animate .fadeUpAnimation6 {
