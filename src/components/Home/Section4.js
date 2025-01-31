@@ -68,7 +68,7 @@ export default function Section4() {
             const progress = Math.min(1, (timestamp - prizeStartTime) / prizeDuration);
             const easedProgress = easeOutQuart(progress);
             
-            setPrize(Math.floor(200000000 * easedProgress));
+            setPrize(Math.floor(199500000 * easedProgress));
             
             if (progress < 1) {
               requestAnimationFrame(animatePrize);

@@ -97,7 +97,7 @@ export default function Section3() {
                 <Link href="/activities/research" className={styles.circleLink}>
                   <div className={styles.circle}>
                     <Image 
-                      src="/Section3_3.jpg" 
+                      src="/Section3_3.png" 
                       alt="Research" 
                       width={400}
                       height={560}

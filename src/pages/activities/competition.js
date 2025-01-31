@@ -561,7 +561,7 @@ export default function Competition() {
           <p className={styles.description}>
             금융연구회는 <strong>2011년부터 현재까지 100여 건의 수상실적</strong>을 보유하고 있습니다.<br />
             금융, 경제, 데이터 분석 등 다양한 분야의 공모전에서 우수한 성과를 거두며<br />
-            <strong>누적 상금 200,000,000원 이상</strong>을 수상하였고,<br />
+            <strong>누적 상금 약 200,000,000원</strong>을 수상하였고,<br />
             <strong>대한민국 최고의 금융동아리로서의 위상</strong>을 보여주고 있습니다.
           </p>
           
