@@ -14,7 +14,7 @@ export default function Header() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [visibleDropdown, setVisibleDropdown] = useState(null);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isWhiteBackground, setIsWhiteBackground] = useState(false);
 
   const handleMouseEnter = (menu) => {
     setVisibleDropdown(menu);
@@ -29,26 +29,6 @@ export default function Header() {
   const handleLinkClick = () => {
     setVisibleDropdown(null);
     setIsMenuOpen(false);
-  };
-
-  const handleLogoClick = (e) => {
-    e.preventDefault();
-    
-    if (router.pathname === '/') {
-      // 홈페이지에서는 fullpage.js의 moveTo 메서드 사용
-      if (typeof window !== 'undefined' && window.fullpage_api) {
-        window.fullpage_api.moveTo(1);
-      }
-    } else {
-      // 다른 페이지에서는 홈으로 이동 후 첫 섹션으로
-      router.push('/').then(() => {
-        setTimeout(() => {
-          if (window.fullpage_api) {
-            window.fullpage_api.moveTo(1);
-          }
-        }, 100);
-      });
-    }
   };
 
   const menuItems = [
@@ -67,9 +47,9 @@ export default function Header() {
       href: "/activities/regular-session",
       items: [
         { label: "Regular Session", href: "/activities/regular-session" },
-        { label: "Competition", href: "/activities/competition" },
+        { label: "공모전", href: "/activities/competition", className: styles.koreanText },
         { label: "Research", href: "/activities/research" },
-        { label: "DSAI", href: "https://hif-dsai.github.io/", isExternal: true },
+        { label: "DS/AI", href: "https://hif-dsai.github.io/", isExternal: true },
       ],
     },
     {
@@ -90,51 +70,48 @@ export default function Header() {
   ];
 
   useEffect(() => {
-    // 현재 페이지가 메인 페이지인지 확인
-    const isMainPage = router.pathname === '/';
-    
-    // 초기 상태 설정
-    if (!isMainPage) {
-      // 서브 페이지에서는 hero 섹션이 있으므로 처음에는 투명 배경
-      setIsScrolled(false);
-    }
-
     const handleScroll = () => {
-      if (isMainPage) {
-        // 메인 페이지에서는 기존 로직 유지
+      if (router.pathname === '/members') {
+        setIsWhiteBackground(false);
+        return;
+      }
+
+      if (router.pathname === '/') {
         const scrolled = window.scrollY > 50;
-        setIsScrolled(scrolled);
+        setIsWhiteBackground(scrolled);
       } else {
-        // 서브 페이지에서는 hero 섹션을 지나면 배경색 변경
         const heroSection = document.querySelector('[class*="heroSection"]');
         if (heroSection) {
-          const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-          const scrolled = window.scrollY > (heroBottom - 100);
-          setIsScrolled(scrolled);
+          const heroBottom = heroSection.getBoundingClientRect().bottom;
+          setIsWhiteBackground(heroBottom < 0);
         }
       }
     };
 
-    // 페이지 로드 시 초기 스크롤 위치에 따른 상태 설정
     handleScroll();
-    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [router.pathname]);
 
   return (
     <header 
-      className={`${styles.header} ${isMenuOpen ? styles.menuOpen : ''} ${playfairDisplay.variable} ${isScrolled ? styles.scrolled : ''}`}
+      className={`
+        ${styles.header} 
+        ${isMenuOpen ? styles.menuOpen : ''} 
+        ${playfairDisplay.variable} 
+        ${isWhiteBackground ? styles.whiteBackground : ''}
+        ${router.pathname === '/members' ? styles.darkHeader : ''}
+      `}
       onMouseLeave={handleMouseLeave}
     >
       <div className={styles.logoContainer}>
-        <Link href="/" onClick={handleLogoClick}>
+        <Link href="/">
           <Image
             src="/white_no.svg"
             alt="HIF Logo"
-            className={`${styles.logoImage} logoImage`}
-            width={50}
-            height={50}
+            className={styles.logoImage}
+            width={40}
+            height={40}
           />
         </Link>
       </div>
