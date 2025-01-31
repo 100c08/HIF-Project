@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import Section1 from '../components/Home/Section1';
 import Section2 from '../components/Home/Section2';
 import Section4 from '../components/Home/Section4';
+import Section3 from '../components/Home/Section3';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,6 +29,7 @@ export default function Home() {
   const [section2Active, setSection2Active] = useState(false);
   const [section4Active, setSection4Active] = useState(false);
   const [isFooterActive, setIsFooterActive] = useState(false);
+  const [section3Active, setSection3Active] = useState(false);
 
   useEffect(() => {
     // 푸터 네비게이터 아이템 숨기기
@@ -81,8 +83,8 @@ export default function Home() {
           const items = document.querySelectorAll('#fp-nav > ul > li > a > span');
           const logo = document.querySelector('.logoImage');
           
-          if (destination.index === 1 || destination.index === 3) {
-            document.documentElement.setAttribute('data-section', destination.index === 1 ? '2' : '4');
+          if (destination.index === 1) {
+            document.documentElement.setAttribute('data-section', '2');
             items.forEach(item => {
               item.style.cssText = 'background: #000000; transition: background 0.8s ease';
             });
@@ -101,6 +103,7 @@ export default function Home() {
         }}
         afterLoad={(origin, destination) => {
           setSection2Active(destination.index === 1);
+          setSection3Active(destination.index === 2);
           setSection4Active(destination.index === 3);
           setIsFooterActive(destination.index === 5);
         }}
@@ -116,11 +119,8 @@ export default function Home() {
               <Section2 isActive={section2Active} />
             </div>
 
-            <div className={`section ${styles.heroSection}`}>
-              <div className={styles.heroOverlay}>
-                <h1 className={styles.heroTitle}>Section 3</h1>
-                <p className={styles.heroSubtitle}>HUFS Institute of Finance</p>
-              </div>
+            <div className="section">
+              <Section3 isActive={section3Active} />
             </div>
 
             <div className="section">

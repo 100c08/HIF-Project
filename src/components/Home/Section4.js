@@ -24,11 +24,11 @@ export default function Section4() {
           if (videoRef.current) {
             const timeLeft = videoRef.current.duration - videoRef.current.currentTime;
             if (timeLeft < 1) {
-              videoRef.current.style.opacity = '0';
+              videoRef.current.style.cssText = 'opacity: 0; background-color: #000;';
               setTimeout(() => {
                 if (videoRef.current) {
                   videoRef.current.currentTime = 0;
-                  videoRef.current.style.opacity = '1';
+                  videoRef.current.style.cssText = 'opacity: 1; background-color: #000;';
                 }
               }, 1000);
             }
@@ -136,7 +136,7 @@ export default function Section4() {
             <div className={styles.styledLine} />
           </div>
           <div className={styles.awardsList}>
-            2024 DB 이노베이션챌린지 공모전 대상(1위), 2024 리서치 아카데미아 장려, 2024 산업통상자원부 공공데이터 활용 아이디어 공모전 대상(장관상), 2024 DB 금융경제 공모전 가작 2회
+            2024 DB 이노베이션챌린지 공모전 대상(1위), 2024 리서치 아카데미아 장려, 2024 산업통상자원부 공공데이터 활용 아이디어 공모전 대상(장관상)
           </div>
           <Link href="/activities/competition" className={styles.viewMore}>
             view more
