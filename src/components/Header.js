@@ -47,7 +47,7 @@ export default function Header() {
       href: "/activities/regular-session",
       items: [
         { label: "Regular Session", href: "/activities/regular-session" },
-        { label: "공모전", href: "/activities/competition", className: styles.koreanText },
+        { label: "Awards", href: "/activities/competition" },
         { label: "Research", href: "/activities/research" },
         { label: "DS/AI", href: "https://hif-dsai.github.io/", isExternal: true },
       ],

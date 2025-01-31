@@ -63,7 +63,7 @@
   }
   
   .mainContent {
-    background: #fff;
+    background: #000;  /* 흰색에서 검정으로 변경 */
     padding: 2rem;
     position: relative;
   }
@@ -84,3 +84,123 @@
       transform: translateY(0);
     }
   }
+
+.timeline {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.yearSection {
+  margin-bottom: 4rem;
+}
+
+.yearMarker {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;  /* Palatino 폰트로 변경 */
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  position: relative;
+  font-weight: 500;  /* 약간의 두께 추가 */
+}
+
+.yearMarker::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 60px;
+  height: 3px;
+  background-color: #fff;  /* 연도 밑줄 색상 변경 */
+}
+
+.awardsList {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.awardCard {
+  display: flex;
+  background: #111;  /* 카드 배경색 어두운 회색으로 */
+  padding: 1.5rem;
+  border: 1px solid #333;  /* 테두리 색상 변경 */
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.awardCard:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);  /* 그림자 색상 변경 */
+}
+
+.awardDate {
+  font-family: var(--font-iropke);
+  min-width: 120px;
+  color: #999;  /* 날짜 색상 변경 */
+}
+
+.awardDetails {
+  flex: 1;
+}
+
+.awardDetails h3 {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 1.1rem;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.awardRank {
+  font-family: var(--font-iropke);
+  color: #fff;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .awardCard {
+    flex-direction: column;
+  }
+  
+  .awardDate {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: #fff;  /* 글자색 흰색으로 변경 */
+  text-align: center;
+  font-family: var(--font-playfair);
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.description {
+  text-align: center;
+  line-height: 1.8;
+  color: #999;  /* 밝은 회색으로 변경 */
+  margin: 2rem auto;
+  max-width: 900px;
+  word-break: keep-all;
+  font-family: var(--font-iropke);
+}
+
+.description strong {
+  color: #fff;  /* 강조 텍스트는 흰색으로 */
+  font-weight: 600;
+}
+
+/* 구분선 스타일 */
+.divider {
+  width: 100%;
+  max-width: 1000px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.2),  /* 구분선 색상 변경 */
+    transparent
+  );
+  margin: 5rem auto;
+}
