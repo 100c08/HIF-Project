@@ -75,7 +75,7 @@ export default function RegularSession() {
           
           <p className={styles.description}>
             금융연구회는 <strong>학회원 전원이 참여하는 세미나 활동을 진행</strong>하고 있습니다.<br />
-            세미나는 4명 내외의 학회원들이 팀을 이뤄 주제 선정부터 자료 준비, 발표까지 함께 협력하며<br />
+            세미나는 4명 내외의 학회원이 팀을 이뤄 주제 선정부터 자료 준비, 발표까지 함께 협력하며<br />
             금융과 경제 분야에 있어 <strong>학술 역량을 배양하는 핵심 활동</strong>입니다.
           </p>
 
@@ -109,7 +109,7 @@ export default function RegularSession() {
           </div>
 
           <p className={styles.seminarFooter}>
-            세미나는 학회원들이 학문적 깊이를 더하고, 분석 능력과 발표 능력을 함양하며,<br />
+            세미나는 학회원의 학문적 깊이를 더하고, 분석 능력과 발표 능력을 함양하며,<br />
             미래 금융인으로 성장할 수 있는 중요한 발판이 될 것입니다.
           </p>
 
@@ -120,7 +120,7 @@ export default function RegularSession() {
           <h2 className={styles.sectionTitle}>Finance Market Insight</h2>
           
           <p className={styles.description}>
-            매주 <strong>기업분석, 정책금융, 매크로이슈</strong> 등을 주제로 학회원들끼리 심도 깊은 학습을 진행하며, <strong>금융시장 이슈들을 Follow-up</strong>하고 있습니다.
+            매주 <strong>기업분석, 정책금융, 매크로이슈</strong> 등을 주제로 학회원 간의 심도 깊은 학습을 진행하며, <strong>금융시장 이슈들을 Follow-up</strong>하고 있습니다.
             이를 통해 매크로 시황, 포트폴리오 전략 등 다양한 금융분야의 인사이트를 습득할 수 있습니다.
           </p>
 
