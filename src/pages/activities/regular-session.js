@@ -70,6 +70,53 @@ export default function RegularSession() {
       {/* Main Content */}
       <div className={styles.mainContent}>
         <div className={styles.contentSection}>
+          {/* Seminar 섹션 */}
+          <h2 className={styles.sectionTitle}>Seminar</h2>
+          
+          <p className={styles.description}>
+            금융연구회는 <strong>학회원 전원이 참여하는 세미나 활동을 진행</strong>하고 있습니다.<br />
+            세미나는 4명 내외의 학회원들이 팀을 이뤄 주제 선정부터 자료 준비, 발표까지 함께 협력하며<br />
+            금융과 경제 분야에 있어 <strong>학술 역량을 배양하는 핵심 활동</strong>입니다.
+          </p>
+
+          <div className={styles.seminarGrid} ref={sectionRef}>
+            <div className={`${styles.seminarItem} ${styles.topPosition}`}>
+              <div className={styles.imageWrapper}>
+                <Image 
+                  src="/Seminar1.png" 
+                  alt="Seminar 1" 
+                  width={600}
+                  height={400}
+                  className={styles.seminarImage}
+                  onClick={() => handleImageClick("/Seminar1.png")}
+                  priority
+                />
+              </div>
+            </div>
+            <div className={`${styles.seminarItem} ${styles.bottomPosition}`}>
+              <div className={styles.imageWrapper}>
+                <Image 
+                  src="/Seminar2.png" 
+                  alt="Seminar 2" 
+                  width={600}
+                  height={400}
+                  className={styles.seminarImage}
+                  onClick={() => handleImageClick("/Seminar2.png")}
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+
+          <p className={styles.seminarFooter}>
+            세미나는 학회원들이 학문적 깊이를 더하고, 분석 능력과 발표 능력을 함양하며,<br />
+            미래 금융인으로 성장할 수 있는 중요한 발판이 될 것입니다.
+          </p>
+
+          {/* 구분선 */}
+          <div className={styles.divider}></div>
+
+          {/* Finance Market Insight 섹션 */}
           <h2 className={styles.sectionTitle}>Finance Market Insight</h2>
           
           <p className={styles.description}>

@@ -8,6 +8,7 @@
   z-index: 1000;
   width: 100%;
   transition: all 0.3s ease;
+  background: transparent;
 }
 
 .header::before {
@@ -24,6 +25,23 @@
 
 .header.menuOpen::before {
   height: 260px; /* 전체 높이 증가 */
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.header.scrolled .logoImage {
+  filter: brightness(0);  /* 로고를 검은색으로 */
+}
+
+.header.scrolled .navLink {
+  color: #333;  /* 네비게이션 링크를 검은색으로 */
+}
+
+/* 모바일 메뉴가 있다면 그에 대한 스타일도 추가 */
+.header.scrolled .menuIcon {
+  filter: brightness(0);
 }
 
 .logoContainer {

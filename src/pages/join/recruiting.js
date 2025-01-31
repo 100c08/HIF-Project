@@ -70,7 +70,7 @@ export default function Recruiting() {
                         <Image src="/F.svg" alt="F" width={250} height={250} />
                         <h3 className={`${styles.pointTitle} ${styles.financeColor}`}>Finance</h3>
                         <p className={styles.circleText}>
-                            금융권에 대한 관심이 높으신 분
+                            금융에 대한 관심이 높으신 분
                         </p>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ export default function Recruiting() {
               <div className={styles.infoRow}>
                 <span className={styles.infoLabel}>지원방법</span>
                 <p className={styles.infoContent}>
-                  페이지 하단에서 지원서를 다운받아 작성 후 <a href="mailto:hufsvalue15@naver.com" className={styles.emailLink}>hufsvalue15@naver.com</a>으로 제출
+                  페이지 하단에서 지원서를 다운로드하여 작성 후 <a href="mailto:hufsvalue15@naver.com" className={styles.emailLink}>hufsvalue15@naver.com</a>으로 제출
                 </p>
               </div>
             </div>

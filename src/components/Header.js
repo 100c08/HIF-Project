@@ -14,7 +14,7 @@ export default function Header() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [visibleDropdown, setVisibleDropdown] = useState(null);
-  const [isWhiteBackground, setIsWhiteBackground] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const handleMouseEnter = (menu) => {
     setVisibleDropdown(menu);
@@ -90,31 +90,41 @@ export default function Header() {
   ];
 
   useEffect(() => {
+    // 현재 페이지가 메인 페이지인지 확인
+    const isMainPage = router.pathname === '/';
+    
+    // 초기 상태 설정
+    if (!isMainPage) {
+      // 서브 페이지에서는 hero 섹션이 있으므로 처음에는 투명 배경
+      setIsScrolled(false);
+    }
+
     const handleScroll = () => {
-      if (router.pathname === '/members') {
-        setIsWhiteBackground(false);
-        return;
-      }
-
-      if (router.pathname === '/') {
-        setIsWhiteBackground(false);
-        return;
-      }
-
-      const heroSection = document.querySelector('[class*="heroSection"]');
-      if (heroSection) {
-        const heroBottom = heroSection.getBoundingClientRect().bottom;
-        setIsWhiteBackground(heroBottom < 0);
+      if (isMainPage) {
+        // 메인 페이지에서는 기존 로직 유지
+        const scrolled = window.scrollY > 50;
+        setIsScrolled(scrolled);
+      } else {
+        // 서브 페이지에서는 hero 섹션을 지나면 배경색 변경
+        const heroSection = document.querySelector('[class*="heroSection"]');
+        if (heroSection) {
+          const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+          const scrolled = window.scrollY > (heroBottom - 100);
+          setIsScrolled(scrolled);
+        }
       }
     };
 
+    // 페이지 로드 시 초기 스크롤 위치에 따른 상태 설정
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [router.pathname]);
 
   return (
     <header 
-      className={`${styles.header} ${isMenuOpen ? styles.menuOpen : ''} ${playfairDisplay.variable} ${isWhiteBackground ? styles.whiteBackground : ''}`}
+      className={`${styles.header} ${isMenuOpen ? styles.menuOpen : ''} ${playfairDisplay.variable} ${isScrolled ? styles.scrolled : ''}`}
       onMouseLeave={handleMouseLeave}
     >
       <div className={styles.logoContainer}>
@@ -122,7 +132,7 @@ export default function Header() {
           <Image
             src="/white_no.svg"
             alt="HIF Logo"
-            className={styles.logoImage}
+            className={`${styles.logoImage} logoImage`}
             width={50}
             height={50}
           />
