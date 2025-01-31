@@ -143,9 +143,9 @@
 }
 
 .activityItem p {
-  font-family: inherit;  /* 'Nanum Myeongjo' 제거하고 기본 폰트 사용 */
+  font-family: inherit;
   font-size: 0.95rem;
-  opacity: 0.7;
+  color: rgba(255, 255, 255, 0.3);  /* 0.6에서 0.3으로 변경 */
   margin: 0;
   line-height: 1.4;
   white-space: nowrap;
@@ -258,7 +258,7 @@
 .description {
   text-align: center;
   margin-top: 1rem;
-  font-family: inherit;  /* 'Nanum Myeongjo' 제거하고 기본 폰트 사용 */
+  font-family: 'Nanum Myeongjo';  /* 다시 나눔명조로 변경 */
   line-height: 1.8;
   opacity: 0;
   font-weight: normal;

@@ -145,9 +145,10 @@ export default function Header() {
           <Image
             src="/white_no.svg"
             alt="HIF Logo"
-            className={styles.logoImage}
+            className={`${styles.logoImage} logoImage`}
             width={40}
             height={40}
+            style={{ transition: 'filter 0.8s ease' }}
           />
         </Link>
       </div>
