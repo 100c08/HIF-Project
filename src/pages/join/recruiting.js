@@ -9,9 +9,14 @@ const playfairDisplay = localFont({
   variable: "--font-playfair"
 });
 
+const iropke = localFont({
+  src: "../../pages/fonts/IropkeBatangM.woff",
+  variable: "--font-iropke"
+});
+
 export default function Recruiting() {
     return (
-      <div className={playfairDisplay.variable}>
+      <div className={`${playfairDisplay.variable} ${iropke.variable}`}>
         <Head>
           <title>Recruiting | HIF</title>
           <meta property="og:title" content="Recruiting | HIF" />
@@ -35,7 +40,7 @@ export default function Recruiting() {
         {/* Main Content */}
         <div className={styles.mainContent}>
           <div className={styles.contentSection}>
-            <h2 className={styles.recruitingTitle}>16th Recruiting</h2>
+            <h2 className={styles.recruitingTitle}>HIF&apos;s Philosophy</h2>
             <div className={styles.underline}></div>
             <p className={styles.recruitingDesc}>
               HIF is looking for...
@@ -69,6 +74,44 @@ export default function Recruiting() {
                         </p>
                     </div>
                 </div>
+            </div>
+
+            <div className={styles.applicationInfo}>
+              <div className={styles.infoRow}>
+                <span className={styles.infoLabel}>지원자격</span>
+                <p className={styles.infoContent}>
+                  한국외국어대학교 <strong>서울캠퍼스</strong>에서 재학 중이며, <strong>2개 학기 연속 참여</strong>가 가능하신 분
+                </p>
+              </div>
+              <div className={styles.infoRow}>
+                <span className={styles.infoLabel}>지원방법</span>
+                <p className={styles.infoContent}>
+                  페이지 하단에서 지원서를 다운받아 작성 후 <a href="mailto:hufsvalue15@naver.com" className={styles.emailLink}>hufsvalue15@naver.com</a>으로 제출
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.timelineSection}>
+              <Image 
+                src="/timeline.svg" 
+                alt="Recruitment Timeline" 
+                width={1000} 
+                height={250}
+                className={styles.timelineImage}
+              />
+              
+              <p className={styles.finalMessage}>
+                한국외국어대학교 최고의 금융학회 금융연구회에서<br />
+                잠재력을 발휘하고 미래 금융인으로 성장하실 분을 찾습니다.
+              </p>
+
+              <a 
+                href="/application_form.txt" 
+                download 
+                className={styles.downloadButton}
+              >
+                지원서 다운로드
+              </a>
             </div>
           </div>
         </div>

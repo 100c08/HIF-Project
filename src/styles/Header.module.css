@@ -134,3 +134,28 @@
 :root[data-section="2"] .header:not(.menuOpen) .logoImage {
   filter: invert(1);
 }
+
+.header.whiteBackground .navLink {
+    color: #000;
+}
+
+.header.whiteBackground .logoImage {
+    filter: invert(1);
+}
+
+.header.whiteBackground .dropdownLink {
+    color: #000;
+}
+
+/* 메뉴가 열렸을 때는 원래 색상 유지 */
+.header.menuOpen .navLink,
+.header.menuOpen .dropdownLink,
+.header.menuOpen.whiteBackground .navLink,
+.header.menuOpen.whiteBackground .dropdownLink {
+    color: #fff !important;
+}
+
+.header.menuOpen .logoImage,
+.header.menuOpen.whiteBackground .logoImage {
+    filter: none !important;
+}

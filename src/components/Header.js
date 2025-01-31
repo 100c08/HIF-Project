@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from 'next/router';
 import styles from "../styles/Header.module.css";
 import localFont from "next/font/local";
 
@@ -10,8 +11,10 @@ const playfairDisplay = localFont({
 });
 
 export default function Header() {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [visibleDropdown, setVisibleDropdown] = useState(null);
+  const [isWhiteBackground, setIsWhiteBackground] = useState(false);
 
   const handleMouseEnter = (menu) => {
     setVisibleDropdown(menu);
@@ -66,9 +69,27 @@ export default function Header() {
     },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (router.pathname === '/members') {
+        setIsWhiteBackground(false);
+        return;
+      }
+
+      const heroSection = document.querySelector('[class*="heroSection"]');
+      if (heroSection) {
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        setIsWhiteBackground(heroBottom < 0);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [router.pathname]);
+
   return (
     <header 
-      className={`${styles.header} ${isMenuOpen ? styles.menuOpen : ''} ${playfairDisplay.variable}`}
+      className={`${styles.header} ${isMenuOpen ? styles.menuOpen : ''} ${playfairDisplay.variable} ${isWhiteBackground ? styles.whiteBackground : ''}`}
       onMouseLeave={handleMouseLeave}
     >
       <div className={styles.logoContainer}>
