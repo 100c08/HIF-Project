@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 80px;
+    gap: 40px;  /* 전체적인 간격을 50px에서 40px로 줄임 */
     max-width: 1024px;
     width: 100%;
   }
@@ -25,7 +25,7 @@
   }
 
   .title {
-    margin-left: auto;
+    text-align: center;  /* 가운데 정렬 추가 */
     font-family: var(--font-playfair);
     font-size: 3rem;
     color: rgba(255, 255, 255, 0.7);
@@ -57,6 +57,9 @@
     text-align: center;
     position: relative;
     font-family: 'Nanum Myeongjo';
+    display: flex;
+    flex-direction: column;
+    gap: 30px;  /* stats 내부 요소들 간격 추가 */
   }
   
   .statItem {
@@ -111,7 +114,7 @@
   .awardsList {
     font-size: 1rem;
     opacity: 0.7;
-    font-family: 'Nanum Myeongjo';
+    font-family: inherit;  /* 'Nanum Myeongjo' 제거하고 기본 폰트 사용 */
   }
   
   .viewMore {
@@ -186,3 +189,17 @@
     transition: opacity 1s ease, background-color 1s ease;  /* 배경색 전환 효과 추가 */
     background-color: #000;  /* 기본 배경색 설정 */
   }
+
+  .proofText {
+    font-family: 'Nanum Myeongjo';
+    font-size: 2.5rem;
+    text-align: center;
+    opacity: 0;
+    margin: 0 auto;
+    transform: translateY(30px);
+    margin-bottom: -10px;  /* 아래쪽 간격을 줄이기 위해 음수 마진 추가 */
+  }
+
+  /* fadeUpAnimation5에 대한 애니메이션이 이미 정의되어 있으므로, 
+     proofText는 fadeUpAnimation5 클래스와 함께 사용될 때 
+     자동으로 페이드업 애니메이션이 적용됩니다 */

@@ -40,7 +40,7 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 50px;  /* 80px에서 50px로 줄임 */
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;  /* 중앙 정렬 */
@@ -48,6 +48,7 @@
 }
 
 .title {
+  text-align: center;  /* 가운데 정렬 추가 */
   font-family: var(--font-playfair);
   font-size: 3rem;
   color: rgba(255, 255, 255, 0.7);
@@ -142,12 +143,12 @@
 }
 
 .activityItem p {
-  font-family: 'Nanum Myeongjo';
+  font-family: inherit;  /* 'Nanum Myeongjo' 제거하고 기본 폰트 사용 */
   font-size: 0.95rem;
   opacity: 0.7;
   margin: 0;
   line-height: 1.4;
-  white-space: nowrap;  /* 줄바꿈 방지 */
+  white-space: nowrap;
 }
 
 /* 애니메이션 */
@@ -257,15 +258,15 @@
 .description {
   text-align: center;
   margin-top: 1rem;
-  font-family: 'Nanum Myeongjo';
+  font-family: inherit;  /* 'Nanum Myeongjo' 제거하고 기본 폰트 사용 */
   line-height: 1.8;
   opacity: 0;
-  font-weight: normal;  /* 볼드 제거 */
+  font-weight: normal;
 }
 
 .description p {
   font-size: 1.6rem;
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
-  font-weight: normal;  /* 볼드 제거 */
+  font-weight: normal;
 } 

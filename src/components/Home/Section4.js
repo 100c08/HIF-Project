@@ -130,7 +130,11 @@ export default function Section4() {
           </div>
         </div>
 
-        <div className={`${styles.recentAwards} ${styles.fadeUpAnimation5}`}>
+        <div className={`${styles.proofText} ${styles.fadeUpAnimation5}`}>
+          우리는 결과로 증명합니다.
+        </div>
+
+        <div className={`${styles.recentAwards} ${styles.fadeUpAnimation6}`}>
           <div className={styles.titleWrapper}>
             <div className={styles.recentAwardsTitle}>최근 수상내역</div>
             <div className={styles.styledLine} />

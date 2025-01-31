@@ -9,6 +9,7 @@ import Section1 from '../components/Home/Section1';
 import Section2 from '../components/Home/Section2';
 import Section4 from '../components/Home/Section4';
 import Section3 from '../components/Home/Section3';
+import Section5 from '../components/Home/Section5';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,6 +31,7 @@ export default function Home() {
   const [section4Active, setSection4Active] = useState(false);
   const [isFooterActive, setIsFooterActive] = useState(false);
   const [section3Active, setSection3Active] = useState(false);
+  const [section5Active, setSection5Active] = useState(false);
 
   useEffect(() => {
     // 푸터 네비게이터 아이템 숨기기
@@ -105,6 +107,7 @@ export default function Home() {
           setSection2Active(destination.index === 1);
           setSection3Active(destination.index === 2);
           setSection4Active(destination.index === 3);
+          setSection5Active(destination.index === 4);
           setIsFooterActive(destination.index === 5);
         }}
         render={({ state, fullpageApi }) => (
@@ -127,14 +130,11 @@ export default function Home() {
               <Section4 isActive={section4Active} />
             </div>
 
-            <div className={`section ${styles.heroSection}`}>
-              <div className={styles.heroOverlay}>
-                <h1 className={styles.heroTitle}>Section 5</h1>
-                <p className={styles.heroSubtitle}>HUFS Institute of Finance</p>
-              </div>
+            <div className="section">
+              <Section5 isActive={section5Active} />
             </div>
 
-            <div className={`section fp-auto-height ${styles.footerSection}`} style={{ backgroundColor: '#000' }}>
+            <div className={`section fp-auto-height ${styles.footerSection}`} style={{ backgroundColor: '#111111' }}>
               <Footer isActive={isFooterActive} />
             </div>
           </ReactFullpage.Wrapper>
