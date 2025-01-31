@@ -27,18 +27,21 @@
 }
 
 .logoContainer {
+  padding: 0.5rem;
   display: flex;
   align-items: center;
 }
 
 .logoImage {
-  width: 40px;
-  height: auto;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
   transition: all 0.8s ease;
 }
 
 .nav {
   position: relative;
+  margin-right: 3rem;  /* 오른쪽 여백 추가 */
 }
 
 .navMenu {
@@ -115,6 +118,11 @@
   color: #ccc;
 }
 
+/* 기본 transition 유지 */
+.navLink, .logoImage, .dropdownLink {
+  transition: all 0.8s ease;
+}
+
 /* 메뉴가 열렸을 때의 스타일 */
 .header.menuOpen .navLink,
 .header.menuOpen .dropdownLink {
@@ -140,7 +148,7 @@
 }
 
 .header.whiteBackground .logoImage {
-    filter: invert(1);
+    filter: none;
 }
 
 .header.whiteBackground .dropdownLink {
@@ -158,4 +166,29 @@
 .header.menuOpen .logoImage,
 .header.menuOpen.whiteBackground .logoImage {
     filter: none !important;
+}
+
+.header .logoImage {
+  filter: brightness(0) invert(1);
+}
+
+.header.whiteBackground .navLink {
+  color: #000;
+}
+
+.header.whiteBackground .logoImage {
+  filter: none;
+}
+
+/* Section2에서의 스타일 */
+:root[data-section="2"] .navLink {
+  color: #000;
+}
+
+:root[data-section="2"] .logoImage {
+  filter: invert(1);
+}
+
+:root[data-section="2"] .dropdownLink {
+  color: #000;
 }

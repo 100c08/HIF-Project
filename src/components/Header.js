@@ -31,6 +31,26 @@ export default function Header() {
     setIsMenuOpen(false);
   };
 
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    
+    if (router.pathname === '/') {
+      // 홈페이지에서는 fullpage.js의 moveTo 메서드 사용
+      if (typeof window !== 'undefined' && window.fullpage_api) {
+        window.fullpage_api.moveTo(1);
+      }
+    } else {
+      // 다른 페이지에서는 홈으로 이동 후 첫 섹션으로
+      router.push('/').then(() => {
+        setTimeout(() => {
+          if (window.fullpage_api) {
+            window.fullpage_api.moveTo(1);
+          }
+        }, 100);
+      });
+    }
+  };
+
   const menuItems = [
     {
       title: "ABOUT US",
@@ -47,9 +67,9 @@ export default function Header() {
       href: "/activities/regular-session",
       items: [
         { label: "Regular Session", href: "/activities/regular-session" },
-        { label: "공모전", href: "/activities/competition", className: styles.koreanText },
+        { label: "Competition", href: "/activities/competition" },
         { label: "Research", href: "/activities/research" },
-        { label: "DS/AI", href: "https://hif-dsai.github.io/", isExternal: true },
+        { label: "DSAI", href: "https://hif-dsai.github.io/", isExternal: true },
       ],
     },
     {
@@ -76,6 +96,11 @@ export default function Header() {
         return;
       }
 
+      if (router.pathname === '/') {
+        setIsWhiteBackground(false);
+        return;
+      }
+
       const heroSection = document.querySelector('[class*="heroSection"]');
       if (heroSection) {
         const heroBottom = heroSection.getBoundingClientRect().bottom;
@@ -93,15 +118,15 @@ export default function Header() {
       onMouseLeave={handleMouseLeave}
     >
       <div className={styles.logoContainer}>
-        <Link href="/">
+        <a href="/" onClick={handleLogoClick}>
           <Image
             src="/white_no.svg"
             alt="HIF Logo"
             className={styles.logoImage}
-            width={40}
-            height={40}
+            width={50}
+            height={50}
           />
-        </Link>
+        </a>
       </div>
 
       <nav className={styles.nav}>
