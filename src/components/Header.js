@@ -71,7 +71,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (router.pathname === '/members') {
+      if (router.pathname === '/members' || router.pathname === '/activities/competition') {
         setIsWhiteBackground(false);
         return;
       }
@@ -100,7 +100,7 @@ export default function Header() {
         ${isMenuOpen ? styles.menuOpen : ''} 
         ${playfairDisplay.variable} 
         ${isWhiteBackground ? styles.whiteBackground : ''}
-        ${router.pathname === '/members' ? styles.darkHeader : ''}
+        ${(router.pathname === '/members' || router.pathname === '/activities/competition') ? styles.darkHeader : ''}
       `}
       onMouseLeave={handleMouseLeave}
     >

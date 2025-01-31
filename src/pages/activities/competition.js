@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../../styles/activities/Competition.module.css';
 import localFont from "next/font/local";
+import { useEffect } from 'react';
 
 const playfairDisplay = localFont({
   src: "../../pages/fonts/PlayfairDisplay-Regular.woff",
@@ -68,7 +69,7 @@ const awards = [
   {
     title: "제5회 한국투자증권 리서치 대회",
     date: "2023-06-09",
-    rank: "대상(1등)"
+    rank: "대상(1위)"
   },
   {
     title: "제81회 TESAT",
@@ -93,12 +94,12 @@ const awards = [
   {
     title: "2022-2023 CFA Research",
     date: "2023-01-14",
-    rank: "3등"
+    rank: "3위"
   },
   {
     title: "2022년 NH투자증권 빅데이터 경진대회",
     date: "2022-12-13",
-    rank: "우수상 2등"
+    rank: "우수상 2위"
   },
   {
     title: "제78회 TESAT",
@@ -503,72 +504,95 @@ const awards = [
 ];
 
 export default function Competition() {
-    return (
-      <div className={playfairDisplay.variable}>
-        <Head>
-          <title>Award List | HIF</title>
-          <meta property="og:title" content="Award List | HIF" />
-          <meta name="description" content="HIF Award List page" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap"
-          />
-        </Head>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.visible);
+          }
+        });
+      },
+      {
+        threshold: 0.1,  // 10%만 보여도 애니메이션 시작
+        rootMargin: '50px'  // 약간 일찍 시작
+      }
+    );
 
-        {/* Hero Section */}
-        <div className={styles.heroSection}>
-          <div className={styles.heroOverlay} />
-          <h1 className={styles.heroTitle}>
-            Awards
-          </h1>
-          {/* Breadcrumb Navigation */}
-          <div className={styles.breadcrumb}>
-            <Link href="/" className={styles.breadcrumbLink}>ACTIVITIES</Link>
-            <span className={styles.separator}>/</span>
-            <span className={styles.current}>Awards</span>
-          </div>
+    // 모든 award 카드에 observer 적용
+    document.querySelectorAll(`.${styles.awardCard}`).forEach((card) => {
+      observer.observe(card);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className={playfairDisplay.variable}>
+      <Head>
+        <title>Award List | HIF</title>
+        <meta property="og:title" content="Award List | HIF" />
+        <meta name="description" content="HIF Award List page" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap"
+        />
+      </Head>
+
+      {/* Hero Section */}
+      <div className={styles.heroSection}>
+        <div className={styles.heroOverlay} />
+        <h1 className={styles.heroTitle}>
+          Awards
+        </h1>
+        {/* Breadcrumb Navigation */}
+        <div className={styles.breadcrumb}>
+          <Link href="/" className={styles.breadcrumbLink}>ACTIVITIES</Link>
+          <span className={styles.separator}>/</span>
+          <span className={styles.current}>Awards</span>
         </div>
+      </div>
 
-        {/* Main Content */}
-        <div className={styles.mainContent}>
-          <div className={styles.contentSection}>
-            <h2 className={styles.sectionTitle}>Award List</h2>
+      {/* Main Content */}
+      <div className={styles.mainContent}>
+        <div className={styles.contentSection}>
+          <h2 className={styles.sectionTitle}>Award List</h2>
 
-            <p className={styles.description}>
-              금융연구회는 <strong>2011년부터 현재까지 100여 건의 수상실적</strong>을 보유하고 있습니다.<br />
-              금융, 경제, 데이터 분석 등 다양한 분야의 공모전에서 우수한 성과를 거두며<br />
-              <strong>누적 상금 200,000,000원 이상</strong>을 수상하였고,<br />
-              <strong>대한민국 최고의 금융동아리로서의 위상</strong>을 보여주고 있습니다.
-            </p>
-            
-            <div className={styles.timeline}>
-              {/* 연도별로 그룹화하여 표시 */}
-              {[2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011].map(year => (
-                <div key={year} className={styles.yearSection}>
-                  <div className={styles.yearMarker}>{year}</div>
-                  <div className={styles.awardsList}>
-                    {awards
-                      .filter(award => new Date(award.date).getFullYear() === year)
-                      .map((award, index) => (
-                        <div key={index} className={styles.awardCard}>
-                          <div className={styles.awardDate}>
-                            {new Date(award.date).toLocaleDateString('ko-KR', {
-                              month: 'long',
-                              day: 'numeric'
-                            })}
-                          </div>
-                          <div className={styles.awardDetails}>
-                            <h3>{award.title}</h3>
-                            <span className={styles.awardRank}>{award.rank}</span>
-                          </div>
+          <p className={styles.description}>
+            금융연구회는 <strong>2011년부터 현재까지 100여 건의 수상실적</strong>을 보유하고 있습니다.<br />
+            금융, 경제, 데이터 분석 등 다양한 분야의 공모전에서 우수한 성과를 거두며<br />
+            <strong>누적 상금 200,000,000원 이상</strong>을 수상하였고,<br />
+            <strong>대한민국 최고의 금융동아리로서의 위상</strong>을 보여주고 있습니다.
+          </p>
+          
+          <div className={styles.timeline}>
+            {/* 연도별로 그룹화하여 표시 */}
+            {[2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011].map(year => (
+              <div key={year} className={styles.yearSection}>
+                <div className={styles.yearMarker}>{year}</div>
+                <div className={styles.awardsList}>
+                  {awards
+                    .filter(award => new Date(award.date).getFullYear() === year)
+                    .map((award, index) => (
+                      <div key={index} className={styles.awardCard}>
+                        <div className={styles.awardDate}>
+                          {new Date(award.date).toLocaleDateString('ko-KR', {
+                            month: 'long',
+                            day: 'numeric'
+                          })}
                         </div>
-                      ))}
-                  </div>
+                        <div className={styles.awardDetails}>
+                          <h3>{award.title}</h3>
+                          <span className={styles.awardRank}>{award.rank}</span>
+                        </div>
+                      </div>
+                    ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    );
+    </div>
+  );
 }

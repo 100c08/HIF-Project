@@ -121,11 +121,12 @@
 
 .awardCard {
   display: flex;
-  background: #111;  /* 카드 배경색 어두운 회색으로 */
+  background: #111;
   padding: 1.5rem;
-  border: 1px solid #333;  /* 테두리 색상 변경 */
+  border: 1px solid #333;
   border-radius: 8px;
   transition: transform 0.2s ease;
+  opacity: 0;  /* 초기에는 투명하게 */
 }
 
 .awardCard:hover {
@@ -204,3 +205,26 @@
   );
   margin: 5rem auto;
 }
+
+/* 애니메이션 키프레임 추가 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 화면에 보일 때 적용될 클래스 */
+.awardCard.visible {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* 각 카드마다 약간의 딜레이를 주기 위한 클래스들 */
+.awardCard:nth-child(2) { animation-delay: 0.1s; }
+.awardCard:nth-child(3) { animation-delay: 0.2s; }
+.awardCard:nth-child(4) { animation-delay: 0.3s; }
+.awardCard:nth-child(5) { animation-delay: 0.4s; }
