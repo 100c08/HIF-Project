@@ -69,7 +69,7 @@ export default function RegularSession() {
           Regular Session
         </h1>
         <div className={styles.breadcrumb}>
-          <Link href="/" className={styles.breadcrumbLink}>ACTIVITIES</Link>
+          <span className={styles.breadcrumbText}>ACTIVITIES</span>
           <span className={styles.separator}>/</span>
           <span className={styles.current}>Regular Session</span>
         </div>

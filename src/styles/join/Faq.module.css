@@ -174,3 +174,8 @@
     transform: translateY(0);
   }
 }
+
+.breadcrumbText {
+  color: #999;
+  font-family: var(--font-playfair);
+}

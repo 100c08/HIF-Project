@@ -69,7 +69,7 @@ export default function Research() {
           Valuation Study
         </h1>
         <div className={styles.breadcrumb}>
-          <Link href="/" className={styles.breadcrumbLink}>ACTIVITIES</Link>
+          <span className={styles.breadcrumbText}>ACTIVITIES</span>
           <span className={styles.separator}>/</span>
           <span className={styles.current}>Valuation Study</span>
         </div>
@@ -80,14 +80,14 @@ export default function Research() {
           <h2 className={styles.sectionTitle}>Valuation Study</h2>
           
           <p className={styles.description}>
-            밸류에이션 스터디는 학회원들이 심도 있는 <strong>기업분석</strong>과 <strong>투자전략 수립</strong> 과정을 통해<br />
+            밸류에이션 스터디는 학회원들이 심도 있는 <strong>기업분석</strong>과 <strong>투자전략</strong> 수립 과정을 통해<br />
             금융 시장에 대한 이해를 높이고 실무 역량을 강화할 수 있는 팀 활동입니다.
           </p>
 
           <div className={styles.studyIntro}>
             <ul className={styles.studyDetails}>
               <li>
-                <strong>기업분석팀</strong>과 <strong>투자전략팀</strong>으로 나눠 각각 기업문서과 투자전략에 관한 프로젝트를 수행하며 스터디 결과물을 발표하는 형태로 진행됩니다.
+                <strong>기업분석팀</strong>과 <strong>투자전략팀</strong>으로 나눠 각각 기업분석과 투자전략에 관한 프로젝트를 수행하며 스터디 결과물을 발표하는 형태로 진행됩니다.
               </li>
               <li>
                 밸류에이션 스터디는 이론적인 학습뿐만 아니라 <strong>현직에 종사하고 계신 선배님들의 도움</strong>으로 실질적인 사례 연구까지 더해 금융 및 투자 분야에서의 전문성을 배양합니다.
@@ -107,7 +107,7 @@ export default function Research() {
               <div className={styles.teamInfo}>
                 <h3 className={styles.teamSubtitle}>기업분석팀 한 줄 소개</h3>
                 <p className={styles.teamDescription}>
-                  거시경제를 중심으로(Top-Down) 자산시장을 분석하고 시의적절한 투자전략을 제시
+                  산업 분석, 사업 분석, 기업 분석까지 대상 기업의 전반적인 분석 및 밸류에이션
                 </p>
 
                 <h3 className={styles.teamSubtitle}>활동 내용</h3>
@@ -154,12 +154,12 @@ export default function Research() {
               <div className={styles.teamInfo}>
                 <h3 className={styles.teamSubtitle}>투자전략팀 한 줄 소개</h3>
                 <p className={styles.teamDescription}>
-                  산업 분석, 사업 분석, 기업 분석까지 대상 기업의 전반적인 분석 및 벨류에이션
+                  거시경제를 중심으로(Top-Down) 자산시장을 분석하고 시의적절한 투자전략을 제시
                 </p>
 
                 <h3 className={styles.teamSubtitle}>활동 내용</h3>
                 <ul className={styles.activityList}>
-                  <li>벨류에이션 방법론 학습</li>
+                  <li>밸류에이션 방법론 학습</li>
                   <li>분석 대상 기업의 재무재표 및 경영성과 분석</li>
                   <li>산업 트렌드 및 Peer 분석</li>
                   <li>분석 결과를 토대로 투자 아이디어 제안</li>
@@ -195,7 +195,7 @@ export default function Research() {
         </div>
 
         <div className={styles.bottomDescription}>
-          벨류에이션 스터디는 실무 중심의 학습을 통해 학회원들에게 기업 분석 및 전략적 사고 능력을 배양하며, 이론과 실무를 연결하는 중요한 학습 기회를 제공합니다.
+          밸류에이션 스터디는 실무 중심의 학습을 통해 학회원들에게 기업 분석 및 전략적 사고 능력을 배양하며, 이론과 실무를 연결하는 중요한 학습 기회를 제공합니다.
         </div>
       </div>
 

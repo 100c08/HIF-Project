@@ -337,3 +337,8 @@
   );
   margin: 8rem auto 2rem;  /* 상단 8rem, 하단 4rem으로 조정 */
 }
+
+.breadcrumbText {
+  color: #999;
+  font-family: var(--font-playfair);
+}

@@ -70,7 +70,7 @@ export default function FAQ() {
                     FAQ
                 </h1>
                 <div className={styles.breadcrumb}>
-                    <Link href="/" className={styles.breadcrumbLink}>JOIN US</Link>
+                    <span className={styles.breadcrumbText}>JOIN US</span>
                     <span className={styles.separator}>/</span>
                     <span className={styles.current}>FAQ</span>
                 </div>

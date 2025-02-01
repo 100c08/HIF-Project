@@ -423,3 +423,8 @@ margin: 5rem auto;
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+.breadcrumbText {
+  color: #999;
+  font-family: var(--font-playfair);
+}

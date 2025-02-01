@@ -51,7 +51,7 @@ export default function Introduction() {
         </h1>
         {/* Breadcrumb Navigation */}
         <div className={styles.breadcrumb}>
-          <Link href="/" className={styles.breadcrumbLink}>ABOUT US</Link>
+          <span className={styles.breadcrumbText}>ABOUT US</span>
           <span className={styles.separator}>/</span>
           <span className={styles.current}>Introduction</span>
         </div>

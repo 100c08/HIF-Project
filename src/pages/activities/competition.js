@@ -547,7 +547,7 @@ export default function Competition() {
         </h1>
         {/* Breadcrumb Navigation */}
         <div className={styles.breadcrumb}>
-          <Link href="/" className={styles.breadcrumbLink}>ACTIVITIES</Link>
+          <span className={styles.breadcrumbText}>ACTIVITIES</span>
           <span className={styles.separator}>/</span>
           <span className={styles.current}>Awards</span>
         </div>
