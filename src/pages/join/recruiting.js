@@ -40,7 +40,7 @@ export default function Recruiting() {
         {/* Main Content */}
         <div className={styles.mainContent}>
           <div className={styles.contentSection}>
-            <h2 className={styles.recruitingTitle}>HIF&apos;s Ideals</h2>
+            <h2 className={styles.recruitingTitle}>HIF&apos;s Core Values</h2>
             <div className={styles.underline}></div>
             <p className={styles.recruitingDesc}>
               HIF is looking for...
