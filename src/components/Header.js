@@ -52,10 +52,7 @@ export default function Header() {
       title: "ABOUT US",
       menu: "about",
       href: "/about/introduction",
-      items: [
-        { label: "Introduction", href: "/about/introduction" },
-        { label: "Greetings", href: "/about/greetings" },
-      ],
+      items: [],
     },
     {
       title: "ACTIVITIES",

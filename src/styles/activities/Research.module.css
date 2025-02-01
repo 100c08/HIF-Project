@@ -1,12 +1,12 @@
 .heroSection {
-    height: 450px;
+    height: 450px;  /* 정확한 높이 지정 */
     position: relative;
     background-image: url('/research.jpg');  /* 배경 이미지는 추후 변경 가능 */
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;  /* 중앙 정렬 */
     overflow: hidden;
   }
   
@@ -66,12 +66,81 @@
     background: #fff;
     padding: 2rem;
     position: relative;
+    padding-bottom: 8rem; /* 하단 여백 추가 */
   }
   
   .contentSection {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 0;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 4rem;  /* 상단 여백 추가 */
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: var(--font-playfair);
+  }
+  
+  .description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+    text-align: center;
+    margin-bottom: 4rem;
+    word-break: keep-all;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .description strong {
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .studyIntro {
+    margin-top: 4rem;
+  }
+  
+  .mainDescription {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 4rem;
+    max-width: 1000px;
+    margin: 0 auto 4rem;
+    white-space: normal;
+    word-break: keep-all;
+  }
+  
+  .studyDetails {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .studyDetails li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    white-space: normal;
+    word-break: keep-all;
+  }
+  
+  .studyDetails li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #333;
   }
   
   @keyframes slideUp {
@@ -84,3 +153,187 @@
       transform: translateY(0);
     }
   }
+
+.teamsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.teamSection {
+  flex: 0 1 650px;
+  margin-top: 4rem;  /* 팀 섹션 상단 여백 줄임 */
+}
+
+.teamContent {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.teamInfo {
+  flex: 0 1 300px;
+}
+
+.teamTitle {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 2rem;
+  color: #000;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.teamSubtitle {
+  font-size: 1.3rem;
+  color: #000;
+  margin-bottom: 1.5rem;
+}
+
+.teamDescription {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+.activityList {
+  list-style: none;
+  padding: 0;
+}
+
+.activityList li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.activityList li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #333;
+}
+
+.teamImages {
+  flex: 0 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.imageWrapper {
+  width: 100%;
+  margin: 0;
+}
+
+.teamImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.teamImage:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 모달 스타일 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.modalContent {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  background: white;
+  padding: 2rem;
+  border-radius: 4px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  z-index: 1001;
+}
+
+.closeButton:hover {
+  background: #555;
+}
+
+.modalImage {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+/* 투자전략팀 특정 스타일 제거 (더 이상 필요없음) */
+.teamSection:nth-child(2) .teamImages {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.teamSection:nth-child(2) .imageWrapper:last-child {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.bottomDescription {
+  font-family: 'Nanum Myeongjo', serif;
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: #333;
+  max-width: 1000px;
+  margin: 8rem auto 4rem;
+  letter-spacing: -1px;
+}
+
+.divider {
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+  margin: 8rem auto 2rem;  /* 상단 8rem, 하단 4rem으로 조정 */
+}
