@@ -42,7 +42,17 @@ const awards = [
     rank: "대상"
   },
   {
-    title: "제82회 TESAT 동아리대항전",
+    title: "제4회 중소기업 통계데이터 활용 정책아이디어 공모전",
+    date: "2023-09-22",
+    rank: "장려상"
+  },
+  {
+    title: "2023년 미래에셋 빅데이터 페스티벌",
+    date: "2023-09-21",
+    rank: "장려상"
+  },
+  {
+    title: "제82회 한국경제신문 TESAT 동아리대항전",
     date: "2023-09-01",
     rank: "대상"
   },
@@ -57,7 +67,7 @@ const awards = [
     rank: "대상"
   },
   {
-    title: "2023 KISA블록체인·핀테크 경진대회『BEST Challenge』",
+    title: "2023 KISA블록체인·핀테크 경진대회『BEST Challenge』(신용평가 부문)",
     date: "2023-08-17",
     rank: "최우수상"
   },
@@ -72,27 +82,17 @@ const awards = [
     rank: "대상(1위)"
   },
   {
-    title: "제81회 TESAT",
+    title: "제81회 한국경제신문 TESAT 동아리대항전",
     date: "2023-06-02",
     rank: "최우수상"
   },
   {
-    title: "제13회 DB 금융경제 공모전",
-    date: "2023-04-28",
-    rank: "가작"
-  },
-  {
-    title: "제13회 DB 금융경제 공모전",
-    date: "2023-04-28",
-    rank: "가작"
-  },
-  {
-    title: "제79회 TESAT",
+    title: "제79회 한국경제신문 TESAT 동아리대항전",
     date: "2023-03-03",
     rank: "대상"
   },
   {
-    title: "2022-2023 CFA Research",
+    title: "2022-2023 CFA Institute Research Challenge",
     date: "2023-01-14",
     rank: "3위"
   },
@@ -102,7 +102,7 @@ const awards = [
     rank: "우수상 2위"
   },
   {
-    title: "제78회 TESAT",
+    title: "제78회 한국경제신문 TESAT 동아리대항전",
     date: "2022-12-01",
     rank: "우수상"
   },
@@ -112,12 +112,12 @@ const awards = [
     rank: "최우수상"
   },
   {
-    title: "2022년 제8회 DB GAPS 투자대회",
+    title: "제8회 DB GAPS 투자대회",
     date: "2022-11-28",
     rank: "금융동아리상"
   },
   {
-    title: "2022년 제8회 DB GAPS 투자대회",
+    title: "제8회 DB GAPS 투자대회",
     date: "2022-11-28",
     rank: "운용철학상"
   },
@@ -142,32 +142,32 @@ const awards = [
     rank: "우수상"
   },
   {
-    title: "DT 아이디어 공모전",
+    title: "SK증권 DT 아이디어 공모전",
     date: "2022-08-26",
     rank: "우수상"
   },
   {
-    title: "2022년 문화·관광 빅데이터 분석대회 신한카드",
+    title: "2022년 문화·관광 빅데이터 분석대회",
     date: "2022-08-25",
-    rank: "우수상"
+    rank: "우수상(신한카드 우수상)"
   },
   {
-    title: "제30회 중소벤처기업 지원 아이디어 공모전",
+    title: "제30회 중소벤처기업 정책 아이디어 공모전",
     date: "2022-08-04",
     rank: "최우수상"
   },
   {
-    title: "제30회 중소벤처기업 지원 아이디어 공모전",
+    title: "제30회 중소벤처기업 정책 아이디어 공모전",
     date: "2022-08-04",
     rank: "우수상"
   },
   {
-    title: "제74회 TESAT",
+    title: "제74회 한국경제신문 TESAT 동아리대항전",
     date: "2022-06-03",
     rank: "최우수상"
   },
   {
-    title: "제1회 디지털 Idea Market 공모전",
+    title: "KB증권 디지털 Idea Market 공모전",
     date: "2022-05-23",
     rank: "장려상"
   },
@@ -187,7 +187,7 @@ const awards = [
     rank: "장려상"
   },
   {
-    title: "제70회 TESAT",
+    title: "제70회 한국경제신문 TESAT 동아리대항전",
     date: "2021-12-03",
     rank: "최우수상"
   },
@@ -197,42 +197,42 @@ const awards = [
     rank: "우수상"
   },
   {
-    title: "제16회 금융공모전",
+    title: "제16회 금융감독원 금융공모전",
     date: "2021-11-05",
     rank: "최우수상"
   },
   {
-    title: "제29회 중소벤처기업 지원 아이디어 공모전",
+    title: "제29회 중소벤처기업 정책 아이디어 공모전",
     date: "2021-10-19",
     rank: "우수상"
   },
   {
-    title: "제29회 중소벤처기업 지원 아이디어 공모전",
+    title: "제29회 중소벤처기업 정책 아이디어 공모전",
     date: "2021-10-19",
     rank: "우수상"
   },
   {
-    title: "제29회 중소벤처기업 지원 아이디어 공모전",
+    title: "제29회 중소벤처기업 정책 아이디어 공모전",
     date: "2021-10-19",
     rank: "우수상"
   },
   {
-    title: "제29회 중소벤처기업 지원 아이디어 공모전",
+    title: "제29회 중소벤처기업 정책 아이디어 공모전",
     date: "2021-10-19",
     rank: "장려상"
   },
   {
-    title: "제68회 TESAT",
+    title: "제68회 한국경제신문 TESAT 동아리대항전",
     date: "2021-08-25",
     rank: "최우수상"
   },
   {
-    title: "제66회 TESAT",
+    title: "제66회 한국경제신문 TESAT 동아리대항전",
     date: "2021-05-28",
     rank: "최우수상"
   },
   {
-    title: "우리은행 해커톤",
+    title: "우리은행 온택트 해커톤",
     date: "2021-05-08",
     rank: "장려상"
   },
@@ -247,17 +247,17 @@ const awards = [
     rank: "장려상"
   },
   {
-    title: "제62회 TESAT",
+    title: "제62회 한국경제신문 TESAT 동아리대항전",
     date: "2020-12-11",
     rank: "최우수상"
   },
   {
-    title: "제28회 중소벤처기업 지원 아이디어 공모전",
+    title: "제28회 중소벤처기업 정책 아이디어 공모전",
     date: "2020-10-08",
     rank: "장려상"
   },
   {
-    title: "제60회 TESAT",
+    title: "제60회 한국경제신문 TESAT 동아리대항전",
     date: "2020-09-03",
     rank: "대상"
   },
@@ -267,7 +267,7 @@ const awards = [
     rank: "가작"
   },
   {
-    title: "제58회 TESAT",
+    title: "제58회 한국경제신문 TESAT 동아리대항전",
     date: "2020-02-27",
     rank: "최우수상"
   },
@@ -277,7 +277,7 @@ const awards = [
     rank: "운용철학우수상"
   },
   {
-    title: "제5회 아카데미쿠스",
+    title: "제5회 아카데미쿠스 연합학술제",
     date: "2019-11-21",
     rank: "최우수상"
   },
@@ -287,12 +287,12 @@ const awards = [
     rank: "우수상"
   },
   {
-    title: "제27회 중소벤처기업 지원 아이디어 공모전",
+    title: "제27회 중소벤처기업 정책 아이디어 공모전",
     date: "2019-06-17",
     rank: "장려상"
   },
   {
-    title: "제54회 TESAT",
+    title: "제54회 한국경제신문 TESAT 동아리대항전",
     date: "2019-05-30",
     rank: "우수상"
   },
@@ -307,7 +307,7 @@ const awards = [
     rank: "가작"
   },
   {
-    title: "제52회 TESAT",
+    title: "제52회 한국경제신문 TESAT 동아리대항전",
     date: "2019-02-28",
     rank: "최우수상"
   },
@@ -317,7 +317,7 @@ const awards = [
     rank: "장려상"
   },
   {
-    title: "제51회 TESAT",
+    title: "제51회 한국경제신문 TESAT 동아리대항전",
     date: "2018-11-29",
     rank: "우수상"
   },
@@ -337,12 +337,12 @@ const awards = [
     rank: "장려상"
   },
   {
-    title: "제26회 중소벤처기업 지원 아이디어 공모전",
+    title: "제26회 중소벤처기업 정책 아이디어 공모전",
     date: "2018-07-06",
     rank: "최우수상"
   },
   {
-    title: "제26회 중소벤처기업 지원 아이디어 공모전",
+    title: "제26회 중소벤처기업 정책 아이디어 공모전",
     date: "2018-07-06",
     rank: "장려상"
   },
@@ -357,7 +357,7 @@ const awards = [
     rank: "가작"
   },
   {
-    title: "제25회 중소기업 지원 아이디어 공모전",
+    title: "제25회 중소기업 정책 아이디어 공모전",
     date: "2017-11-30",
     rank: "대상"
   },
@@ -372,7 +372,7 @@ const awards = [
     rank: "최우수상"
   },
   {
-    title: "제24회 중소기업 지원 아이디어 공모전",
+    title: "제24회 중소기업 정책 아이디어 공모전",
     date: "2016-11-08",
     rank: "최우수상"
   },
@@ -447,7 +447,7 @@ const awards = [
     rank: "이코노미스트상"
   },
   {
-    title: "제2회 한국 기업평가 대학생신용평가 논문 공모전",
+    title: "제2회 한국기업평가 대학생 신용평가 논문 공모전",
     date: "2013-10-01",
     rank: "장려상"
   },
@@ -457,12 +457,12 @@ const awards = [
     rank: "장려상"
   },
   {
-    title: "제6회 동부금융 대학생 금융논문 공모전",
+    title: "제3회 동부금융 대학생 금융논문 공모전",
     date: "2012-10-01",
     rank: "장려상"
   },
   {
-    title: "제1회 한국 기업평가 대학생신용평가 논문 공모전",
+    title: "제1회 한국기업평가 대학생 신용평가 논문 공모전",
     date: "2012-07-01",
     rank: "장려상"
   },
@@ -477,7 +477,7 @@ const awards = [
     rank: "장려상"
   },
   {
-    title: "2011 통화정책 경시대회",
+    title: "2011 한국은행 통화정책 경시대회",
     date: "2011-08-01",
     rank: "장려상"
   },
@@ -500,7 +500,7 @@ const awards = [
     title: "제1회 생명보험협회 생명보험 논문 공모전",
     date: "2011-01-01",
     rank: "대상"
-  },
+  }
 ];
 
 export default function Competition() {
@@ -556,12 +556,12 @@ export default function Competition() {
       {/* Main Content */}
       <div className={styles.mainContent}>
         <div className={styles.contentSection}>
-          <h2 className={styles.sectionTitle}>Award List</h2>
+          <h2 className={styles.sectionTitle}>Awards List</h2>
 
           <p className={styles.description}>
             금융연구회는 <strong>2011년부터 현재까지 100여 건의 수상실적</strong>을 보유하고 있습니다.<br />
             금융, 경제, 데이터 분석 등 다양한 분야의 공모전에서 우수한 성과를 거두며<br />
-            <strong>누적 상금 약 200,000,000원</strong>을 수상하였고,<br />
+            <strong>누적 상금 199,500,000원</strong>을 수상하였고,<br />
             <strong>대한민국 최고의 금융동아리로서의 위상</strong>을 보여주고 있습니다.
           </p>
           

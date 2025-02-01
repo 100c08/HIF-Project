@@ -61,7 +61,7 @@ export default function Recruiting() {
                         <Image src="/I.svg" alt="I" width={250} height={250} />
                         <h3 className={`${styles.pointTitle} ${styles.interactionColor}`}>Initiative</h3>
                         <p className={styles.circleText}>
-                            배우고자하는 열정과 의지가 뛰어나신 분
+                            배우고자 하는 열정과 의지가 뛰어나신 분
                         </p>
                     </div>
                 </div>
