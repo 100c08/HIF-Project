@@ -1,0 +1,173 @@
+.curriculumSection {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+  }
+  
+  .curriculumTitle {
+    font-family: var(--font-playfair);
+    font-size: 2.5rem;
+    color: #000;
+    text-align: center;
+    margin: 3rem 0 1rem 0;
+  }
+  
+  .smallDivider {
+    width: 40%;
+    height: 1px;
+    background-color: #ddd;
+    margin: 0 auto;
+  }
+  
+  .timelineContainer {
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem 4rem 8rem 4rem;  /* 아래 패딩 증가 */
+    margin: 0 auto;
+  }
+  
+  .timeline {
+    position: relative;
+    padding: 3rem 0;  /* 상하 패딩 증가 */
+  }
+  
+  .timelineLine {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: calc(100% + 2rem);  /* 선 길이 증가 */
+    background-color: #ddd;
+    top: -1rem;  /* 위로 더 확장 */
+  }
+  
+  .timelineItem {
+    position: relative;
+    margin-bottom: 6.5rem;  /* 5rem에서 6.5rem으로 간격 증가 */
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .timelineItem:last-child {
+    margin-bottom: 2rem;  /* 마지막 아이템 아래 여백 추가 */
+  }
+  
+  .activeDot {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    position: fixed;
+    left: 50%;
+    top: 66vh;
+    transform: translateX(-50%);
+    z-index: 10;
+    opacity: 0;
+  }
+  
+  .activeDot.show {
+    opacity: 1;
+  }
+  
+  .staticDot {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  
+  .timelineContent {
+    position: absolute;
+    right: 52%;
+    width: 200px;
+    padding: 1.2rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s ease;  /* 트랜지션 시간 증가 */
+  }
+  
+  .timelineDescription {
+    position: absolute;
+    left: 52%;
+    width: 400px;
+    padding: 1.5rem;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease;  /* 트랜지션 시간 증가 */
+    text-align: left;
+  }
+  
+  /* 짝수 아이템 스타일 */
+  .timelineItem:nth-child(even) .timelineContent {
+    left: 52%;
+    right: auto;
+    transform: translateX(-30px);
+  }
+  
+  .timelineItem:nth-child(even) .timelineDescription {
+    right: 52%;
+    left: auto;
+    text-align: right;
+    transform: translateX(30px);
+  }
+  
+  .timelineItem.active .timelineContent,
+  .timelineItem.active .timelineDescription {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .timelineContent h3 {
+    margin: 0;
+    font-family: var(--font-playfair);
+    font-size: 1.1rem;
+    color: #000;
+    text-align: center;
+  }
+  
+  .timelineDescription p {
+    margin: 0.4rem 0;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    word-break: keep-all;
+  }
+  
+  .timelineItem:first-child .timelineDescription,
+  .timelineItem:last-child .timelineDescription {
+    display: none;
+  }
+  
+  .timelineItem:first-child {
+    padding-top: 0;
+  }
+  
+  .timelineItem:last-child {
+    margin-bottom: 0;
+  }
+
+  .curriculumDescription {
+    font-family: 'Nanum Myeongjo', serif;
+    text-align: center;
+    color: #333;
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin: 0 auto 10rem auto;
+    padding: 0 2rem;
+    word-break: keep-all;
+    letter-spacing: -1px;
+  }

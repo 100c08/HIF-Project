@@ -40,7 +40,7 @@ export default function Recruiting() {
         {/* Main Content */}
         <div className={styles.mainContent}>
           <div className={styles.contentSection}>
-            <h2 className={styles.recruitingTitle}>HIF&apos;s Philosophy</h2>
+            <h2 className={styles.recruitingTitle}>HIF&apos;s Ideals</h2>
             <div className={styles.underline}></div>
             <p className={styles.recruitingDesc}>
               HIF is looking for...
@@ -50,18 +50,18 @@ export default function Recruiting() {
                 <div className={`${styles.circleItem} ${styles.fadeInFirst}`}>
                     <div className={styles.circleWrapper}>
                         <Image src="/H.svg" alt="H" width={250} height={250} />
-                        <h3 className={`${styles.pointTitle} ${styles.heartColor}`}>Heart</h3>
+                        <h3 className={`${styles.pointTitle} ${styles.heartColor}`}>Harmony</h3>
                         <p className={styles.circleText}>
-                            배우고자하는 열정과 의지가 뛰어나신 분
+                            열린 자세로 타인과 의견을 교환하며 교류하실 분
                         </p>
                     </div>
                 </div>
                 <div className={`${styles.circleItem} ${styles.fadeInSecond}`}>
                     <div className={styles.circleWrapper}>
                         <Image src="/I.svg" alt="I" width={250} height={250} />
-                        <h3 className={`${styles.pointTitle} ${styles.interactionColor}`}>Interaction</h3>
+                        <h3 className={`${styles.pointTitle} ${styles.interactionColor}`}>Initiative</h3>
                         <p className={styles.circleText}>
-                            열린 자세로 타인과 의견을 교환하며 교류하실 분
+                            배우고자하는 열정과 의지가 뛰어나신 분
                         </p>
                     </div>
                 </div>
