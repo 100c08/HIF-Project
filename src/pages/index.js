@@ -80,9 +80,17 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // iOS 디바이스 감지 (브라우저 상관없이)
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    setIsSafari(isIOS);  // 여기서 isSafari는 실제로는 "isIOS"의 의미
+    // 사용자 에이전트 문자열 가져오기
+    const userAgent = navigator.userAgent;
+    // iOS 기기 여부 체크
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+    // 실제 Safari 브라우저인지 판별 (CriOS: iOS용 크롬, FxiOS: iOS용 파이어폭스)
+    const isActualSafari =
+      isIOS &&
+      userAgent.includes("Safari") &&
+      !userAgent.includes("CriOS") &&
+      !userAgent.includes("FxiOS");
+    setIsSafari(isActualSafari);
   }, []);
 
   // Safari인 경우 일반 스크롤 버전 렌더링
