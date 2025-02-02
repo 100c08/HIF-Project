@@ -100,9 +100,7 @@ export default function Home() {
         </Head>
         <div className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>
           <div className={styles.section}>
-            <div className={styles.heroOverlay}>
-              <Section1 />
-            </div>
+            <Section1 />
           </div>
 
           <div className={styles.section}>
@@ -119,10 +117,6 @@ export default function Home() {
 
           <div className={styles.section}>
             <Section5 isActive={true} />
-          </div>
-
-          <div className={styles.footerSection}>
-            <Footer isActive={true} />
           </div>
         </div>
       </>
@@ -190,10 +184,8 @@ export default function Home() {
         }}
         render={({ state, fullpageApi }) => (
           <ReactFullpage.Wrapper className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>
-            <div className={`section ${styles.heroSection}`}>
-              <div className={styles.heroOverlay}>
-                <Section1 />
-              </div>
+            <div className="section">
+              <Section1 />
             </div>
 
             <div className="section">

@@ -8,23 +8,23 @@
 }
 
 .backgroundVideo {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   object-fit: cover;
   z-index: 1;
   transition: opacity 0.5s ease-in-out;
 }
 
 .wrapper::after {
-  position: fixed;
+  position: absolute;
   content: '';
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
@@ -37,7 +37,7 @@
   align-items: center;
   justify-content: flex-start;
   z-index: 3;
-  padding: 0 2rem; /* 텍스트 여백 추가 */
+  padding: 0 2rem 0 6rem;  /* 4rem에서 6rem으로 증가 */
 }
 
 /* 나머지 기존 스타일 유지 */
@@ -142,6 +142,13 @@
   }
 }
 
+/* 반응형 대응을 위한 미디어 쿼리 */
+@media (max-width: 1366px) {
+  .content {
+    padding: 0 2rem 0 4rem;  /* 3rem에서 4rem으로 증가 */
+  }
+}
+
 /* 모바일 대응을 위한 미디어 쿼리 */
 @media (max-width: 820px) {
   .title {
@@ -155,7 +162,7 @@
   }
 
   .content {
-    padding: 0 1.5rem;
+    padding: 0 1.5rem 0 3rem;  /* 2rem에서 3rem으로 증가 */
   }
 
   .buttonContainer {
