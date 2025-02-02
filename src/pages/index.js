@@ -32,6 +32,7 @@ export default function Home() {
   const [isFooterActive, setIsFooterActive] = useState(false);
   const [section3Active, setSection3Active] = useState(false);
   const [section5Active, setSection5Active] = useState(false);
+  const [isSafari, setIsSafari] = useState(false);
 
   useEffect(() => {
     // 푸터 네비게이터 아이템 숨기기
@@ -78,6 +79,57 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    // iOS Safari 감지
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isSafariBrowser = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    setIsSafari(isIOS && isSafariBrowser);
+  }, []);
+
+  // Safari인 경우 일반 스크롤 버전 렌더링
+  if (isSafari) {
+    return (
+      <>
+        <Head>
+          <title>금융연구회 | HUFS Institute of Finance</title>
+          <meta property="og:title" content="금융연구회 | HUFS Institute of Finance" />
+          <meta property="og:description" content="HUFS Institute of Finance - Where Vision Meets Finance" />
+          <meta property="og:type" content="website" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <div className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>
+          <div className={styles.section}>
+            <div className={styles.heroOverlay}>
+              <Section1 />
+            </div>
+          </div>
+
+          <div className={styles.section}>
+            <Section2 isActive={true} />
+          </div>
+
+          <div className={styles.section}>
+            <Section3 isActive={true} />
+          </div>
+
+          <div className={styles.section}>
+            <Section4 isActive={true} />
+          </div>
+
+          <div className={styles.section}>
+            <Section5 isActive={true} />
+          </div>
+
+          <div className={styles.footerSection}>
+            <Footer isActive={true} />
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  // Safari가 아닌 경우 기존 fullpage 버전 렌더링
   return (
     <>
       <Head>
@@ -88,7 +140,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <ReactFullpage
         navigation={true}
         fitToSection={true}

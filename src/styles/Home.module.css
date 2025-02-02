@@ -226,3 +226,25 @@ a.secondary {
   position: relative; /* Fullpage.js에서 독립적인 스크롤 */
   overflow: hidden; /* 스크롤 충돌 방지 */
 }
+
+/* Safari용 일반 스크롤 스타일 */
+.section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.footerSection {
+  width: 100%;
+  background-color: #111111;
+}
+
+/* Safari에서 스크롤 부드럽게 */
+@supports (-webkit-touch-callout: none) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
