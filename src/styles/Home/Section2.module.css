@@ -281,7 +281,10 @@
   }
 
   .description {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    word-break: keep-all;
+    word-wrap: break-word;
+    line-height: 1.4;
   }
 
   .introText {
@@ -294,9 +297,6 @@
     word-break: keep-all;
     word-wrap: break-word;
     line-height: 1.4;
-    br {
-      display: none;
-    }
   }
 }
 
