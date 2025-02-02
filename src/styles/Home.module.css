@@ -241,10 +241,3 @@ a.secondary {
   width: 100%;
   background-color: #111111;
 }
-
-/* Safari에서 스크롤 부드럽게 */
-@supports (-webkit-touch-callout: none) {
-  html {
-    scroll-behavior: smooth;
-  }
-}

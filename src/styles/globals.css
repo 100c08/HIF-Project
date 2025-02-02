@@ -72,3 +72,10 @@ html, body {
     height: -webkit-fill-available !important;
   }
 }
+
+/* Safari에서 스크롤 부드럽게 */
+@supports (-webkit-touch-callout: none) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
