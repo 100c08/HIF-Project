@@ -61,11 +61,11 @@ const Section1 = () => {
             </Link>
             
             <a 
-              href="/application_form.txt" 
-              download="YFL_2024_Fall_Application.txt"
+              href="/금융연구회 16기 지원서.docx"
+              download="금융연구회 16기 지원서.docx"
               className={styles.button}
             >
-              2025 - Spring Recruiting 지원서 다운로드
+              2025 - Spring (16기) 지원서 다운로드
             </a>
           </div>
         </div>

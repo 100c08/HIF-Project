@@ -243,4 +243,37 @@
     margin-bottom: 2px;
     font-size: 0.8rem;
   }
+  .questionButton {
+    font-size: 0.9rem !important;
+    padding: 15px 15px;
+    word-break: keep-all;  /* 단어 단위 줄바꿈 */
+    word-wrap: break-word;  /* 긴 단어 처리 */
+  }
+  .answer {
+    font-size: 0.85rem !important;
+    line-height: 1.5;
+    padding: 0 15px 0 45px;
+    word-break: keep-all;  /* 단어 단위 줄바꿈 */
+    word-wrap: break-word;  /* 긴 단어 처리 */
+  }
+  .questionIcon {
+    font-size: 1.2rem !important;
+    margin-right: 1rem;
+  }
+  .mainTitle {
+    font-size: 2rem !important;
+    margin-bottom: 2.5rem;
+    word-break: keep-all;  /* 단어 단위 줄바꿈 */
+    word-wrap: break-word;  /* 긴 단어 처리 */
+  }
+  .faqContainer .arrow {
+    display: none;
+  }
+  .faqContainer .answer.open {
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+  .contentSection {
+    padding: 0rem 0;
+  }  
 }

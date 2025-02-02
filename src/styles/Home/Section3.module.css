@@ -493,8 +493,7 @@
 }
 
 /* 낮은 해상도 데스크탑 (1440x900 등) */
-@media (min-width: 1367px) and (max-width: 1440px), 
-       (min-height: 800px) and (max-height: 900px) {  /* 높이도 고려 */
+@media (min-width: 1367px) and (max-width: 1440px) {  /* 높이도 고려 */
   .container {
     padding: 0 6rem;
     gap: 35px;

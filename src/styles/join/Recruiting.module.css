@@ -210,7 +210,7 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 500px;
+  width: 40%;
   height: 1px;
   background: #ddd;
   margin: 0 auto;
@@ -286,7 +286,7 @@
   margin-top: 2rem;
   margin-bottom: 4rem;
   padding: 1rem 2.5rem;
-  background-color: #004556;
+  background-color: #012D56;
   color: white;
   border: none;
   border-radius: 5px;
@@ -294,12 +294,13 @@
   cursor: pointer;
   text-decoration: none;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .downloadButton:hover {
-  background-color: #003344;
+  background-color: #001f3d;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 .breadcrumbText {
@@ -326,6 +327,54 @@
   .breadcrumb {
     padding: 0.8rem 1.5rem;
     margin-bottom: 3px;
+  }
+
+  .recruitingTitle {
+    font-size: 2.5rem;
+  }
+
+  .recruitingDesc {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+  }
+
+  .circleContainer {
+    gap: 3rem;
+    padding: 1.5rem 0;
+  }
+
+  .pointTitle {
+    font-size: 1.3rem;
+  }
+
+  .circleText {
+    font-size: 1rem;
+    max-width: 220px;
+  }
+
+  .applicationInfo {
+    margin-top: 3rem;
+    gap: 1.2rem;
+    padding: 0 2rem 3rem;
+  }
+
+  .infoLabel {
+    font-size: 1rem;
+  }
+
+  .infoContent {
+    font-size: 1rem;
+  }
+
+  .timelineSection {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    gap: 4rem;
+  }
+
+  .finalMessage {
+    font-size: 1.6rem;
+    padding: 0 2rem;
   }
 }
 
@@ -354,6 +403,61 @@
     margin-bottom: 2px;
     font-size: 0.9rem;
   }
+
+  .recruitingTitle {
+    font-size: 2.2rem;
+  }
+
+  .recruitingDesc {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .circleContainer {
+    gap: 2.5rem;
+    padding: 1rem 0;
+  }
+
+  .pointTitle {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+  }
+
+  .circleText {
+    font-size: 0.95rem;
+    max-width: 200px;
+  }
+
+  .applicationInfo {
+    margin-top: 2.5rem;
+    gap: 1rem;
+    padding: 0 1.5rem 2.5rem;
+  }
+
+  .infoLabel {
+    font-size: 0.95rem;
+    min-width: 90px;
+  }
+
+  .infoContent {
+    font-size: 0.95rem;
+  }
+
+  .timelineSection {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    gap: 3rem;
+  }
+
+  .finalMessage {
+    font-size: 1.4rem;
+    padding: 0 1.5rem;
+  }
+
+  .circleWrapper img {  /* Image 컴포넌트에 대한 스타일 */
+    width: 200px !important;  /* 250px에서 축소 */
+    height: 200px !important;
+  }
 }
 
 /* 480px 이하 스타일 */
@@ -369,5 +473,266 @@
     padding: 0.5rem 0.5rem;
     margin-bottom: 2px;
     font-size: 0.8rem;
+  }
+
+  .recruitingTitle {
+    font-size: 1.8rem;
+  }
+
+  .recruitingDesc {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .circleContainer {
+    gap: 1.5rem;  /* gap도 더 줄임 */
+    padding: 0.8rem 0;
+  }
+
+  .pointTitle {
+    font-size: 1.1rem;
+    margin-top: 1.2rem;
+  }
+
+  .circleText {
+    font-size: 0.85rem;
+    max-width: 180px;
+    line-height: 1.5;
+  }
+
+  .applicationInfo {
+    width: 93%;  /* 90%에서 93%로 증가 */
+    margin: 2rem auto;
+    padding: 0 0 2rem 0;
+  }
+
+  .infoRow {
+    gap: 1rem;
+  }
+
+  .infoLabel {
+    font-size: 0.85rem;
+    min-width: auto;
+    text-align: left;
+  }
+
+  .infoContent {
+    font-size: 0.85rem;
+    padding: 0.3rem 0;
+  }
+
+  .applicationInfo::after {
+    width: 93%;  /* 가로선도 같은 너비로 맞춤 */
+    bottom: 0;
+  }
+
+  .timelineSection {
+    margin-top: 4rem;
+    margin-bottom: 6rem;  /* 4rem에서 6rem으로 증가 */
+    gap: 2.5rem;
+  }
+
+  .finalMessage {
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    line-height: 1.6;
+    margin-top: 4rem;  /* 상단 여백 추가 */
+  }
+
+  .downloadButton {
+    margin-top: 1rem;  /* 2rem에서 1rem으로 축소 */
+    margin-bottom: 4rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+
+  .circleWrapper img {
+    width: 180px !important;  /* 130px에서 180px로 크게 증가 */
+    height: 180px !important;
+  }
+
+  .circleWrapper {
+    transform: scale(0.85);  /* 전체 요소를 85% 크기로 축소 */
+  }
+
+  .pointTitle {
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .circleText {
+    font-size: 1rem;
+    max-width: 200px;
+    line-height: 1.5;
+  }
+
+  .circleContainer {
+    gap: 3rem;  /* 2.5rem에서 3rem으로 증가 - 더 큰 이미지에 맞춰 간격도 조정 */
+    padding: 1rem 0;
+  }
+
+  .circleItem {
+    margin-bottom: -50px;  /* 음수 마진으로 간격 줄임 */
+  }
+
+  .circleItem:last-child {
+    margin-bottom: 0;  /* 마지막 아이템은 마진 제거 */
+  }
+
+  .desktopTimeline {
+    display: none;
+  }
+
+  .mobileTimeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;  /* gap 제거하고 마진으로 조정 */
+    width: 93%;
+    margin: 0 auto;
+    position: relative;  /* 포지셔닝 컨텍스트 설정 */
+  }
+
+  .timelineItem {
+    display: flex;
+    align-items: flex-start;  /* center에서 flex-start로 변경 */
+    gap: 0.8rem;
+    margin-bottom: -30px;
+    opacity: 0;  /* 초기 상태는 투명 */
+  }
+
+  .timelineItem:last-child {
+    margin-bottom: 0;  /* 마지막 아이템은 마진 제거 */
+  }
+
+  .timelineItem:nth-child(1) {
+    animation: fadeInDown 0.6s ease forwards;
+    animation-delay: 0.2s;
+  }
+
+  .timelineItem:nth-child(2) {
+    animation: fadeInDown 0.6s ease forwards;
+    animation-delay: 0.4s;
+  }
+
+  .timelineItem:nth-child(3) {
+    animation: fadeInDown 0.6s ease forwards;
+    animation-delay: 0.6s;
+  }
+
+  .timelineItem:nth-child(4) {
+    animation: fadeInDown 0.6s ease forwards;
+    animation-delay: 0.8s;
+  }
+
+  .timelineItem img {
+    width: 130px !important;
+    height: 130px !important;
+  }
+
+  .timelineText {
+    text-align: left;
+    padding-top: 0.5rem;
+    line-height: 1.1;
+  }
+
+  .timelineTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+  }
+
+  .timelineDate {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1;
+  }
+}
+
+/* 기본 스타일 */
+.mobileTimeline {
+  display: none;
+}
+
+/* 480px 이하 스타일 */
+@media (max-width: 480px) {
+  .desktopTimeline {
+    display: none;
+  }
+
+  .mobileTimeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 93%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .timelineItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: -30px;
+    opacity: 0;
+  }
+
+  .timelineItem:last-child {
+    margin-bottom: 0;
+  }
+
+  .timelineItem img {
+    width: 130px !important;
+    height: 130px !important;
+  }
+
+  .timelineText {
+    text-align: left;
+    padding-top: 0.5rem;
+    line-height: 1.1;
+  }
+
+  .timelineTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+  }
+
+  .timelineDate {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1;
+  }
+}
+
+/* 애니메이션 클래스 */
+.animate .timelineItem:nth-child(1) {
+  animation: fadeInDown 0.6s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.animate .timelineItem:nth-child(2) {
+  animation: fadeInDown 0.6s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.animate .timelineItem:nth-child(3) {
+  animation: fadeInDown 0.6s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.animate .timelineItem:nth-child(4) {
+  animation: fadeInDown 0.6s ease forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
