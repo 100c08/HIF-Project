@@ -43,7 +43,7 @@ const membersData = {
     { name: "Oh Soo-been", major: "Economics" },
     { name: "Lee Su-hyeon", major: "Business Administration" },
     { name: "In Seo-yeon", major: "Chinese Foreign Affairs and Commerce" },
-    { name: "Jung Myung-Jo", major: "International Economics and Law" },
+    { name: "Jung Myung-jo", major: "International Economics and Law" },
     { name: "Han Min-seo", major: "International Economics and Law" },
     { name: "Han Se-bin", major: "Italian" },
     { name: "Hwang Zi-won", major: "English for International Conferences and Communication" }
@@ -98,7 +98,7 @@ const membersData = {
   ],
   "12th Generation": [
     { name: "Kwon Keun-young", major: "Chinese Foreign Affairs and Commerce" },
-    { name: "Kim gyeong-mi", major: "Business Administration" },
+    { name: "Kim Gyeong-mi", major: "Business Administration" },
     { name: "Dong Jin-woo", major: "Business Administration" },
     { name: "Min Hui-won", major: "Business Administration" },
     { name: "Park Seo-bin", major: "Hindi" },
@@ -162,7 +162,7 @@ const membersData = {
     { name: "Han Kyu-ri", major: "Turkish and Azerbaijani" }
   ],
   "9th Generation": [
-    { name: "Park Ji-gan", major: "English" },
+    { name: "Park Ji-gan", major: "English Linguistics" },
     { name: "Kim Hye-min", major: "Public Administration" },
     { name: "Kim Jae-yoon", major: "English Linguistics" },
     { name: "Jung Hyun-sin", major: "German" },
@@ -231,7 +231,7 @@ const membersData = {
     { name: "Lee Dong-hwi", major: "Business Administration" }
   ],
   "4th Generation": [
-    { name: "Jeon Byung-ha", major: "Japanese Language, Literature and Culture" },
+    { name: "Jeon Byung-ha", major: "Japanese" },
     { name: "Jung Bong-hyun", major: "Business Administration" },
     { name: "Kim Bo-ra", major: "Economics" },
     { name: "Kim Jin-sung", major: "Economics" },
@@ -262,12 +262,12 @@ const membersData = {
     { name: "Jung Il-kwon", major: "Economics" }
   ],
   "1st Generation": [
-    { name: "Yu Seong-woo", major: "Japanese Language, Literature and Culture" },
+    { name: "Yu Seong-woo", major: "Japanese" },
     { name: "Choi Woo-seok", major: "English Linguistics" },
     { name: "Im Seong-won", major: "Business Administration" },
     { name: "Kwak Yong-jung", major: "Business Administration" },
     { name: "Moon Han-gil", major: "Law" },
-    { name: "Baek Seung-hun", major: "Japanese Language, Literature and Culture" },
+    { name: "Baek Seung-hun", major: "Japanese" },
     { name: "Yu Hye-yun", major: "German" }
   ]
 };
