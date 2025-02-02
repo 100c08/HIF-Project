@@ -171,7 +171,7 @@ a.secondary {
 /* 풀스크린 섹션 */
 .heroSection {
   position: relative;
-  height: 100vh;
+  height: 100dvh;
   background: #000000; /* 검정색 배경으로 변경 */
   display: flex;
   justify-content: flex-start;
@@ -229,7 +229,7 @@ a.secondary {
 
 /* Safari용 일반 스크롤 스타일 */
 .section {
-  min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   display: flex;
   align-items: center;

@@ -32,7 +32,6 @@ export default function Home() {
   const [isFooterActive, setIsFooterActive] = useState(false);
   const [section3Active, setSection3Active] = useState(false);
   const [section5Active, setSection5Active] = useState(false);
-  const [isSafari, setIsSafari] = useState(false);
 
   useEffect(() => {
     // 푸터 네비게이터 아이템 숨기기
@@ -79,60 +78,8 @@ export default function Home() {
     };
   }, []);
 
-  useEffect(() => {
-    // 사용자 에이전트 문자열 가져오기
-    const userAgent = navigator.userAgent;
-    // iOS 기기 여부 체크
-    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-    // 실제 Safari 브라우저 판별:
-    // Safari는 "Version/"이라는 문자열을 항상 포함하므로 이를 이용합니다.
-    const isActualSafari =
-      isIOS &&
-      userAgent.includes("Version/") &&
-      userAgent.includes("Safari") &&
-      !userAgent.includes("CriOS") &&
-      !userAgent.includes("FxiOS");
-    setIsSafari(isActualSafari);
-  }, []);
-
-  // Safari인 경우 일반 스크롤 버전 렌더링
-  if (isSafari) {
-    return (
-      <>
-        <Head>
-          <title>금융연구회 | HUFS Institute of Finance</title>
-          <meta property="og:title" content="금융연구회 | HUFS Institute of Finance" />
-          <meta property="og:description" content="HUFS Institute of Finance - Where Vision Meets Finance" />
-          <meta property="og:type" content="website" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <div className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>
-          <div className={styles.section}>
-            <Section1 />
-          </div>
-
-          <div className={styles.section}>
-            <Section2 isActive={true} />
-          </div>
-
-          <div className={styles.section}>
-            <Section3 isActive={true} />
-          </div>
-
-          <div className={styles.section}>
-            <Section4 isActive={true} />
-          </div>
-
-          <div className={styles.section}>
-            <Section5 isActive={true} />
-          </div>
-        </div>
-      </>
-    );
-  }
-
-  // Safari가 아닌 경우 기존 fullpage 버전 렌더링
+  // 기존의 Safari 감지 및 별도 처리(if (isSafari) 블록)를 제거하고,
+  // 모든 브라우저에서 ReactFullpage 기반의 풀스크린을 적용합니다.
   return (
     <>
       <Head>
@@ -140,6 +87,7 @@ export default function Home() {
         <meta property="og:title" content="금융연구회 | HUFS Institute of Finance" />
         <meta property="og:description" content="HUFS Institute of Finance - Where Vision Meets Finance" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="/OG.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -155,8 +103,7 @@ export default function Home() {
         onLeave={(origin, destination, direction) => {
           const items = document.querySelectorAll('#fp-nav > ul > li > a > span');
           const logo = document.querySelector('.logoImage');
-          
-          // 화면 크기가 1400px 초과일 때만 색상 변경 적용
+
           if (window.innerWidth > 1400) {
             if (destination.index === 1) {
               document.documentElement.setAttribute('data-section', '2');
@@ -185,7 +132,6 @@ export default function Home() {
           setSection4Active(destination.index === 3);
           setSection5Active(destination.index === 4);
           setIsFooterActive(destination.index === 5);
-          // 섹션 로드 후 높이 재조정
           const currentSection = document.querySelector('.fp-section.active');
           if (currentSection) {
             currentSection.style.height = `${window.innerHeight}px`;

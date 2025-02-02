@@ -60,7 +60,7 @@ html, body {
 }
 
 .fp-section {
-  height: 100vh !important;
+  height: 100dvh !important;
   height: -webkit-fill-available !important;  /* iOS Safari용 */
   touch-action: none;  /* 터치 동작 제어 */
 }

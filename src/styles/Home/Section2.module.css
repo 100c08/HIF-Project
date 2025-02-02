@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -197,7 +197,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   .textSection {
