@@ -37,12 +37,14 @@ export default function Section5() {
         const [entry] = entries;
         if (entry.isIntersecting && !animationStarted) {
           setAnimationStarted(true);
-          
+          // 애니메이션이 처음 실행되면 observer를 즉시 끊어서 이후 스크롤 이벤트에 영향을 주지 않도록 함
+          observer.disconnect();
+  
           if (chartRef.current) {
             if (chartInstance.current) {
               chartInstance.current.destroy();
             }
-
+  
             const ctx = chartRef.current.getContext('2d');
             
             // 화면 크기에 따른 설정 변경
