@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../../styles/activities/Competition.module.css';
 import localFont from "next/font/local";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const playfairDisplay = localFont({
   src: "../../pages/fonts/PlayfairDisplay-Regular.woff",
@@ -47,7 +47,7 @@ const awards = [
     rank: "장려상"
   },
   {
-    title: "2023년 미래에셋 빅데이터 페스티벌",
+    title: "2023 미래에셋 빅데이터 페스티벌",
     date: "2023-09-21",
     rank: "장려상"
   },
@@ -87,6 +87,16 @@ const awards = [
     rank: "최우수상"
   },
   {
+    title: "제13회 DB 금융경제 공모전",
+    date: "2023-04-28",
+    rank: "가작"
+  },
+  {
+    title: "제13회 DB 금융경제 공모전",
+    date: "2023-04-28",
+    rank: "가작"
+  },
+  {
     title: "제79회 한국경제신문 TESAT 동아리대항전",
     date: "2023-03-03",
     rank: "대상"
@@ -99,7 +109,7 @@ const awards = [
   {
     title: "2022년 NH투자증권 빅데이터 경진대회",
     date: "2022-12-13",
-    rank: "우수상 2위"
+    rank: "우수상(2위)"
   },
   {
     title: "제78회 한국경제신문 TESAT 동아리대항전",
@@ -187,14 +197,14 @@ const awards = [
     rank: "장려상"
   },
   {
-    title: "제70회 한국경제신문 TESAT 동아리대항전",
-    date: "2021-12-03",
-    rank: "최우수상"
-  },
-  {
     title: "공공기관 혁신 아이디어 공모전",
     date: "2021-12-07",
     rank: "우수상"
+  },
+  {
+    title: "제70회 한국경제신문 TESAT 동아리대항전",
+    date: "2021-12-03",
+    rank: "최우수상"
   },
   {
     title: "제16회 금융감독원 금융공모전",
@@ -272,7 +282,7 @@ const awards = [
     rank: "최우수상"
   },
   {
-    title: "제5회 DB 글로벌 자산배분 투자대회",
+    title: "제5회 DB GAPS 투자대회",
     date: "2019-11-24",
     rank: "운용철학우수상"
   },
@@ -504,6 +514,19 @@ const awards = [
 ];
 
 export default function Competition() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -559,10 +582,22 @@ export default function Competition() {
           <h2 className={styles.sectionTitle}>Awards List</h2>
 
           <p className={styles.description}>
-            금융연구회는 <strong>2011년부터 현재까지 100여 건의 수상실적</strong>을 보유하고 있습니다.<br />
-            금융, 경제, 데이터 분석 등 다양한 분야의 공모전에서 우수한 성과를 거두며<br />
-            <strong>누적 상금 199,500,000원</strong>을 수상하였고,<br />
-            <strong>대한민국 최고의 금융동아리로서의 위상</strong>을 보여주고 있습니다.
+            {isMobile ? (
+              <>
+                금융연구회는 2011년부터 현재까지<br />
+                <strong>100여 건의 수상실적</strong>을 보유하고 있습니다.<br />
+                금융, 경제, 데이터 분석 등 다양한 분야의 공모전에서 우수한 성과를<br />
+                거두며 <strong>누적 상금 199,500,000원</strong>을 수상하였고,<br />
+                <strong>대한민국 최고의 금융동아리로서의 위상</strong>을 보여주고 있습니다.
+              </>
+            ) : (
+              <>
+                금융연구회는 <strong>2011년부터 현재까지 100여 건의 수상실적</strong>을 보유하고 있습니다.<br />
+                금융, 경제, 데이터 분석 등 다양한 분야의 공모전에서 우수한 성과를 거두며<br />
+                <strong>누적 상금 199,500,000원</strong>을 수상하였고,<br />
+                <strong>대한민국 최고의 금융동아리로서의 위상</strong>을 보여주고 있습니다.
+              </>
+            )}
           </p>
           
           <div className={styles.timeline}>
