@@ -165,11 +165,14 @@
 
 .teamSection {
   flex: 0 1 650px;
-  margin-top: 2rem;  /* 4rem에서 2rem으로 축소 */
+  margin-top: 2rem;
+  min-height: 600px; /* 고정 높이 추가 */
+  display: flex;
+  flex-direction: column;
 }
 
-.teamSection:nth-child(2) {  /* 투자전략팀 섹션 */
-  margin-top: 4rem;  /* 투자전략팀 상단 여백 추가 */
+.teamSection:nth-child(2) {
+  margin-top: 2rem; /* 4rem에서 2rem으로 수정하여 첫 번째 섹션과 동일하게 */
 }
 
 .teamContent {
@@ -472,6 +475,7 @@
   }
 
   .teamSection {
+    min-height: auto; /* 모바일에서는 고정 높이 제거 */
     margin-top: 1rem;
   }
   

@@ -51,11 +51,16 @@
   align-items: center;
 }
 
-.logoImage {
+.header .logoImage {
   width: 50px;
   height: 50px;
   object-fit: contain;
-  transition: all 0.8s ease;
+  filter: brightness(0) invert(1);  /* 기본 흰색 */
+  transition: filter 0.8s ease;  /* 텍스트와 동일한 트랜지션 */
+}
+
+.header.scrolled:not(.menuOpen) .logoImage {
+  filter: brightness(0);  /* 스크롤 시 검정색으로 */
 }
 
 .nav {
@@ -155,7 +160,7 @@
 }
 
 .header.menuOpen .logoImage {
-  filter: none !important; /* Section2에서도 원래 로고 색상 유지 */
+  filter: brightness(0) invert(1) !important; /* Section2에서도 원래 로고 색상 유지 */
 }
 
 /* Section2에서의 스타일 (메뉴가 닫혀있을 때만 적용) */
@@ -190,11 +195,17 @@
 
 .header.menuOpen .logoImage,
 .header.menuOpen.whiteBackground .logoImage {
-    filter: none !important;
+    filter: brightness(0) invert(1) !important;
 }
 
-.header .logoImage {
-  filter: brightness(0) invert(1);
+/* 스크롤 시 스타일 */
+.header.scrolled:not(.menuOpen) .navLink {
+  color: #333;
+}
+
+/* 메뉴가 열렸을 때는 원래 색상 유지 */
+.header.menuOpen .logoImage {
+  filter: brightness(0) invert(1) !important;
 }
 
 .header.whiteBackground .navLink {
@@ -237,4 +248,8 @@
 :root[data-section="2"] .header,
 :root[data-section="4"] .header {
   color: #000000;
+}
+
+@media (max-width: 480px) {
+  /* 모바일 스타일 */
 }

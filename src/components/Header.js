@@ -131,40 +131,17 @@ export default function Header() {
 
     const handleRouteChange = () => {
       document.documentElement.removeAttribute('data-section');
-      
-      const logo = document.querySelector('.logoImage');
-      if (logo) {
-        logo.style.filter = 'brightness(0) invert(1)';
-      }
-
       setIsMenuOpen(false);
       setVisibleDropdown(null);
-    };
-
-    const resetStyles = () => {
-      const items = document.querySelectorAll('#fp-nav > ul > li > a > span');
-      const logo = document.querySelector('.logoImage');
-      
-      if (items) {
-        items.forEach(item => {
-          item.style.cssText = 'background: #ffffff; transition: background 0.8s ease';
-        });
-      }
-      
-      if (logo) {
-        logo.style.cssText = 'filter: brightness(1); transition: filter 0.8s ease';
-      }
     };
 
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     router.events.on('routeChangeStart', handleRouteChange);
-    router.events.on('routeChangeStart', resetStyles);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       router.events.off('routeChangeStart', handleRouteChange);
-      router.events.off('routeChangeStart', resetStyles);
     };
   }, [router.pathname]);
 
@@ -193,7 +170,6 @@ export default function Header() {
             className={`${styles.logoImage} logoImage`}
             width={40}
             height={40}
-            style={{ transition: 'filter 0.8s ease' }}
           />
         </Link>
       </div>

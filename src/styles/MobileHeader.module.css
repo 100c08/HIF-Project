@@ -175,7 +175,11 @@
 }
 
 .whiteBackground {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.whiteBackground .logoImage {
+  filter: brightness(0);
 }
 
 .whiteBackground .menuIcon,
@@ -188,4 +192,8 @@
 .menuOpen .menuIcon::before,
 .menuOpen .menuIcon::after {
   background-color: #fff;
+}
+
+.menuOpen .logoImage {
+  filter: none !important;
 } 

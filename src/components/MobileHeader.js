@@ -29,6 +29,23 @@ const MobileHeader = () => {
     };
   }, [router]);
 
+  // 스크롤 위치에 따라 whiteBackground 상태 업데이트
+  useEffect(() => {
+    const handleScroll = () => {
+      // 메뉴가 열려있지 않을 때만 스크롤에 따른 상태 업데이트
+      if (!isMenuOpen) {
+        if (window.scrollY > 100) {
+          setWhiteBackground(true);
+        } else {
+          setWhiteBackground(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isMenuOpen]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     setActiveDropdown(null);

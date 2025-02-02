@@ -54,7 +54,7 @@ export default function Section2() {
             <p className={`${styles.introText} ${styles.fadeUpAnimation4}`}>
               금융연구회는 2010년 설립된 한국외국어대학교
               {isMobile ? ' ' : <br />}
-              경영대학 소속의 금융 전문 학회입니다
+              경영대학 소속의 금융 전문 학회입니다.
             </p>
             <p className={`${styles.detailText} ${styles.fadeUpAnimation5}`}>
               우리 학회는 금융세미나, 신문스터디, 공모전 참가 등 다양한 활동을 통해
