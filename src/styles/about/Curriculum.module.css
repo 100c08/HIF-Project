@@ -171,3 +171,94 @@
     word-break: keep-all;
     letter-spacing: -1px;
   }
+
+  /* 820px 이하 스타일 */
+  @media (max-width: 820px) {
+    .timelineContainer {
+      padding: 2rem 1.5rem 6rem 1.5rem;
+    }
+
+    .timelineContent {
+      width: 180px;
+      padding: 1rem;
+      right: 53%;  /* 51%에서 53%로 증가하여 타임라인과의 간격 증가 */
+    }
+
+    .timelineDescription {
+      width: 300px;
+      padding: 1.2rem;
+      left: 53%;  /* 51%에서 53%로 증가하여 타임라인과의 간격 증가 */
+    }
+
+    .timelineContent h3 {
+      font-size: 1rem;  /* 제목 텍스트 크기 감소 */
+    }
+
+    .timelineDescription p {
+      font-size: 0.85rem;  /* 설명 텍스트 크기 감소 */
+      line-height: 1.5;
+    }
+
+    /* 짝수 아이템 스타일 조정 */
+    .timelineItem:nth-child(even) .timelineContent {
+      left: 53%;  /* 51%에서 53%로 증가 */
+    }
+
+    .timelineItem:nth-child(even) .timelineDescription {
+      right: 53%;  /* 51%에서 53%로 증가 */
+    }
+
+    .curriculumDescription {
+      font-size: 1.5rem;  /* 1.8rem에서 1.5rem으로 감소 */
+      line-height: 1.7;
+      margin: 0 auto 8rem auto;
+      padding: 0 2rem;
+    }
+  }
+
+  /* 480px 이하 스타일 */
+  @media (max-width: 480px) {
+    .timelineContainer {
+      padding: 1.5rem 1rem 5rem 1rem;
+    }
+
+    .timelineContent {
+      width: 160px;
+      padding: 0.8rem;
+      right: 54%;
+    }
+
+    .timelineDescription {
+      width: 250px;
+      padding: 1rem;
+      left: 54%;
+      max-width: 45%;  /* 42%에서 45%로 증가 */
+      overflow-wrap: break-word;
+      word-break: keep-all;
+    }
+
+    .timelineContent h3 {
+      font-size: 0.85rem;
+    }
+
+    .timelineDescription p {
+      font-size: 0.7rem;
+      line-height: 1.4;
+      white-space: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* 짝수 아이템 스타일 조정 */
+    .timelineItem:nth-child(even) .timelineDescription {
+      right: 54%;
+      max-width: 45%;  /* 42%에서 45%로 증가 */
+    }
+
+    .curriculumDescription {
+      font-size: 1.2rem;  /* 1.5rem에서 1.2rem으로 더 감소 */
+      line-height: 1.6;
+      margin: 0 auto 6rem auto;
+      padding: 0 1.5rem;
+    }
+  }

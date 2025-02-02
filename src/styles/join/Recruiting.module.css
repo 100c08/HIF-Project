@@ -306,3 +306,68 @@
   color: #999;
   font-family: var(--font-playfair);
 }
+
+/* 맥북 해상도 (1440) */
+@media (min-width: 1367px) and (max-width: 1440px) {
+  .heroSection {
+    height: 420px; /* 기존 450px에서 약간 줄임 */
+  }
+  .breadcrumb {
+    padding: 0.9rem 1.8rem;
+    margin-bottom: 4px;
+  }
+}
+
+/* 태블릿 가로 모드 (아이패드) */
+@media (min-width: 821px) and (max-width: 1180px) {
+  .heroSection {
+    height: 380px;
+  }
+  .breadcrumb {
+    padding: 0.8rem 1.5rem;
+    margin-bottom: 3px;
+  }
+}
+
+/* 1400px 이하 스타일 */
+@media (max-width: 1400px) {
+  .heroSection {
+    height: 400px;
+  }
+  .breadcrumb {
+    padding: 1rem;
+    margin-bottom: 3px;
+  }
+}
+
+/* 820px 이하 스타일 */
+@media (max-width: 820px) {
+  .heroSection {
+    height: 300px; /* 모바일에서 덜 차지하도록 높이 조정 */
+  }
+  .heroTitle {
+    font-size: 2.5rem;
+    margin-top: 120px; /* 상단 여백 조정 */
+  }
+  .breadcrumb {
+    padding: 0.7rem 1rem;
+    margin-bottom: 2px;
+    font-size: 0.9rem;
+  }
+}
+
+/* 480px 이하 스타일 */
+@media (max-width: 480px) {
+  .heroSection {
+    height: 250px; /* 모바일 중에서도 작은 기기용 */
+  }
+  .heroTitle {
+    font-size: 2rem;
+    margin-top: 100px; /* 타이틀 margin-top을 100px로 설정 */
+  }
+  .breadcrumb {
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 2px;
+    font-size: 0.8rem;
+  }
+}
