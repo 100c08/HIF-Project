@@ -189,7 +189,7 @@ export default function RegularSession() {
                 className={styles.newsImage} 
                 onClick={() => handleImageClick("/news2.png")} 
               />
-              <a href="/[2022.04.06 박영찬] 미 장단기 금리 역전…이번에도 '심각한 경기침체' 신호일까.docx" 
+              <a href="/[2022.04.06 박영찬] 미 장단기 금리 역전…이번에도 ‘심각한 경기침체’ 신호일까.pdf" 
                  download 
                  className={styles.downloadLink}>
                 전체 보고서 보기
