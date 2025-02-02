@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/router';
 import styles from "../styles/Header.module.css";
+import MobileHeader from "./MobileHeader";
 import localFont from "next/font/local";
 
 const playfairDisplay = localFont({
@@ -15,6 +16,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [visibleDropdown, setVisibleDropdown] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleMouseEnter = (menu) => {
     setVisibleDropdown(menu);
@@ -83,6 +85,26 @@ export default function Header() {
   ];
 
   useEffect(() => {
+    // 초기 화면 크기 체크
+    if (typeof window !== 'undefined') {
+      setIsMobile(window.innerWidth <= 1400);
+    }
+
+    // 리사이즈 이벤트 핸들러
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1400);
+    };
+
+    // 이벤트 리스너 등록
+    window.addEventListener('resize', handleResize);
+
+    // 클린업 함수
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
     const isMainPage = router.pathname === '/';
     const isMembersPage = router.pathname.includes('/members');
     const isAwardsPage = router.pathname === '/activities/competition';
@@ -119,19 +141,40 @@ export default function Header() {
       setVisibleDropdown(null);
     };
 
+    const resetStyles = () => {
+      const items = document.querySelectorAll('#fp-nav > ul > li > a > span');
+      const logo = document.querySelector('.logoImage');
+      
+      if (items) {
+        items.forEach(item => {
+          item.style.cssText = 'background: #ffffff; transition: background 0.8s ease';
+        });
+      }
+      
+      if (logo) {
+        logo.style.cssText = 'filter: brightness(1); transition: filter 0.8s ease';
+      }
+    };
+
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     router.events.on('routeChangeStart', handleRouteChange);
+    router.events.on('routeChangeStart', resetStyles);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       router.events.off('routeChangeStart', handleRouteChange);
+      router.events.off('routeChangeStart', resetStyles);
     };
   }, [router.pathname]);
 
   const headerClass = `${styles.header} ${
     isScrolled ? styles.scrolled : ''
   } ${router.pathname.includes('/members') ? styles.darkHeader : ''}`;
+
+  if (isMobile) {
+    return <MobileHeader />;
+  }
 
   return (
     <header 

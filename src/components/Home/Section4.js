@@ -146,6 +146,13 @@ export default function Section4() {
             view more
           </Link>
         </div>
+
+        <button 
+          onClick={() => window.open('/activities/competition', '_blank')}
+          className={styles.mobileAwardsButton}
+        >
+          최근 수상내역 보기
+        </button>
       </div>
     </div>
   );

@@ -109,7 +109,7 @@ export default function Section3() {
                   </div>
                 </Link>
                 <h3>Research</h3>
-                <p>경제분석팀 & 투자전략팀</p>
+                <p>기업분석팀 & 투자전략팀</p>
               </div>
 
               <div className={`${styles.activityItem} ${styles.fadeUpAnimation7}`}>

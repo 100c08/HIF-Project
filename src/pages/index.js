@@ -85,21 +85,24 @@ export default function Home() {
           const items = document.querySelectorAll('#fp-nav > ul > li > a > span');
           const logo = document.querySelector('.logoImage');
           
-          if (destination.index === 1) {
-            document.documentElement.setAttribute('data-section', '2');
-            items.forEach(item => {
-              item.style.cssText = 'background: #000000; transition: background 0.8s ease';
-            });
-            if (logo) {
-              logo.style.cssText = 'filter: brightness(0); transition: filter 0.8s ease';
-            }
-          } else {
-            document.documentElement.removeAttribute('data-section');
-            items.forEach(item => {
-              item.style.cssText = 'background: #ffffff; transition: background 0.8s ease';
-            });
-            if (logo) {
-              logo.style.cssText = 'filter: brightness(1); transition: filter 0.8s ease';
+          // 화면 크기가 1400px 초과일 때만 색상 변경 적용
+          if (window.innerWidth > 1400) {
+            if (destination.index === 1) {
+              document.documentElement.setAttribute('data-section', '2');
+              items.forEach(item => {
+                item.style.cssText = 'background: #000000; transition: background 0.8s ease';
+              });
+              if (logo) {
+                logo.style.cssText = 'filter: brightness(0); transition: filter 0.8s ease';
+              }
+            } else {
+              document.documentElement.removeAttribute('data-section');
+              items.forEach(item => {
+                item.style.cssText = 'background: #ffffff; transition: background 0.8s ease';
+              });
+              if (logo) {
+                logo.style.cssText = 'filter: brightness(1); transition: filter 0.8s ease';
+              }
             }
           }
         }}
