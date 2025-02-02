@@ -337,13 +337,18 @@
   }
 
   .generationButtons {
-    gap: 0.5rem;
+    gap: 0.5rem;  /* 0.5rem에서 0.3rem으로 버튼 간 간격 축소 */
     margin-bottom: 1.5rem;
   }
 
   .genButton {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.75rem;
+    padding: 0.4rem 0.5rem;  /* 좌우 패딩을 0.8rem에서 0.6rem으로 축소 */
+    font-size: 0.70rem;
+    border-radius: 8px;
+  }
+
+  .genButton.selected {
+    border-radius: 8px;
   }
 
   .generationTitle {
