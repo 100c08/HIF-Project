@@ -14,6 +14,7 @@ export default function Research() {
   const [selectedImage, setSelectedImage] = useState(null);
   const marketInsightRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     // 페이지 마운트 시 바로 visible 상태를 false로 설정
@@ -39,11 +40,19 @@ export default function Research() {
       observer.observe(marketInsightRef.current);
     }
 
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
     return () => {
       clearTimeout(timer);
       if (marketInsightRef.current) {
         observer.unobserve(marketInsightRef.current);
       }
+      window.removeEventListener('resize', checkMobile);
     };
   }, []);
 
@@ -80,8 +89,16 @@ export default function Research() {
           <h2 className={styles.sectionTitle}>Valuation Study</h2>
           
           <p className={styles.description}>
-            밸류에이션 스터디는 학회원들이 심도 있는 <strong>기업분석</strong>과 <strong>투자전략</strong> 수립 과정을 통해<br />
-            금융 시장에 대한 이해를 높이고 실무 역량을 강화할 수 있는 팀 활동입니다.
+            {isMobile ? (
+              <>
+                밸류에이션 스터디는 학회원들이 심도 있는 <strong>기업분석</strong>과 <strong>투자전략</strong> 수립 과정을 통해 금융 시장에 대한 이해를 높이고 실무 역량을 강화할 수 있는 팀 활동입니다.
+              </>
+            ) : (
+              <>
+                밸류에이션 스터디는 학회원들이 심도 있는 <strong>기업분석</strong>과 <strong>투자전략</strong> 수립 과정을 통해<br />
+                금융 시장에 대한 이해를 높이고 실무 역량을 강화할 수 있는 팀 활동입니다.
+              </>
+            )}
           </p>
 
           <div className={styles.studyIntro}>
@@ -112,10 +129,10 @@ export default function Research() {
 
                 <h3 className={styles.teamSubtitle}>활동 내용</h3>
                 <ul className={styles.activityList}>
-                  <li>금융/경제 이론 학습</li>
-                  <li>국내외 최신 시황 스터디</li>
-                  <li>제도권 수준의 분석보고서 작성</li>
-                  <li>투자전략 세미나 진행</li>
+                  <li>밸류에이션 방법론 학습</li>
+                  <li>분석 대상 기업의 재무재표 및 경영성과 분석</li>
+                  <li>산업 트렌드 및 Peer 분석</li>
+                  <li>분석 결과를 토대로 투자 아이디어 제안</li>
                 </ul>
               </div>
 
@@ -159,10 +176,10 @@ export default function Research() {
 
                 <h3 className={styles.teamSubtitle}>활동 내용</h3>
                 <ul className={styles.activityList}>
-                  <li>밸류에이션 방법론 학습</li>
-                  <li>분석 대상 기업의 재무재표 및 경영성과 분석</li>
-                  <li>산업 트렌드 및 Peer 분석</li>
-                  <li>분석 결과를 토대로 투자 아이디어 제안</li>
+                  <li>금융/경제 이론 학습</li>
+                  <li>국내외 최신 시황 스터디</li>
+                  <li>제도권 수준의 분석보고서 작성</li>
+                  <li>투자전략 세미나 진행</li>
                 </ul>
               </div>
 
