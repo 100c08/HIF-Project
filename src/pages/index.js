@@ -84,9 +84,11 @@ export default function Home() {
     const userAgent = navigator.userAgent;
     // iOS 기기 여부 체크
     const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-    // 실제 Safari 브라우저인지 판별 (CriOS: iOS용 크롬, FxiOS: iOS용 파이어폭스)
+    // 실제 Safari 브라우저 판별:
+    // Safari는 "Version/"이라는 문자열을 항상 포함하므로 이를 이용합니다.
     const isActualSafari =
       isIOS &&
+      userAgent.includes("Version/") &&
       userAgent.includes("Safari") &&
       !userAgent.includes("CriOS") &&
       !userAgent.includes("FxiOS");
