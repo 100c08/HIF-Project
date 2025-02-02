@@ -345,20 +345,21 @@
   }
 
   .container {
-    padding: 0 0.5rem;  /* 패딩 최소화 */
-    gap: 5px;  /* gap 대폭 축소 */
-    width: 100%;  /* 너비 확실히 지정 */
-    max-width: 100%;  /* 최대 너비 제한 */
+    padding: 2rem 0.5rem;  /* 상단 패딩 축소 (기존값에서 약간 줄임) */
+    gap: 5px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .title {
-    font-size: 1.8rem;  /* 더 작게 */
+    font-size: 1.8rem;
     margin-bottom: 0.3rem;
   }
 
   .activitiesGrid {
     gap: 0.8rem;
-    margin-bottom: 1.2rem;  /* 2rem에서 1.2rem으로 축소 */
+    margin-top: -10px;  /* 상단 간격 추가로 축소 */
+    margin-bottom: 1.2rem;
   }
 
   .sectionTitle {

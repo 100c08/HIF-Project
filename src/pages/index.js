@@ -75,10 +75,11 @@ export default function Home() {
       <ReactFullpage
         navigation={true}
         fitToSection={true}
-        fitToSectionDelay={500}
-        scrollingSpeed={800}
+        fitToSectionDelay={300}
+        scrollingSpeed={600}
         scrollOverflow={true}
-        touchSensitivity={5}
+        touchSensitivity={15}
+        normalScrollElements=".section"
         licenseKey={process.env.NEXT_PUBLIC_FULLPAGE_LICENSE_KEY}
         credits={false}
         onLeave={(origin, destination, direction) => {
