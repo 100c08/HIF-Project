@@ -61,6 +61,23 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    // iOS Safari의 주소창 높이 변화에 대응
+    const appHeight = () => {
+      const doc = document.documentElement;
+      doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+    };
+    
+    window.addEventListener('resize', appHeight);
+    window.addEventListener('orientationchange', appHeight);
+    appHeight();
+    
+    return () => {
+      window.removeEventListener('resize', appHeight);
+      window.removeEventListener('orientationchange', appHeight);
+    };
+  }, []);
+
   return (
     <>
       <Head>
@@ -75,11 +92,10 @@ export default function Home() {
       <ReactFullpage
         navigation={true}
         fitToSection={true}
-        fitToSectionDelay={300}
-        scrollingSpeed={600}
+        fitToSectionDelay={500}
+        scrollingSpeed={800}
         scrollOverflow={true}
-        touchSensitivity={15}
-        normalScrollElements=".section"
+        touchSensitivity={5}
         licenseKey={process.env.NEXT_PUBLIC_FULLPAGE_LICENSE_KEY}
         credits={false}
         onLeave={(origin, destination, direction) => {
@@ -106,6 +122,8 @@ export default function Home() {
               }
             }
           }
+          // 섹션 전환 시 스크롤 위치 리셋
+          window.scrollTo(0, 0);
         }}
         afterLoad={(origin, destination) => {
           setSection2Active(destination.index === 1);
@@ -113,6 +131,11 @@ export default function Home() {
           setSection4Active(destination.index === 3);
           setSection5Active(destination.index === 4);
           setIsFooterActive(destination.index === 5);
+          // 섹션 로드 후 높이 재조정
+          const currentSection = document.querySelector('.fp-section.active');
+          if (currentSection) {
+            currentSection.style.height = `${window.innerHeight}px`;
+          }
         }}
         render={({ state, fullpageApi }) => (
           <ReactFullpage.Wrapper className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>

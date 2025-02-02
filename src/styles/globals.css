@@ -52,3 +52,23 @@ body {
 *{
   box-sizing: border-box;
 }
+
+/* iOS Safari의 동적 주소창 문제 해결을 위한 스타일 */
+html, body {
+  height: 100%;
+  height: -webkit-fill-available;  /* iOS Safari용 */
+}
+
+.fp-section {
+  height: 100vh !important;
+  height: -webkit-fill-available !important;  /* iOS Safari용 */
+  touch-action: none;  /* 터치 동작 제어 */
+}
+
+/* 모바일 디바이스에서 추가적인 설정 */
+@supports (-webkit-touch-callout: none) {
+  .fp-section {
+    /* iOS 디바이스의 실제 뷰포트 높이 사용 */
+    height: -webkit-fill-available !important;
+  }
+}
