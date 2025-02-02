@@ -311,9 +311,10 @@ transform-origin: bottom left;
 .seminarItem {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;  /* 중앙 정렬 */
   justify-content: flex-start;
   gap: 1rem;
+  text-align: center;  /* 텍스트도 중앙 정렬 */
 }
 
 .imageWrapper {
@@ -394,12 +395,13 @@ margin: 5rem auto;
 
 .downloadLink {
   margin-top: 1rem;
-  margin-left: 0;
+  margin-left: 0;  /* 왼쪽 마진 제거 */
   color: #004556;
   text-decoration: none;
   font-size: 0.9rem;
   position: relative;
   transition: color 0.3s ease;
+  align-self: center;  /* 링크 자체도 중앙 정렬 */
 }
 
 .downloadLink:hover {
@@ -673,5 +675,12 @@ margin: 5rem auto;
     font-size: 0.85rem;
     line-height: 1.4;
     padding: 0 1rem;
+  }
+
+  .description, 
+  .seminarFooter {
+    word-break: keep-all;
+    word-wrap: break-word;
+    line-height: 1.6;
   }
 }

@@ -15,6 +15,8 @@ export default function RegularSession() {
   const marketInsightRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 480;
+
   useEffect(() => {
     // 페이지 마운트 시 바로 visible 상태를 false로 설정
     setIsVisible(false);
@@ -80,8 +82,10 @@ export default function RegularSession() {
           <h2 className={styles.sectionTitle}>Seminar</h2>
           
           <p className={styles.description}>
-            금융연구회는 <strong>학회원 전원이 참여하는 세미나 활동을 진행</strong>하고 있습니다.<br />
-            세미나는 4명 내외의 학회원이 팀을 이뤄 주제 선정부터 자료 준비, 발표까지 함께 협력하며<br />
+            금융연구회는 <strong>학회원 전원이 참여하는 세미나 활동을 진행</strong>하고 있습니다.
+            {!isMobile && <br />}
+            세미나는 4명 내외의 학회원이 팀을 이뤄 주제 선정부터 자료 준비, 발표까지 함께 협력하며
+            {!isMobile && <br />}
             금융과 경제 분야에 있어 <strong>학술 역량을 배양하는 핵심 활동</strong>입니다.
           </p>
 
@@ -149,7 +153,8 @@ export default function RegularSession() {
           </div>
 
           <p className={styles.seminarFooter}>
-            세미나는 학회원의 학문적 깊이를 더하고, 분석 능력과 발표 능력을 함양하며,<br />
+            세미나는 학회원의 학문적 깊이를 더하고, 분석 능력과 발표 능력을 함양하며,
+            {!isMobile && <br />}
             미래 금융인으로 성장할 수 있는 중요한 발판이 될 것입니다.
           </p>
 
