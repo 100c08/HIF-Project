@@ -1,29 +1,46 @@
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from '../../styles/Home/Section2.module.css';
-import { useState, useEffect } from 'react';
 
-export default function Section2({ isActive }) {
+export default function Section2() {
   const [isMobile, setIsMobile] = useState(false);
+  const [animationStarted, setAnimationStarted] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 480);
     };
-
-    // 초기 설정
     handleResize();
-
-    // 리사이즈 이벤트 리스너 추가
     window.addEventListener('resize', handleResize);
 
-    // 클린업
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    // Intersection Observer 설정
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting && !animationStarted) {
+          setAnimationStarted(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [animationStarted]);
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} ref={sectionRef}>
       <div className={styles.backgroundGradient}></div>
-      <div className={`${styles.contentContainer} ${isActive ? styles.animate : ''}`}>
+      <div className={`${styles.contentContainer} ${animationStarted ? styles.animate : ''}`}>
         <div className={styles.textSection}>
           <div className={styles.horizontalLine}></div>
           <div className={styles.textContent}>
