@@ -80,9 +80,9 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Safari 브라우저만 감지
-    const isSafariBrowser = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    setIsSafari(isSafariBrowser);
+    // iOS 디바이스 감지 (브라우저 상관없이)
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    setIsSafari(isIOS);  // 여기서 isSafari는 실제로는 "isIOS"의 의미
   }, []);
 
   // Safari인 경우 일반 스크롤 버전 렌더링
