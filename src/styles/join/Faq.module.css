@@ -252,13 +252,13 @@
   .answer {
     font-size: 0.85rem !important;
     line-height: 1.5;
-    padding: 0 15px 0 45px;
+    padding: 0 20px 0 20px;
     word-break: keep-all;  /* 단어 단위 줄바꿈 */
     word-wrap: break-word;  /* 긴 단어 처리 */
   }
   .questionIcon {
     font-size: 1.2rem !important;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
   }
   .mainTitle {
     font-size: 2rem !important;
