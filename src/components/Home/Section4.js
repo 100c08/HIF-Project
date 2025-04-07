@@ -140,7 +140,7 @@ export default function Section4() {
             <div className={styles.styledLine} />
           </div>
           <div className={styles.awardsList}>
-            2024 DB 이노베이션챌린지 공모전 대상(1위), 2024 리서치 아카데미아 장려, 2024 산업통상자원부 공공데이터 활용 아이디어 공모전 대상(장관상)
+            2025 매일경제 대학(원)생 경제논문 공모전 우수작(2위), 2024 DB 이노베이션챌린지 공모전 대상, 2024 리서치 아카데미아 장려
           </div>
           <Link href="/activities/competition" className={styles.viewMore}>
             view more

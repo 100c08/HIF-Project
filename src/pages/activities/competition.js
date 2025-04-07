@@ -12,6 +12,11 @@ const playfairDisplay = localFont({
 // 수상 내역 데이터
 const awards = [
   {
+    title: "2025 매일경제 대학(원)생 경제논문 공모전",
+    date: "2025-04-10",
+    rank: "우수작(2위)"
+  },
+  {
     title: "2024 리서치 아카데미아",
     date: "2024-12-07",
     rank: "장려"
@@ -19,7 +24,7 @@ const awards = [
   {
     title: "2024 DB 이노베이션챌린지 공모전",
     date: "2024-11-26",
-    rank: "대상(1위)"
+    rank: "대상"
   },
   {
     title: "제12회 산업통상자원부 공공데이터 활용 아이디어 공모전",
@@ -602,7 +607,7 @@ export default function Competition() {
           
           <div className={styles.timeline}>
             {/* 연도별로 그룹화하여 표시 */}
-            {[2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011].map(year => (
+            {[2025,2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011].map(year => (
               <div key={year} className={styles.yearSection}>
                 <div className={styles.yearMarker}>{year}</div>
                 <div className={styles.awardsList}>
