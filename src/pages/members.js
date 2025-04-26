@@ -16,7 +16,7 @@ const palatino = localFont({
 });
 
 const generations = [
-  "15th Generation", "14th Generation", "13th Generation", 
+  "16th Generation", "15th Generation", "14th Generation", "13th Generation", 
   "12th Generation", "11th Generation", "10th Generation",
   "9th Generation", "8th Generation", "7th Generation", 
   "6th Generation", "5th Generation", "4th Generation", 
@@ -24,6 +24,19 @@ const generations = [
 ];
 
 const membersData = {
+  "16th Generation": [
+    { name: "Kim Byung-jun", major: "Business Administration" },
+    { name: "Kim Yong-un", major: "Economics" },
+    { name: "Roh Ji-hoon", major: "Language & Trade" },
+    { name: "Park Seon-yang", major: "Business Administration" },
+    { name: "Seo Ji-won", major: "Language & Trade" },
+    { name: "Sung Ji-won", major: "French Language" },
+    { name: "Son Hyeong-ju", major: "Business Administration" },
+    { name: "Lee Eun-jeong", major: "International Economics and Law" },
+    { name: "Chang Seo-hyun", major: "English Literature and Culture" },
+    { name: "Joo Seong-pyo", major: "German" },
+    { name: "Hyeon Chae-yeon", major: "Business Administration" }
+  ],
   "15th Generation": [
     { name: "Kang Ji-won", major: "Language & Trade" },
     { name: "Kwon Do-yoon", major: "Dutch" },
