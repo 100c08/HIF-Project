@@ -46,8 +46,57 @@
     opacity: 0.8;
   }
   
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 700px; /* 필요시 조정 */
+    margin: 1rem auto;
+  }
+  
+  .logoWrapper {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+  }
+  
+  .logoWrapper.center {
+    flex: 0 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  
+  .logoWrapper.left {
+    justify-content: flex-end;
+    margin-right: 100px; /* HIF와의 간격 */
+  }
+  
+  .logoWrapper.right {
+    justify-content: flex-start;
+    margin-left: 100px; /* HIF와의 간격 */
+  }
+  
   .footerLogo {
-    margin: 0.5rem 0;  /* 간격 줄임 */
+    display: block;
+    object-fit: contain;
+    height: 40px;   /* 김준기문화재단 로고와 동일한 높이 */
+    width: auto;    /* 가로는 자동 */
+    filter: brightness(0) invert(0.8);
+  }
+  
+  .dongbukLogo {
+    height: 60px !important;
+    width: auto !important;
+    max-width: 320px !important;
+    object-fit: contain !important;
+    display: block;
+    filter: brightness(0) invert(0.8);
   }
   
   .copyright {
