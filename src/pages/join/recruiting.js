@@ -164,8 +164,8 @@ export default function Recruiting() {
             </p>
 
             <a 
-              href="/000_16.5기 지원서.docx"
-              download="000_16.5기 지원서.docx"
+              href="/000_16.5기 지원서.docx"
+              download="000_16.5기 지원서.docx"
               className={styles.downloadButton}
             >
               지원서 다운로드

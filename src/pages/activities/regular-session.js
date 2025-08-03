@@ -144,7 +144,7 @@ export default function RegularSession() {
                   sizes="(max-width: 768px) 100vw, 400px"
                 />
               </div>
-              <a href="/[25.05.15] 세미나 A조_자산배분전략-일부발췌.pdf" 
+              <a href="/[2025.05.15 세미나 A조] 자산배분전략 일부발췌.pdf" 
                  download 
                  className={styles.downloadLink}>
                 세미나 자료 보기
