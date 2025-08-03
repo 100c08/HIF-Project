@@ -114,7 +114,7 @@ export default function Introduction() {
 
               <div className={styles.featureItem}>
                 <p className={styles.featureText}>
-                  학회원들의 학구적 열정과 이를 뒷받침하는 역량과 학회의 <strong>체계적인 공모전 커리큘럼을 가지고 있습니다.</strong> 무엇보다 <strong>선배님들의 수상 KNOW-HOW 및 레퍼런스 전수</strong>를 통해 한단계 더 나은 성장을 이루고 있습니다.
+                  학회원들의 학구적 열정과 이를 뒷받침하는 역량과 학회의 <strong>체계적인 공모전 커리큘럼을 가지고 있습니다.</strong> 무엇보다 <strong>선배님들의 수상 Know-How 및 레퍼런스 전수</strong>를 통해 한단계 더 나은 성장을 이루고 있습니다.
                 </p>
                 <Image src="/intro_3.svg" alt="Feature 3" width={250} height={250} />
               </div>

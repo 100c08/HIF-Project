@@ -97,13 +97,6 @@ html, body {
   }
 }
 
-/* 이미지 드래그 방지 */
-img {
-  pointer-events: none;       /* 이미지 우클릭 방지 */
-  -webkit-user-drag: none;    /* 이미지 드래그 방지 */
-  user-select: none;          /* 이미지 선택 방지 */
-}
-
 /* 모든 트랜지션 부드럽게 */
 * {
   transition: all 0.3s ease;

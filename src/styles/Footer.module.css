@@ -152,8 +152,12 @@
     }
 
     .footerLogo {
-      width: 60px;
-      height: 60px;
+      height: 35px; /* 30px에서 35px로 살짝 증가 */
+    }
+
+    .dongbukLogo {
+      height: 40px !important; /* 35px에서 40px로 살짝 증가 */
+      max-width: 220px !important; /* 200px에서 220px로 살짝 증가 */
     }
 
     .copyright {
@@ -179,9 +183,25 @@
       font-size: 0.75rem;
     }
 
+    .logoContainer {
+      max-width: 600px;
+    }
+
+    .logoWrapper.left {
+      margin-right: 60px; /* 간격 줄임 */
+    }
+
+    .logoWrapper.right {
+      margin-left: 60px; /* 간격 줄임 */
+    }
+
     .footerLogo {
-      width: 55px;
-      height: 55px;
+      height: 30px; /* 크기 줄임 */
+    }
+
+    .dongbukLogo {
+      height: 35px !important; /* 김준기문화재단 로고 크기 줄임 */
+      max-width: 200px !important;
     }
 
     .copyright {
@@ -207,9 +227,25 @@
       font-size: 0.7rem;
     }
 
+    .logoContainer {
+      max-width: 350px;
+    }
+
+    .logoWrapper.left {
+      margin-right: 30px; /* 간격 더 줄임 */
+    }
+
+    .logoWrapper.right {
+      margin-left: 30px; /* 간격 더 줄임 */
+    }
+
     .footerLogo {
-      width: 50px;
-      height: 50px;
+      height: 30px; /* 25px에서 30px로 살짝 증가 */
+    }
+
+    .dongbukLogo {
+      height: 33px !important; /* 28px에서 33px로 살짝 증가 */
+      max-width: 170px !important; /* 150px에서 170px로 살짝 증가 */
     }
 
     .copyright {

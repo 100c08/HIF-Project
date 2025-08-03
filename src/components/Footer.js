@@ -39,12 +39,12 @@ export default function Footer() {
               />
             </div>
             <div className={`${styles.logoWrapper} ${styles.center}`}>
-              <Image
-                src="/White_O.svg"
-                alt="HIF Logo"
+          <Image
+            src="/White_O.svg"
+            alt="HIF Logo"
                 width={70}
-                height={70}
-                className={styles.footerLogo}
+            height={70}
+            className={styles.footerLogo}
                 style={{ filter: 'brightness(0) invert(0.8)' }}
               />
             </div>

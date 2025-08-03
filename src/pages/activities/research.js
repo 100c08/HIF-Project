@@ -91,7 +91,7 @@ export default function Research() {
           <p className={styles.description}>
             {isMobile ? (
               <>
-                밸류에이션 스터디는 학회원들이 심도 있는 <strong>기업분석</strong>과 <strong>투자전략</strong> 수립 과정을 통해 금융 시장에 대한 이해를 높이고 실무 역량을 강화할 수 있는 팀 활동입니다.
+                밸류에이션 스터디는 정규세션의 일환으로 학회원들이 심도 있는 <strong>기업분석</strong>과 <strong>투자전략</strong> 수립 과정을 통해 금융 시장에 대한 이해를 높이고 실무 역량을 강화할 수 있는 팀 활동입니다.
               </>
             ) : (
               <>
@@ -124,39 +124,39 @@ export default function Research() {
               <div className={styles.teamInfo}>
                 <h3 className={styles.teamSubtitle}>기업분석팀 한 줄 소개</h3>
                 <p className={styles.teamDescription}>
-                  산업 분석, 사업 분석, 기업 분석까지 대상 기업의 전반적인 분석 및 밸류에이션
+                산업 및 기업분석, 밸류에이션 등 대상 기업에 대한 전반적인 분석
                 </p>
 
                 <h3 className={styles.teamSubtitle}>활동 내용</h3>
                 <ul className={styles.activityList}>
-                  <li>밸류에이션 방법론 학습</li>
-                  <li>분석 대상 기업의 재무재표 및 경영성과 분석</li>
-                  <li>산업 트렌드 및 Peer 분석</li>
-                  <li>분석 결과를 토대로 투자 아이디어 제안</li>
+                  <li>산업 트렌드 및 Peer 기업 분석</li>
+                  <li>분석 대상 기업의 재무제표 및 경영성과 분석</li>
+                  <li>밸류에이션 방법론 학습 및 실전 적용</li>
+                  <li>Target Price 도출 과정 학습</li>
                 </ul>
               </div>
 
               <div className={styles.teamImages}>
                 <div className={styles.imageWrapper}>
                   <Image
-                    src="/Research1.png"
-                    alt="Research Image 1"
-                    width={400}
-                    height={300}
+                    src="/Research1-1.png"
+                    alt="Research Image 1-1"
+                    width={300}
+                    height={400}
                     className={styles.teamImage}
                     quality={100}
-                    onClick={() => handleImageClick("/Research1.png")}
+                    onClick={() => handleImageClick("/Research1-1.png")}
                   />
                 </div>
                 <div className={styles.imageWrapper}>
                   <Image
-                    src="/Research2.png"
-                    alt="Research Image 2"
-                    width={400}
-                    height={300}
+                    src="/Research1-2.png"
+                    alt="Research Image 1-2"
+                    width={300}
+                    height={400}
                     className={styles.teamImage}
                     quality={100}
-                    onClick={() => handleImageClick("/Research2.png")}
+                    onClick={() => handleImageClick("/Research1-2.png")}
                   />
                 </div>
               </div>
@@ -186,24 +186,24 @@ export default function Research() {
               <div className={styles.teamImages}>
                 <div className={styles.imageWrapper}>
                   <Image
-                    src="/Research3.png"
-                    alt="Research Image 3"
-                    width={400}
-                    height={300}
+                    src="/Research2-1.png"
+                    alt="Research Image 2-1"
+                    width={300}
+                    height={400}
                     className={styles.teamImage}
                     quality={100}
-                    onClick={() => handleImageClick("/Research3.png")}
+                    onClick={() => handleImageClick("/Research2-1.png")}
                   />
                 </div>
                 <div className={styles.imageWrapper}>
                   <Image
-                    src="/Research4.png"
-                    alt="Research Image 4"
-                    width={400}
-                    height={300}
+                    src="/Research2-2.png"
+                    alt="Research Image 2-2"
+                    width={300}
+                    height={400}
                     className={styles.teamImage}
                     quality={100}
-                    onClick={() => handleImageClick("/Research4.png")}
+                    onClick={() => handleImageClick("/Research2-2.png")}
                   />
                 </div>
               </div>

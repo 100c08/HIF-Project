@@ -61,11 +61,11 @@ const Section1 = () => {
             </Link>
             
             <a 
-              href="/금융연구회 16기 지원서.docx"
-              download="금융연구회 16기 지원서.docx"
+              href="/000_16.5기 지원서.docx"
+              download="000_16.5기 지원서.docx"
               className={styles.button}
             >
-              2025 - Spring (16기) 지원서 다운로드
+              2025 - Fall (16.5기) 지원서 다운로드
             </a>
           </div>
         </div>

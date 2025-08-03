@@ -53,7 +53,7 @@ export default function Section4() {
             const progress = Math.min(1, (timestamp - startTime) / duration);
             const easedProgress = easeOutQuart(progress);
             
-            setAwards(Math.floor(101 * easedProgress));
+            setAwards(Math.floor(105 * easedProgress));
             
             if (progress < 1) {
               requestAnimationFrame(animateAwards);
@@ -68,7 +68,7 @@ export default function Section4() {
             const progress = Math.min(1, (timestamp - prizeStartTime) / prizeDuration);
             const easedProgress = easeOutQuart(progress);
             
-            setPrize(Math.floor(201500000 * easedProgress));
+            setPrize(Math.floor(206500000 * easedProgress));
             
             if (progress < 1) {
               requestAnimationFrame(animatePrize);
@@ -140,7 +140,7 @@ export default function Section4() {
             <div className={styles.styledLine} />
           </div>
           <div className={styles.awardsList}>
-            2025 매일경제 대학(원)생 경제논문 공모전 우수작(2위), 2024 DB 이노베이션챌린지 공모전 대상, 2024 리서치 아카데미아 장려
+            삼성화재xPOSTECHx서울대 전국 대학생 리스크 관리 경진대회 최우수상, DB보험금융공모전 3팀 수상, 2025 매일경제 대학(원)생 경제논문 공모전 우수작(2위)
           </div>
           <Link href="/activities/competition" className={styles.viewMore}>
             view more

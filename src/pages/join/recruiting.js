@@ -132,28 +132,28 @@ export default function Recruiting() {
                 <Image src="/timeline_1.svg" alt="Timeline 1" width={100} height={100} />
                 <div className={styles.timelineText}>
                   <p className={styles.timelineTitle}>서류전형</p>
-                  <p className={styles.timelineDate}>02/03(월) ~ 02/14(금)</p>
+                  <p className={styles.timelineDate}>08/04(월) ~ 08/15(금)</p>
                 </div>
               </div>
               <div className={styles.timelineItem}>
                 <Image src="/timeline_2.svg" alt="Timeline 2" width={100} height={100} />
                 <div className={styles.timelineText}>
                   <p className={styles.timelineTitle}>면접진행</p>
-                  <p className={styles.timelineDate}>02/21(금) ~ 02/22(토)</p>
+                  <p className={styles.timelineDate}>08/22(금) ~ 08/23(토)</p>
                 </div>
               </div>
               <div className={styles.timelineItem}>
                 <Image src="/timeline_3.svg" alt="Timeline 3" width={100} height={100} />
                 <div className={styles.timelineText}>
                   <p className={styles.timelineTitle}>합격자발표</p>
-                  <p className={styles.timelineDate}>02/23(일)</p>
+                  <p className={styles.timelineDate}>08/24(일)</p>
                 </div>
               </div>
               <div className={styles.timelineItem}>
                 <Image src="/timeline_4.svg" alt="Timeline 4" width={100} height={100} />
                 <div className={styles.timelineText}>
                   <p className={styles.timelineTitle}>OT</p>
-                  <p className={styles.timelineDate}>03/03(목)</p>
+                  <p className={styles.timelineDate}>09/04(목)</p>
                 </div>
               </div>
             </div>
@@ -164,8 +164,8 @@ export default function Recruiting() {
             </p>
 
             <a 
-              href="/금융연구회 16기 지원서.docx"
-              download="금융연구회 16기 지원서.docx"
+              href="/000_16.5기 지원서.docx"
+              download="000_16.5기 지원서.docx"
               className={styles.downloadButton}
             >
               지원서 다운로드

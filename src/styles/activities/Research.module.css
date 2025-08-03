@@ -156,33 +156,34 @@
 
 .teamsContainer {
   display: flex;
-  justify-content: center;
-  gap: 4rem;
+  flex-direction: column;
+  gap: 6rem;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
 .teamSection {
-  flex: 0 1 650px;
+  width: 100%;
   margin-top: 2rem;
-  min-height: 600px; /* 고정 높이 추가 */
   display: flex;
   flex-direction: column;
 }
 
 .teamSection:nth-child(2) {
-  margin-top: 2rem; /* 4rem에서 2rem으로 수정하여 첫 번째 섹션과 동일하게 */
+  margin-top: 2rem;
 }
 
 .teamContent {
   display: flex;
-  gap: 2rem;
-  align-items: center;
+  gap: 4rem;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .teamInfo {
-  flex: 0 1 300px;
+  flex: 0 1 500px;
+  max-width: 500px;
 }
 
 .teamTitle {
@@ -228,22 +229,22 @@
 }
 
 .teamImages {
-  flex: 0 250px;
+  flex: 0 1 auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 2rem;
   margin-top: 2rem;
-  padding-left: 0;
-  padding-right: 0;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .imageWrapper {
-  width: 100%;
+  width: auto;
   margin: 0;
 }
 
 .teamImage {
-  width: 100%;
+  width: 280px;
   height: auto;
   object-fit: contain;
   cursor: pointer;
@@ -384,7 +385,7 @@
   }
 
   .studyDetails {
-    padding: 0 2rem;  /* 좌우 패딩 추가 */
+    padding: 0 2rem;
   }
 
   .description {
@@ -395,14 +396,14 @@
   }
 
   .teamsContainer {
-    gap: 3rem;
+    gap: 4rem;
     padding: 0 1.5rem;
   }
 
   .teamTitle {
     font-size: 1.8rem;
     margin-bottom: 3rem;
-    margin-top: 0;  /* 상단 여백 제거 */
+    margin-top: 0;
   }
 
   .teamSubtitle {
@@ -423,29 +424,30 @@
   }
   
   .teamSection:nth-child(2) {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
+  }
+
+  .teamContent {
+    gap: 3rem;
+  }
+
+  .teamImages {
+    gap: 1.5rem;
+  }
+
+  .teamImage {
+    width: 220px;
   }
 
   .bottomDescription {
     font-size: 1.5rem;
     line-height: 1.7;
-    margin: 4rem auto 3rem;  /* 상하 여백 증가 */
+    margin: 4rem auto 3rem;
     padding: 0 1.8rem;
   }
 
   .divider {
-    margin: 3rem auto 2rem;  /* 여백 축소 */
-  }
-}
-
-/* 1400px 이하 스타일 */
-@media (max-width: 1400px) {
-  .heroSection {
-    height: 400px;
-  }
-  .breadcrumb {
-    padding: 1rem;
-    margin-bottom: 3px;
+    margin: 3rem auto 2rem;
   }
 }
 
@@ -469,28 +471,33 @@
   }
 
   .teamsContainer {
-    flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     padding: 0 1rem;
   }
 
   .teamSection {
-    min-height: auto; /* 모바일에서는 고정 높이 제거 */
     margin-top: 1rem;
   }
   
   .teamSection:nth-child(2) {
-    margin-top: 2.5rem;
+    margin-top: 1rem;
   }
 
   .teamContent {
     flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .teamInfo {
+    max-width: 100%;
+    text-align: center;
   }
 
   .teamTitle {
     font-size: 1.6rem;
     margin-bottom: 2rem;
-    margin-top: 0;  /* 상단 여백 제거 */
+    margin-top: 0;
   }
 
   .teamSubtitle {
@@ -509,8 +516,13 @@
   }
 
   .teamImages {
-    margin-top: 0;  /* 기존 margin-top 제거 */
-    gap: 1.5rem;
+    margin-top: 0;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .teamImage {
+    width: 180px;
   }
 
   .description {
@@ -520,32 +532,32 @@
   }
 
   .studyDetails {
-    width: 70%;  /* 너비를 70%로 제한 */
-    margin: 0 auto;  /* 가운데 정렬 */
-    padding: 0;  /* 기존 패딩 제거 */
+    width: 70%;
+    margin: 0 auto;
+    padding: 0;
   }
 
   .studyDetails li {
     font-size: 0.9rem;
     line-height: 1.6;
     margin-bottom: 1.2rem;
-    word-break: keep-all;  /* 단어 단위 줄바꿈 */
-    white-space: normal;  /* 자동 줄바꿈 허용 */
+    word-break: keep-all;
+    white-space: normal;
   }
 
   .bottomDescription {
     font-size: 1.3rem;
     line-height: 1.6;
-    margin: 3.5rem auto 2.5rem;  /* 상하 여백 증가 */
+    margin: 3.5rem auto 2.5rem;
     padding: 0 1.5rem;
   }
 
   .divider {
-    margin: 2.5rem auto 1.5rem;  /* 여백 축소 */
+    margin: 2.5rem auto 1.5rem;
   }
 
   .activityList {
-    margin-bottom: 1.5rem;  /* 활동설명과 이미지 사이 간격 설정 */
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -575,19 +587,19 @@
   }
 
   .studyDetails {
-    width: 85%;  /* 모바일에서는 더 넓은 너비 사용 */
+    width: 85%;
   }
 
   .description {
     padding: 0 1.2rem;
     font-size: 0.85rem;
-    margin: 0.8rem auto;  /* 1rem에서 0.8rem으로 하단 여백 축소 */
+    margin: 0.8rem auto;
   }
 
   .teamTitle {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
-    margin-top: 0;  /* 상단 여백 제거 */
+    margin-top: 0;
   }
 
   .teamSubtitle {
@@ -609,32 +621,34 @@
 
   .teamContent {
     flex-direction: column;
-    align-items: center;  /* 중앙 정렬 추가 */
+    align-items: center;
+    gap: 1.5rem;
   }
 
   .teamInfo {
-    width: 100%;  /* 전체 너비 사용 */
-    max-width: 85%;  /* 최대 너비 제한 */
-    margin: 0 auto;  /* 가운데 정렬 */
+    width: 100%;
+    max-width: 85%;
+    margin: 0 auto;
   }
 
   .teamImages {
     width: 100%;
-    max-width: 75%;  /* 85%에서 75%로 축소 */
+    max-width: 85%;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 1rem;
+    gap: 0.8rem;
+    justify-content: center;
   }
 
   .imageWrapper {
-    width: 100%;
+    width: auto;
     margin: 0;
   }
 
   .teamImage {
-    width: 100%;
+    width: 140px;
     height: auto;
   }
 
@@ -649,21 +663,25 @@
   }
   
   .teamSection:nth-child(2) {
-    margin-top: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  .teamsContainer {
+    gap: 2.5rem;
   }
 
   .bottomDescription {
     font-size: 1.1rem;
     line-height: 1.5;
-    margin: 3rem auto 2rem;  /* 상하 여백 증가 */
+    margin: 3rem auto 2rem;
     padding: 0 1.2rem;
   }
 
   .divider {
-    margin: 2rem auto 1rem;  /* 여백 더 축소 */
+    margin: 2rem auto 1rem;
   }
 
   .activityList {
-    margin-bottom: 1rem;  /* 활동설명과 이미지 사이 간격 설정 */
+    margin-bottom: 1rem;
   }
 }

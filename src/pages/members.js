@@ -63,7 +63,7 @@ const membersData = {
   ],
   "14th Generation": [
     { name: "Park Jae-hyeon", major: "Integrated Japanese Studies" },
-    { name: "Ko Yoon-mo", major: "Language & Trade" },
+    { name: "Koo Yoon-mo", major: "Language & Trade" },
     { name: "Baek Jong-hyeon", major: "Arabic" },
     { name: "Shin Seong-jin", major: "Business Administration" },
     { name: "Park Ji-hoon", major: "Business Administration" },
@@ -289,7 +289,7 @@ const membersData = {
 
 export default function Members() {
     const [selectedGen, setSelectedGen] = useState(null);
-    
+  
     const scrollToGeneration = (gen) => {
       setSelectedGen(gen);
       const element = document.getElementById(gen);
@@ -319,34 +319,34 @@ export default function Members() {
         {/* Main Content */}
         <div className={styles.mainContent}>
           <div className={styles.contentSection}>
-            {/* 기수 선택 버튼들 */}
-            <div className={styles.generationButtons}>
-              {generations.map((gen) => (
-                <button
-                  key={gen}
-                  className={`${styles.genButton} ${selectedGen === gen ? styles.selected : ''}`}
-                  onClick={() => scrollToGeneration(gen)}
-                >
-                  {gen}
-                </button>
-              ))}
-            </div>
+        {/* 기수 선택 버튼들 */}
+        <div className={styles.generationButtons}>
+          {generations.map((gen) => (
+            <button
+              key={gen}
+              className={`${styles.genButton} ${selectedGen === gen ? styles.selected : ''}`}
+              onClick={() => scrollToGeneration(gen)}
+            >
+              {gen}
+            </button>
+          ))}
+        </div>
   
-            {/* 멤버 리스트 */}
-            <div className={styles.membersList}>
-              {generations.map((gen) => (
-                <section key={gen} id={gen} className={styles.generationSection}>
-                  <h2 className={styles.generationTitle}>{gen}</h2>
-                  <div className={styles.membersGrid}>
-                    {membersData[gen]?.map((member, index) => (
-                      <div key={index} className={styles.memberCard}>
-                        <h3>{member.name}</h3>
-                        <p>{member.major}</p>
-                      </div>
-                    ))}
+        {/* 멤버 리스트 */}
+        <div className={styles.membersList}>
+          {generations.map((gen) => (
+            <section key={gen} id={gen} className={styles.generationSection}>
+              <h2 className={styles.generationTitle}>{gen}</h2>
+              <div className={styles.membersGrid}>
+                {membersData[gen]?.map((member, index) => (
+                  <div key={index} className={styles.memberCard}>
+                    <h3>{member.name}</h3>
+                    <p>{member.major}</p>
                   </div>
-                </section>
-              ))}
+                ))}
+              </div>
+            </section>
+          ))}
             </div>
           </div>
         </div>
