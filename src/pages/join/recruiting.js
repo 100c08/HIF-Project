@@ -149,7 +149,7 @@ export default function Recruiting() {
                 />
                 <div className={styles.timelineText}>
                   <p className={styles.timelineTitle}>서류전형</p>
-                  <p className={styles.timelineDate}>08/04(월) ~ 08/15(금)</p>
+                  <p className={styles.timelineDate}>01/21(수) ~ 01/28(수)</p>
                 </div>
               </div>
               <div className={styles.timelineItem}>
@@ -161,7 +161,7 @@ export default function Recruiting() {
                 />
                 <div className={styles.timelineText}>
                   <p className={styles.timelineTitle}>면접진행</p>
-                  <p className={styles.timelineDate}>08/22(금) ~ 08/23(토)</p>
+                  <p className={styles.timelineDate}>02/07(토) ~ 02/08(일)</p>
                 </div>
               </div>
               <div className={styles.timelineItem}>
@@ -173,7 +173,7 @@ export default function Recruiting() {
                 />
                 <div className={styles.timelineText}>
                   <p className={styles.timelineTitle}>합격자발표</p>
-                  <p className={styles.timelineDate}>08/24(일)</p>
+                  <p className={styles.timelineDate}>02/09(일)</p>
                 </div>
               </div>
               <div className={styles.timelineItem}>
@@ -185,7 +185,7 @@ export default function Recruiting() {
                 />
                 <div className={styles.timelineText}>
                   <p className={styles.timelineTitle}>OT</p>
-                  <p className={styles.timelineDate}>09/04(목)</p>
+                  <p className={styles.timelineDate}>03/05(목)</p>
                 </div>
               </div>
             </div>

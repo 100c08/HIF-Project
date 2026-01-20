@@ -241,6 +241,36 @@
 .imageWrapper {
   width: auto;
   margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.downloadLink {
+  display: inline-block;
+  position: relative;
+}
+
+.downloadBadge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.downloadCaption {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.4rem;
+  text-align: left;
 }
 
 .teamImage {

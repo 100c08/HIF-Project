@@ -11,10 +11,11 @@ const playfairDisplay = localFont({
 });
 
 export default function Research() {
-  const [selectedImage, setSelectedImage] = useState(null);
   const marketInsightRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const essPdf = encodeURI("/[2025.11.20] 기업분석 A팀_ESS.pdf");
+  const bondPdf = encodeURI("/[2025.05.22]투자전략팀_채권 동향 및 전망.pdf");
 
   useEffect(() => {
     // 페이지 마운트 시 바로 visible 상태를 false로 설정
@@ -55,14 +56,6 @@ export default function Research() {
       window.removeEventListener('resize', checkMobile);
     };
   }, []);
-
-  const handleImageClick = (imageSrc) => {
-    setSelectedImage(imageSrc);
-  };
-
-  const closeModal = () => {
-    setSelectedImage(null);
-  };
 
   return (
     <div className={playfairDisplay.variable}>
@@ -138,26 +131,30 @@ export default function Research() {
 
               <div className={styles.teamImages}>
                 <div className={styles.imageWrapper}>
-                  <Image
-                    src="/Research1-1.png"
-                    alt="Research Image 1-1"
-                    width={300}
-                    height={400}
-                    className={styles.teamImage}
-                    quality={100}
-                    onClick={() => handleImageClick("/Research1-1.png")}
-                  />
+                  <a className={styles.downloadLink} href={essPdf} download>
+                    <Image
+                      src="/Research1-1.png"
+                      alt="Research Image 1-1"
+                      width={300}
+                      height={400}
+                      className={styles.teamImage}
+                      quality={100}
+                    />
+                    <span className={styles.downloadBadge}>PDF ↓</span>
+                  </a>
+                  <p className={styles.downloadCaption}>25-2 [ESS]</p>
                 </div>
                 <div className={styles.imageWrapper}>
-                  <Image
-                    src="/Research1-2.png"
-                    alt="Research Image 1-2"
-                    width={300}
-                    height={400}
-                    className={styles.teamImage}
-                    quality={100}
-                    onClick={() => handleImageClick("/Research1-2.png")}
-                  />
+                  <a className={styles.downloadLink} href={essPdf} download>
+                    <Image
+                      src="/Research1-2.png"
+                      alt="Research Image 1-2"
+                      width={300}
+                      height={400}
+                      className={styles.teamImage}
+                      quality={100}
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -185,26 +182,30 @@ export default function Research() {
 
               <div className={styles.teamImages}>
                 <div className={styles.imageWrapper}>
-                  <Image
-                    src="/Research2-1.png"
-                    alt="Research Image 2-1"
-                    width={300}
-                    height={400}
-                    className={styles.teamImage}
-                    quality={100}
-                    onClick={() => handleImageClick("/Research2-1.png")}
-                  />
+                  <a className={styles.downloadLink} href={bondPdf} download>
+                    <Image
+                      src="/Research2-1.png"
+                      alt="Research Image 2-1"
+                      width={300}
+                      height={400}
+                      className={styles.teamImage}
+                      quality={100}
+                    />
+                    <span className={styles.downloadBadge}>PDF ↓</span>
+                  </a>
+                  <p className={styles.downloadCaption}>25-1 [채권 동향 및 전망]</p>
                 </div>
                 <div className={styles.imageWrapper}>
-                  <Image
-                    src="/Research2-2.png"
-                    alt="Research Image 2-2"
-                    width={300}
-                    height={400}
-                    className={styles.teamImage}
-                    quality={100}
-                    onClick={() => handleImageClick("/Research2-2.png")}
-                  />
+                  <a className={styles.downloadLink} href={bondPdf} download>
+                    <Image
+                      src="/Research2-2.png"
+                      alt="Research Image 2-2"
+                      width={300}
+                      height={400}
+                      className={styles.teamImage}
+                      quality={100}
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -216,21 +217,6 @@ export default function Research() {
         </div>
       </div>
 
-      {selectedImage && (
-        <div className={styles.modal} onClick={closeModal}>
-          <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
-            <button className={styles.closeButton} onClick={closeModal}>×</button>
-            <Image 
-              src={selectedImage} 
-              alt="Enlarged research" 
-              width={1200}
-              height={800}
-              className={styles.modalImage}
-              quality={100}
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 }
