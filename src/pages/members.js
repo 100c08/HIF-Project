@@ -1,26 +1,36 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import { useState } from 'react';
-import styles from '../styles/Members.module.css';
+import Head from "next/head";
+import Link from "next/link";
+import { useState } from "react";
+import styles from "../styles/Members.module.css";
 import localFont from "next/font/local";
-
 
 const playfairDisplay = localFont({
   src: "./fonts/PlayfairDisplay-Regular.woff",
-  variable: "--font-playfair"
+  variable: "--font-playfair",
 });
 
 const palatino = localFont({
   src: "./fonts/palatino-regular.woff",
-  variable: "--font-palatino"
+  variable: "--font-palatino",
 });
 
 const generations = [
-  "16th Generation", "15th Generation", "14th Generation", "13th Generation", 
-  "12th Generation", "11th Generation", "10th Generation",
-  "9th Generation", "8th Generation", "7th Generation", 
-  "6th Generation", "5th Generation", "4th Generation", 
-  "3rd Generation", "2nd Generation", "1st Generation"
+  "16th Generation",
+  "15th Generation",
+  "14th Generation",
+  "13th Generation",
+  "12th Generation",
+  "11th Generation",
+  "10th Generation",
+  "9th Generation",
+  "8th Generation",
+  "7th Generation",
+  "6th Generation",
+  "5th Generation",
+  "4th Generation",
+  "3rd Generation",
+  "2nd Generation",
+  "1st Generation",
 ];
 
 const membersData = {
@@ -35,7 +45,18 @@ const membersData = {
     { name: "Lee Eun-jeong", major: "International Economics and Law" },
     { name: "Chang Seo-hyun", major: "English Literature and Culture" },
     { name: "Joo Seong-pyo", major: "German" },
-    { name: "Hyeon Chae-yeon", major: "Business Administration" }
+    { name: "Hyeon Chae-yeon", major: "Business Administration" },
+    { name: "Ko Min-jae", major: "Business Administration" },
+    { name: "Kim Do-yeon", major: "Business Administration" },
+    { name: "Park Soo-bin", major: "Russian" },
+    { name: "Song Ji-won", major: "International Economics and Law" },
+    { name: "Shim Min-jeong", major: "Scandinavian" },
+    { name: "Lee Seung-woo", major: "Economics" },
+    { name: "Wi Jeong-hoon", major: "Malay-Indonesian" },
+    { name: "Jeong Eo-jin", major: "Business Administration" },
+    { name: "Han Seo-jun", major: "Business Administration" },
+    { name: "Han Si-woo", major: "Business Administration" },
+    { name: "Hyun Ji-woo", major: "Economics" },
   ],
   "15th Generation": [
     { name: "Kang Ji-won", major: "Language & Trade" },
@@ -49,7 +70,10 @@ const membersData = {
     { name: "Lee Geon-ho", major: "Business Administration" },
     { name: "Lee Young-gi", major: "International Economics and Law" },
     { name: "Kim Yeo-rim", major: "Economics" },
-    { name: "Park Kang-in", major: "English Literature and Language Technology" },
+    {
+      name: "Park Kang-in",
+      major: "English Literature and Language Technology",
+    },
     { name: "Seo Ji-woo", major: "Language & Trade" },
     { name: "Shin Hae-su", major: "Media & Communication" },
     { name: "Oh Sang-jun", major: "Economics" },
@@ -59,7 +83,10 @@ const membersData = {
     { name: "Jung Myung-jo", major: "International Economics and Law" },
     { name: "Han Min-seo", major: "International Economics and Law" },
     { name: "Han Se-bin", major: "Italian" },
-    { name: "Hwang Zi-won", major: "English for International Conferences and Communication" }
+    {
+      name: "Hwang Zi-won",
+      major: "English for International Conferences and Communication",
+    },
   ],
   "14th Generation": [
     { name: "Park Jae-hyeon", major: "Integrated Japanese Studies" },
@@ -73,7 +100,10 @@ const membersData = {
     { name: "Kim Seo-yeon", major: "Political Science and Diplomacy" },
     { name: "Lee Jeong-eun", major: "Business Administration" },
     { name: "Lee Ji-soo", major: "Spanish" },
-    { name: "Lee Su-jin", major: "English for International Conferences and Communication" },
+    {
+      name: "Lee Su-jin",
+      major: "English for International Conferences and Communication",
+    },
     { name: "Kim Ryun-woo", major: "Integrated Japanese Studies" },
     { name: "Bang Chang-hyeon", major: "International Economics and Law" },
     { name: "Bae Da-hyun", major: "Business Administration" },
@@ -83,7 +113,7 @@ const membersData = {
     { name: "Yu Seung-ri", major: "Russian" },
     { name: "Lee Young-seop", major: "Business Administration" },
     { name: "Jeong Da-na", major: "International Economics and Law" },
-    { name: "Choi Eun-bin", major: "French Language" }
+    { name: "Choi Eun-bin", major: "French Language" },
   ],
   "13th Generation": [
     { name: "Kong Do-youn", major: "English Linguistics" },
@@ -92,22 +122,31 @@ const membersData = {
     { name: "Song Young-seo", major: "Chinese Education" },
     { name: "Shin Ji-hyeon", major: "German" },
     { name: "Shin Hyun-wook", major: "Business Administration" },
-    { name: "Yoo Chae-eun", major: "English Literature and Language Technology" },
+    {
+      name: "Yoo Chae-eun",
+      major: "English Literature and Language Technology",
+    },
     { name: "Yoon Woo-jin", major: "Hindi" },
     { name: "Jang Se-un", major: "Dutch" },
     { name: "Jin Byeong-hyeon", major: "Economics" },
     { name: "Choi Yun-seo", major: "Language & Trade" },
     { name: "Han Yu-kyeong", major: "Economics" },
     { name: "Kim Hyun-il", major: "Economics" },
-    { name: "Park Gi-won", major: "English for International Conferences and Communication" },
+    {
+      name: "Park Gi-won",
+      major: "English for International Conferences and Communication",
+    },
     { name: "Song Geun-su", major: "Business Administration" },
     { name: "Yang Min-seok", major: "Thai" },
     { name: "Yoon Young-hyeon", major: "Economics" },
     { name: "Lee Geon-hui", major: "Economics" },
     { name: "Lee Min-gyeong", major: "English Literature and Culture" },
     { name: "Lee Ye-ji", major: "Economics" },
-    { name: "Jeong Hyeon-ju", major: "English Literature and Language Technology" },
-    { name: "Choi Ju-yeon", major: "Turkish and Azerbaijani" }
+    {
+      name: "Jeong Hyeon-ju",
+      major: "English Literature and Language Technology",
+    },
+    { name: "Choi Ju-yeon", major: "Turkish and Azerbaijani" },
   ],
   "12th Generation": [
     { name: "Kwon Keun-young", major: "Chinese Foreign Affairs and Commerce" },
@@ -123,14 +162,20 @@ const membersData = {
     { name: "Jang Ha-kyung", major: "Economics" },
     { name: "Ha Seon-woo", major: "German" },
     { name: "Kang Ye-hyun", major: "International Economics and Law" },
-    { name: "Kim Soo-yeon", major: "English Literature and Language Technology" },
+    {
+      name: "Kim Soo-yeon",
+      major: "English Literature and Language Technology",
+    },
     { name: "Bae Jong-sung", major: "Thai" },
     { name: "Shin Jeong-hyeon", major: "International Economics and Law" },
     { name: "Lim Ji-youn", major: "Business Administration" },
     { name: "Oh Seung-hyun", major: "Economics" },
     { name: "Jeong Jae-geun", major: "Business Administration" },
-    { name: "Cho Seo-hyeon", major: "Japanese Language, Literature and Culture" },
-    { name: "Cho Ah-yeong", major: "Chinese Foreign Affairs and Commerce" }
+    {
+      name: "Cho Seo-hyeon",
+      major: "Japanese Language, Literature and Culture",
+    },
+    { name: "Cho Ah-yeong", major: "Chinese Foreign Affairs and Commerce" },
   ],
   "11th Generation": [
     { name: "Kim Kyu-won", major: "Economics" },
@@ -151,7 +196,7 @@ const membersData = {
     { name: "Lim Ji-hye", major: "Chinese Foreign Affairs and Commerce" },
     { name: "Jeon Hee-joo", major: "Mongolian" },
     { name: "Jin Chae-yeon", major: "Thai" },
-    { name: "Cheon Seo-hui", major: "English Linguistics" }
+    { name: "Cheon Seo-hui", major: "English Linguistics" },
   ],
   "10th Generation": [
     { name: "Bae Ji-won", major: "Economics" },
@@ -172,7 +217,7 @@ const membersData = {
     { name: "Lee Min-kyung", major: "Portuguese" },
     { name: "Lee Yeon-su", major: "Dutch" },
     { name: "Choi Young-jin", major: "International Studies" },
-    { name: "Han Kyu-ri", major: "Turkish and Azerbaijani" }
+    { name: "Han Kyu-ri", major: "Turkish and Azerbaijani" },
   ],
   "9th Generation": [
     { name: "Park Ji-gan", major: "English Linguistics" },
@@ -190,7 +235,7 @@ const membersData = {
     { name: "Kim Hye-yeong", major: "French Language" },
     { name: "Lee Won-Bok", major: "Business Administration" },
     { name: "Cho Ye-jin", major: "Mongolian" },
-    { name: "Moon Seung-hwan", major: "Dutch" }
+    { name: "Moon Seung-hwan", major: "Dutch" },
   ],
   "8th Generation": [
     { name: "Kim Do-yun", major: "English Linguistics" },
@@ -205,7 +250,7 @@ const membersData = {
     { name: "Shin Hyo-yeub", major: "Business Administration" },
     { name: "Cha Seok-jin", major: "English Interpretation and Translation" },
     { name: "Park Ki-young", major: "Business Administration" },
-    { name: "Ye Bo-keun", major: "Economics" }
+    { name: "Ye Bo-keun", major: "Economics" },
   ],
   "7th Generation": [
     { name: "Lee Deok-gyu", major: "German" },
@@ -220,7 +265,7 @@ const membersData = {
     { name: "Shin Ji-hwan", major: "Economics" },
     { name: "Lee Woo-young", major: "Business Administration" },
     { name: "Jung Eun-ju", major: "English Linguistics" },
-    { name: "Jo Yong-sang", major: "Economics" }
+    { name: "Jo Yong-sang", major: "Economics" },
   ],
   "6th Generation": [
     { name: "Lee Jun-su", major: "Malay-Indonesian" },
@@ -231,7 +276,7 @@ const membersData = {
     { name: "Baek Seong-jin", major: "Business Administration" },
     { name: "Lee Hyun-woo", major: "Economics" },
     { name: "Im So-yeon", major: "English Interpretation and Translation" },
-    { name: "Cheon Ji-hun", major: "English Linguistics" }
+    { name: "Cheon Ji-hun", major: "English Linguistics" },
   ],
   "5th Generation": [
     { name: "Hwang Jun-hyung", major: "Business Administration" },
@@ -241,21 +286,24 @@ const membersData = {
     { name: "Na Young", major: "Economics" },
     { name: "Noh Ji-min", major: "Economics" },
     { name: "Park Jae-min", major: "Economics" },
-    { name: "Lee Dong-hwi", major: "Business Administration" }
+    { name: "Lee Dong-hwi", major: "Business Administration" },
   ],
   "4th Generation": [
     { name: "Jeon Byung-ha", major: "Japanese" },
     { name: "Jung Bong-hyun", major: "Business Administration" },
     { name: "Kim Bo-ra", major: "Economics" },
     { name: "Kim Jin-sung", major: "Economics" },
-    { name: "Park Kyung-shin", major: "Interdisciplinary Studies in Social Science" },
+    {
+      name: "Park Kyung-shin",
+      major: "Interdisciplinary Studies in Social Science",
+    },
     { name: "Seok Eun-jin", major: "Business Administration" },
     { name: "Lee Sang-chul", major: "Vietnamese" },
     { name: "Lee Jin-young", major: "Business Administration" },
     { name: "Jang Ji-ye", major: "Business Administration" },
     { name: "Lee Young-rae", major: "Business Administration" },
     { name: "Choi Min-hye", major: "Korean Education" },
-    { name: "Park Seung-oh", major: "Economics" }
+    { name: "Park Seung-oh", major: "Economics" },
   ],
   "3rd Generation": [
     { name: "Kim Hee-gyeom", major: "Business Administration" },
@@ -266,13 +314,13 @@ const membersData = {
     { name: "Lee Seo-bin", major: "Thai" },
     { name: "Jeon Ju-hwan", major: "English Linguistics" },
     { name: "Han Seung-ah", major: "Economics" },
-    { name: "Han Yu-ra", major: "Hindi" }
+    { name: "Han Yu-ra", major: "Hindi" },
   ],
   "2nd Generation": [
     { name: "Lee Tae-hwan", major: "Arabic" },
     { name: "Ma Seung-hyun", major: "Business Administration" },
     { name: "Park Kwang-yeom", major: "German" },
-    { name: "Jung Il-kwon", major: "Economics" }
+    { name: "Jung Il-kwon", major: "Economics" },
   ],
   "1st Generation": [
     { name: "Yu Seong-woo", major: "Japanese" },
@@ -281,75 +329,71 @@ const membersData = {
     { name: "Kwak Yong-jung", major: "Business Administration" },
     { name: "Moon Han-gil", major: "Law" },
     { name: "Baek Seung-hun", major: "Japanese" },
-    { name: "Yu Hye-yun", major: "German" }
-  ]
+    { name: "Yu Hye-yun", major: "German" },
+  ],
 };
 
-
-
 export default function Members() {
-    const [selectedGen, setSelectedGen] = useState(null);
-  
-    const scrollToGeneration = (gen) => {
-      setSelectedGen(gen);
-      const element = document.getElementById(gen);
-      element?.scrollIntoView({ behavior: 'smooth' });
-    };
-  
-    return (
-      <div className={`${playfairDisplay.variable} ${palatino.variable}`}>
-        <Head>
-          <title>Members | HIF</title>
-          <meta property="og:title" content="Members | HIF" />
-          <meta name="description" content="Members of HIF" />
-        </Head>
-  
-        {/* Hero Section */}
-        <div className={styles.heroSection}>
-          <div className={styles.heroOverlay} />
-          <h1 className={styles.heroTitle}>
-            Members
-          </h1>
-          {/* Breadcrumb Navigation */}
-          <div className={styles.breadcrumb}>
-            <span className={styles.current}>Members</span>
+  const [selectedGen, setSelectedGen] = useState(null);
+
+  const scrollToGeneration = (gen) => {
+    setSelectedGen(gen);
+    const element = document.getElementById(gen);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <div className={`${playfairDisplay.variable} ${palatino.variable}`}>
+      <Head>
+        <title>Members | HIF</title>
+        <meta property="og:title" content="Members | HIF" />
+        <meta name="description" content="Members of HIF" />
+      </Head>
+
+      {/* Hero Section */}
+      <div className={styles.heroSection}>
+        <div className={styles.heroOverlay} />
+        <h1 className={styles.heroTitle}>Members</h1>
+        {/* Breadcrumb Navigation */}
+        <div className={styles.breadcrumb}>
+          <span className={styles.current}>Members</span>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className={styles.mainContent}>
+        <div className={styles.contentSection}>
+          {/* 기수 선택 버튼들 */}
+          <div className={styles.generationButtons}>
+            {generations.map((gen) => (
+              <button
+                key={gen}
+                className={`${styles.genButton} ${selectedGen === gen ? styles.selected : ""}`}
+                onClick={() => scrollToGeneration(gen)}
+              >
+                {gen}
+              </button>
+            ))}
           </div>
-        </div>
-  
-        {/* Main Content */}
-        <div className={styles.mainContent}>
-          <div className={styles.contentSection}>
-        {/* 기수 선택 버튼들 */}
-        <div className={styles.generationButtons}>
-          {generations.map((gen) => (
-            <button
-              key={gen}
-              className={`${styles.genButton} ${selectedGen === gen ? styles.selected : ''}`}
-              onClick={() => scrollToGeneration(gen)}
-            >
-              {gen}
-            </button>
-          ))}
-        </div>
-  
-        {/* 멤버 리스트 */}
-        <div className={styles.membersList}>
-          {generations.map((gen) => (
-            <section key={gen} id={gen} className={styles.generationSection}>
-              <h2 className={styles.generationTitle}>{gen}</h2>
-              <div className={styles.membersGrid}>
-                {membersData[gen]?.map((member, index) => (
-                  <div key={index} className={styles.memberCard}>
-                    <h3>{member.name}</h3>
-                    <p>{member.major}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-          ))}
-            </div>
+
+          {/* 멤버 리스트 */}
+          <div className={styles.membersList}>
+            {generations.map((gen) => (
+              <section key={gen} id={gen} className={styles.generationSection}>
+                <h2 className={styles.generationTitle}>{gen}</h2>
+                <div className={styles.membersGrid}>
+                  {membersData[gen]?.map((member, index) => (
+                    <div key={index} className={styles.memberCard}>
+                      <h3>{member.name}</h3>
+                      <p>{member.major}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            ))}
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}

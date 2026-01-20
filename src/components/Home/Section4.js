@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 import localFont from "next/font/local";
-import styles from '../../styles/Home/Section4.module.css';
-import Link from 'next/link';
+import styles from "../../styles/Home/Section4.module.css";
+import Link from "next/link";
 
 const playfairDisplay = localFont({
   src: "../../pages/fonts/PlayfairDisplay-Regular.woff",
-  variable: "--font-playfair"
+  variable: "--font-playfair",
 });
 
 export default function Section4() {
@@ -15,20 +15,23 @@ export default function Section4() {
   const sectionRef = useRef(null);
   const videoRef = useRef(null);
 
-  const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
+  const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.addEventListener('loadedmetadata', () => {
-        videoRef.current.addEventListener('timeupdate', () => {
+      videoRef.current.addEventListener("loadedmetadata", () => {
+        videoRef.current.addEventListener("timeupdate", () => {
           if (videoRef.current) {
-            const timeLeft = videoRef.current.duration - videoRef.current.currentTime;
+            const timeLeft =
+              videoRef.current.duration - videoRef.current.currentTime;
             if (timeLeft < 1) {
-              videoRef.current.style.cssText = 'opacity: 0; background-color: #000;';
+              videoRef.current.style.cssText =
+                "opacity: 0; background-color: #000;";
               setTimeout(() => {
                 if (videoRef.current) {
                   videoRef.current.currentTime = 0;
-                  videoRef.current.style.cssText = 'opacity: 1; background-color: #000;';
+                  videoRef.current.style.cssText =
+                    "opacity: 1; background-color: #000;";
                 }
               }, 1000);
             }
@@ -44,7 +47,7 @@ export default function Section4() {
         const [entry] = entries;
         if (entry.isIntersecting && !animationStarted) {
           setAnimationStarted(true);
-          
+
           let startTime;
           const duration = 2000;
 
@@ -52,9 +55,9 @@ export default function Section4() {
             if (!startTime) startTime = timestamp;
             const progress = Math.min(1, (timestamp - startTime) / duration);
             const easedProgress = easeOutQuart(progress);
-            
-            setAwards(Math.floor(105 * easedProgress));
-            
+
+            setAwards(Math.floor(108 * easedProgress));
+
             if (progress < 1) {
               requestAnimationFrame(animateAwards);
             }
@@ -65,11 +68,14 @@ export default function Section4() {
 
           const animatePrize = (timestamp) => {
             if (!prizeStartTime) prizeStartTime = timestamp;
-            const progress = Math.min(1, (timestamp - prizeStartTime) / prizeDuration);
+            const progress = Math.min(
+              1,
+              (timestamp - prizeStartTime) / prizeDuration,
+            );
             const easedProgress = easeOutQuart(progress);
-            
-            setPrize(Math.floor(206500000 * easedProgress));
-            
+
+            setPrize(Math.floor(208300000 * easedProgress));
+
             if (progress < 1) {
               requestAnimationFrame(animatePrize);
             }
@@ -79,7 +85,7 @@ export default function Section4() {
           requestAnimationFrame(animatePrize);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     if (sectionRef.current) {
@@ -94,23 +100,28 @@ export default function Section4() {
   }, [animationStarted]);
 
   return (
-    <div className={`${styles.wrapper} ${playfairDisplay.variable}`} ref={sectionRef}>
-      <video 
+    <div
+      className={`${styles.wrapper} ${playfairDisplay.variable}`}
+      ref={sectionRef}
+    >
+      <video
         ref={videoRef}
         className={styles.backgroundVideo}
-        autoPlay 
-        muted 
+        autoPlay
+        muted
         playsInline
         loop
       >
         <source src="/section4.mp4" type="video/mp4" />
       </video>
 
-      <div className={`${styles.container} ${animationStarted ? styles.animate : ''}`}>
+      <div
+        className={`${styles.container} ${animationStarted ? styles.animate : ""}`}
+      >
         <div className={`${styles.title} ${styles.fadeUpAnimation1}`}>
           Achievements
         </div>
-      
+
         <div className={styles.stats}>
           <div className={`${styles.statItem} ${styles.fadeUpAnimation2}`}>
             <span className={styles.number}>16</span>
@@ -140,15 +151,18 @@ export default function Section4() {
             <div className={styles.styledLine} />
           </div>
           <div className={styles.awardsList}>
-            삼성화재xPOSTECHx서울대 전국 대학생 리스크 관리 경진대회 최우수상, DB보험금융공모전 3팀 수상, 2025 매일경제 대학(원)생 경제논문 공모전 우수작(2위)
+            제20회 금융감독원 금융공모전 우수상, 2025년 예금보험공사 공공데이터
+            활용 아이디어 공모전 우수상, 제1회 헤이영 캠퍼스 아이디어 경진대회
+            우수상, 삼성화재xPOSTECHx서울대 전국 대학생 리스크 관리 경진대회
+            최우수상
           </div>
           <Link href="/activities/competition" className={styles.viewMore}>
             view more
           </Link>
         </div>
 
-        <button 
-          onClick={() => window.open('/activities/competition', '_blank')}
+        <button
+          onClick={() => window.open("/activities/competition", "_blank")}
           className={styles.mobileAwardsButton}
         >
           최근 수상내역 보기
