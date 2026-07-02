@@ -1,13 +1,13 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import styles from '../../styles/activities/Research.module.css';
+import Head from "next/head";
+import Link from "next/link";
+import styles from "../../styles/activities/Research.module.css";
 import localFont from "next/font/local";
-import Image from 'next/image';
-import { useState, useRef, useEffect } from 'react';
+import Image from "next/image";
+import { useState, useRef, useEffect } from "react";
 
 const playfairDisplay = localFont({
   src: "../../pages/fonts/PlayfairDisplay-Regular.woff",
-  variable: "--font-playfair"
+  variable: "--font-playfair",
 });
 
 export default function Research() {
@@ -15,12 +15,14 @@ export default function Research() {
   const [isVisible, setIsVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const essPdf = encodeURI("/[2025.11.20] 기업분석 A팀_ESS.pdf");
-  const bondPdf = encodeURI("/[2025.05.22]투자전략팀_채권 동향 및 전망.pdf");
+  const bondPdf = encodeURI(
+    "/[26.05.14] 투자전략팀_한국 채권시장 매크로 진단 및 투자 전략.pdf",
+  );
 
   useEffect(() => {
     // 페이지 마운트 시 바로 visible 상태를 false로 설정
     setIsVisible(false);
-    
+
     // 약간의 지연 후 visible로 변경
     const timer = setTimeout(() => {
       setIsVisible(true);
@@ -33,8 +35,8 @@ export default function Research() {
         }
       },
       {
-        threshold: 0.2
-      }
+        threshold: 0.2,
+      },
     );
 
     if (marketInsightRef.current) {
@@ -44,16 +46,16 @@ export default function Research() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 480);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
+    window.addEventListener("resize", checkMobile);
+
     return () => {
       clearTimeout(timer);
       if (marketInsightRef.current) {
         observer.unobserve(marketInsightRef.current);
       }
-      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener("resize", checkMobile);
     };
   }, []);
 
@@ -67,9 +69,7 @@ export default function Research() {
 
       <div className={styles.heroSection}>
         <div className={styles.heroOverlay} />
-        <h1 className={styles.heroTitle}>
-          Valuation Study
-        </h1>
+        <h1 className={styles.heroTitle}>Valuation Study</h1>
         <div className={styles.breadcrumb}>
           <span className={styles.breadcrumbText}>ACTIVITIES</span>
           <span className={styles.separator}>/</span>
@@ -80,16 +80,23 @@ export default function Research() {
       <div className={styles.mainContent}>
         <div className={styles.contentSection}>
           <h2 className={styles.sectionTitle}>Valuation Study</h2>
-          
+
           <p className={styles.description}>
             {isMobile ? (
               <>
-                밸류에이션 스터디는 정규세션의 일환으로 학회원들이 심도 있는 <strong>기업분석</strong>과 <strong>투자전략</strong> 수립 과정을 통해 금융 시장에 대한 이해를 높이고 실무 역량을 강화할 수 있는 팀 활동입니다.
+                밸류에이션 스터디는 정규세션의 일환으로 학회원들이 심도 있는{" "}
+                <strong>기업분석</strong>과 <strong>투자전략</strong> 수립
+                과정을 통해 금융 시장에 대한 이해를 높이고 실무 역량을 강화할 수
+                있는 팀 활동입니다.
               </>
             ) : (
               <>
-                밸류에이션 스터디는 학회원들이 심도 있는 <strong>기업분석</strong>과 <strong>투자전략</strong> 수립 과정을 통해<br />
-                금융 시장에 대한 이해를 높이고 실무 역량을 강화할 수 있는 팀 활동입니다.
+                밸류에이션 스터디는 학회원들이 심도 있는{" "}
+                <strong>기업분석</strong>과 <strong>투자전략</strong> 수립
+                과정을 통해
+                <br />
+                금융 시장에 대한 이해를 높이고 실무 역량을 강화할 수 있는 팀
+                활동입니다.
               </>
             )}
           </p>
@@ -97,10 +104,15 @@ export default function Research() {
           <div className={styles.studyIntro}>
             <ul className={styles.studyDetails}>
               <li>
-                <strong>기업분석팀</strong>과 <strong>투자전략팀</strong>으로 나눠 각각 기업분석과 투자전략에 관한 프로젝트를 수행하며 스터디 결과물을 발표하는 형태로 진행됩니다.
+                <strong>기업분석팀</strong>과 <strong>투자전략팀</strong>으로
+                나눠 각각 기업분석과 투자전략에 관한 프로젝트를 수행하며 스터디
+                결과물을 발표하는 형태로 진행됩니다.
               </li>
               <li>
-                밸류에이션 스터디는 이론적인 학습뿐만 아니라 <strong>현직에 종사하고 계신 선배님들의 도움</strong>으로 실질적인 사례 연구까지 더해 금융 및 투자 분야에서의 전문성을 배양합니다.
+                밸류에이션 스터디는 이론적인 학습뿐만 아니라{" "}
+                <strong>현직에 종사하고 계신 선배님들의 도움</strong>으로
+                실질적인 사례 연구까지 더해 금융 및 투자 분야에서의 전문성을
+                배양합니다.
               </li>
             </ul>
           </div>
@@ -112,12 +124,12 @@ export default function Research() {
           {/* 기업분석팀 섹션 */}
           <div className={styles.teamSection}>
             <h2 className={styles.teamTitle}>기업분석팀</h2>
-            
+
             <div className={styles.teamContent}>
               <div className={styles.teamInfo}>
                 <h3 className={styles.teamSubtitle}>기업분석팀 한 줄 소개</h3>
                 <p className={styles.teamDescription}>
-                산업 및 기업분석, 밸류에이션 등 대상 기업에 대한 전반적인 분석
+                  산업 및 기업분석, 밸류에이션 등 대상 기업에 대한 전반적인 분석
                 </p>
 
                 <h3 className={styles.teamSubtitle}>활동 내용</h3>
@@ -163,12 +175,13 @@ export default function Research() {
           {/* 투자전략팀 섹션 */}
           <div className={styles.teamSection}>
             <h2 className={styles.teamTitle}>투자전략팀</h2>
-            
+
             <div className={styles.teamContent}>
               <div className={styles.teamInfo}>
                 <h3 className={styles.teamSubtitle}>투자전략팀 한 줄 소개</h3>
                 <p className={styles.teamDescription}>
-                  거시경제를 중심으로(Top-Down) 자산시장을 분석하고 시의적절한 투자전략을 제시
+                  거시경제를 중심으로(Top-Down) 자산시장을 분석하고 시의적절한
+                  투자전략을 제시
                 </p>
 
                 <h3 className={styles.teamSubtitle}>활동 내용</h3>
@@ -193,7 +206,9 @@ export default function Research() {
                     />
                     <span className={styles.downloadBadge}>PDF ↓</span>
                   </a>
-                  <p className={styles.downloadCaption}>25-1 [채권 동향 및 전망]</p>
+                  <p className={styles.downloadCaption}>
+                    26-1 [채권 동향 및 전망]
+                  </p>
                 </div>
                 <div className={styles.imageWrapper}>
                   <a className={styles.downloadLink} href={bondPdf} download>
@@ -213,10 +228,11 @@ export default function Research() {
         </div>
 
         <div className={styles.bottomDescription}>
-          밸류에이션 스터디는 실무 중심의 학습을 통해 학회원들에게 기업 분석 및 전략적 사고 능력을 배양하며, 이론과 실무를 연결하는 중요한 학습 기회를 제공합니다.
+          밸류에이션 스터디는 실무 중심의 학습을 통해 학회원들에게 기업 분석 및
+          전략적 사고 능력을 배양하며, 이론과 실무를 연결하는 중요한 학습 기회를
+          제공합니다.
         </div>
       </div>
-
     </div>
   );
 }

@@ -12,6 +12,11 @@ const playfairDisplay = localFont({
 // 수상 내역 데이터
 const awards = [
   {
+    title: "제16회 DB 보험금융 공모전",
+    date: "2026-05-05",
+    rank: "가작",
+  },
+  {
     title: "제20회 금융감독원 금융공모전",
     date: "2025-11-20",
     rank: "우수상",
@@ -624,13 +629,13 @@ export default function Competition() {
               <>
                 금융연구회는 2011년부터 현재까지
                 <br />
-                <strong>108여 건의 수상실적</strong>을 보유하고 있습니다.
+                <strong>109여 건의 수상실적</strong>을 보유하고 있습니다.
                 <br />
                 금융, 경제, 데이터 분석 등 다양한 분야의
                 <br />
                 공모전에서 우수한 성과를 거두며
                 <br />
-                <strong>누적 상금 208,300,000원</strong>을 수상하였고,
+                <strong>누적 상금 209,300,000원</strong>을 수상하였고,
                 <br />
                 <strong>대한민국 최고의 금융동아리로서의 위상</strong>을<br />
                 보여주고 있습니다.
@@ -638,13 +643,13 @@ export default function Competition() {
             ) : (
               <>
                 금융연구회는{" "}
-                <strong>2011년부터 현재까지 108여 건의 수상실적</strong>을
+                <strong>2011년부터 현재까지 109여 건의 수상실적</strong>을
                 보유하고 있습니다.
                 <br />
                 금융, 경제, 데이터 분석 등 다양한 분야의 공모전에서 우수한
                 성과를 거두며
                 <br />
-                <strong>누적 상금 208,300,000원</strong>을 수상하였고,
+                <strong>누적 상금 209,300,000원</strong>을 수상하였고,
                 <br />
                 <strong>대한민국 최고의 금융동아리로서의 위상</strong>을
                 보여주고 있습니다.
@@ -655,8 +660,8 @@ export default function Competition() {
           <div className={styles.timeline}>
             {/* 연도별로 그룹화하여 표시 */}
             {[
-              2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015,
-              2014, 2013, 2012, 2011,
+              2026, 2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016,
+              2015, 2014, 2013, 2012, 2011,
             ].map((year) => (
               <div key={year} className={styles.yearSection}>
                 <div className={styles.yearMarker}>{year}</div>

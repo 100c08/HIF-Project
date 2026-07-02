@@ -56,7 +56,7 @@ export default function Section4() {
             const progress = Math.min(1, (timestamp - startTime) / duration);
             const easedProgress = easeOutQuart(progress);
 
-            setAwards(Math.floor(108 * easedProgress));
+            setAwards(Math.floor(109 * easedProgress));
 
             if (progress < 1) {
               requestAnimationFrame(animateAwards);
@@ -74,7 +74,7 @@ export default function Section4() {
             );
             const easedProgress = easeOutQuart(progress);
 
-            setPrize(Math.floor(208300000 * easedProgress));
+            setPrize(Math.floor(209300000 * easedProgress));
 
             if (progress < 1) {
               requestAnimationFrame(animatePrize);
@@ -124,7 +124,7 @@ export default function Section4() {
 
         <div className={styles.stats}>
           <div className={`${styles.statItem} ${styles.fadeUpAnimation2}`}>
-            <span className={styles.number}>16</span>
+            <span className={styles.number}>17</span>
             <span className={styles.label}>년간</span>
           </div>
           <div className={`${styles.statItem} ${styles.fadeUpAnimation3}`}>
@@ -151,10 +151,10 @@ export default function Section4() {
             <div className={styles.styledLine} />
           </div>
           <div className={styles.awardsList}>
-            제20회 금융감독원 금융공모전 우수상, 2025년 예금보험공사 공공데이터
-            활용 아이디어 공모전 우수상, 제1회 헤이영 캠퍼스 아이디어 경진대회
-            우수상, 삼성화재xPOSTECHx서울대 전국 대학생 리스크 관리 경진대회
-            최우수상
+            제16회 DB 보험금융 공모전 가작, 제20회 금융감독원 금융공모전 우수상,
+            2025년 예금보험공사 공공데이터 활용 아이디어 공모전 우수상, 제1회
+            헤이영 캠퍼스 아이디어 경진대회 우수상, 제3회
+            삼성화재xPOSTECHx서울대 전국 대학생 리스크 관리 경진대회 최우수상
           </div>
           <Link href="/activities/competition" className={styles.viewMore}>
             view more

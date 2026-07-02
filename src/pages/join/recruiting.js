@@ -149,7 +149,7 @@ export default function Recruiting() {
                 />
                 <div className={styles.timelineText}>
                   <p className={styles.timelineTitle}>서류전형</p>
-                  <p className={styles.timelineDate}>01/21(수) ~ 01/28(수)</p>
+                  <p className={styles.timelineDate}>07/03(금) ~ 07/10(금)</p>
                 </div>
               </div>
               <div className={styles.timelineItem}>
@@ -161,7 +161,7 @@ export default function Recruiting() {
                 />
                 <div className={styles.timelineText}>
                   <p className={styles.timelineTitle}>면접진행</p>
-                  <p className={styles.timelineDate}>02/07(토) ~ 02/08(일)</p>
+                  <p className={styles.timelineDate}>07/19(일) ~ 07/20(월)</p>
                 </div>
               </div>
               <div className={styles.timelineItem}>
@@ -173,7 +173,7 @@ export default function Recruiting() {
                 />
                 <div className={styles.timelineText}>
                   <p className={styles.timelineTitle}>합격자발표</p>
-                  <p className={styles.timelineDate}>02/09(일)</p>
+                  <p className={styles.timelineDate}>07/21(화)</p>
                 </div>
               </div>
               <div className={styles.timelineItem}>
@@ -185,7 +185,7 @@ export default function Recruiting() {
                 />
                 <div className={styles.timelineText}>
                   <p className={styles.timelineTitle}>OT</p>
-                  <p className={styles.timelineDate}>03/05(목)</p>
+                  <p className={styles.timelineDate}>09/03(목)</p>
                 </div>
               </div>
             </div>
@@ -197,8 +197,8 @@ export default function Recruiting() {
             </p>
 
             <a
-              href="/000_17기 지원서.docx"
-              download="000_17기 지원서.docx"
+              href="/000_17.5기 지원서.docx"
+              download="000_17.5기 지원서.docx"
               className={styles.downloadButton}
             >
               지원서 다운로드

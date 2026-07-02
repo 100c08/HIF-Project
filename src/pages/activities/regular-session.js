@@ -209,7 +209,7 @@ export default function RegularSession() {
                 className={styles.newsImage} 
                 onClick={() => handleImageClick("/news3.png")} 
               />
-              <a href="/[2024.04.30] 15기 김범진_HMM 영구채.pdf" 
+              <a href="/[2026.3.10] 16기_현채연_p-cbo_부실_증가.pdf"
                  download 
                  className={styles.downloadLink}>
                 전체 보고서 보기
@@ -224,7 +224,7 @@ export default function RegularSession() {
                 className={styles.newsImage} 
                 onClick={() => handleImageClick("/news4.png")} 
               />
-              <a href="/[2024.10.29, 14.5기 방창현] 10월 5주차.pdf" 
+              <a href="/[26.03.16] 14.5기 방창현, 사모신용시장 구조와 리스크.pdf"
                  download 
                  className={styles.downloadLink}>
                 전체 보고서 보기
