@@ -66,8 +66,8 @@ const Section1 = () => {
             </Link>
 
             <a
-              href="/000_17.5기 지원서.docx"
-              download="000_17.5기 지원서.docx"
+              href="/000_17.5기 지원서.docx"
+              download="000_17.5기 지원서.docx"
               className={styles.button}
             >
               2026 - Fall (17.5기) 지원서 다운로드

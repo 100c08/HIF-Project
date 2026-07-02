@@ -16,7 +16,7 @@ export default function Research() {
   const [isMobile, setIsMobile] = useState(false);
   const essPdf = encodeURI("/[2025.11.20] 기업분석 A팀_ESS.pdf");
   const bondPdf = encodeURI(
-    "/[26.05.14] 투자전략팀_한국 채권시장 매크로 진단 및 투자 전략.pdf",
+    "/[26.05.14] 투자전략팀_한국 채권시장 매크로 진단 및 투자 전략.pdf",
   );
 
   useEffect(() => {
