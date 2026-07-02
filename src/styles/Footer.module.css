@@ -35,6 +35,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     gap: 1rem;  /* 간격 줄임 */
   }
   
@@ -50,36 +51,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     width: 100%;
     max-width: 700px; /* 필요시 조정 */
+    gap: clamp(0.6rem, 3vw, 2.75rem);
     margin: 1rem auto;
   }
   
   .logoWrapper {
-    flex: 1 1 0;
+    flex: 0 1 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 140px;
-  }
-  
-  .logoWrapper.center {
-    flex: 0 0 auto;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-  }
-  
-  .logoWrapper.left {
-    justify-content: flex-end;
-    margin-right: 100px; /* HIF와의 간격 */
-  }
-  
-  .logoWrapper.right {
-    justify-content: flex-start;
-    margin-left: 100px; /* HIF와의 간격 */
+    min-width: 0;
   }
   
   .footerLogo {
@@ -96,6 +79,14 @@
     max-width: 320px !important;
     object-fit: contain !important;
     display: block;
+    filter: brightness(0) invert(0.8);
+  }
+
+  .investmentLogo {
+    height: 34px !important;
+    width: auto !important;
+    max-width: 180px !important;
+    object-fit: contain !important;
     filter: brightness(0) invert(0.8);
   }
   
@@ -160,6 +151,11 @@
       max-width: 220px !important; /* 200px에서 220px로 살짝 증가 */
     }
 
+    .investmentLogo {
+      height: 22px !important;
+      max-width: 118px !important;
+    }
+
     .copyright {
       font-size: 0.7rem;
     }
@@ -187,14 +183,6 @@
       max-width: 600px;
     }
 
-    .logoWrapper.left {
-      margin-right: 60px; /* 간격 줄임 */
-    }
-
-    .logoWrapper.right {
-      margin-left: 60px; /* 간격 줄임 */
-    }
-
     .footerLogo {
       height: 30px; /* 크기 줄임 */
     }
@@ -202,6 +190,11 @@
     .dongbukLogo {
       height: 35px !important; /* 김준기문화재단 로고 크기 줄임 */
       max-width: 200px !important;
+    }
+
+    .investmentLogo {
+      height: 20px !important;
+      max-width: 106px !important;
     }
 
     .copyright {
@@ -231,14 +224,6 @@
       max-width: 350px;
     }
 
-    .logoWrapper.left {
-      margin-right: 30px; /* 간격 더 줄임 */
-    }
-
-    .logoWrapper.right {
-      margin-left: 30px; /* 간격 더 줄임 */
-    }
-
     .footerLogo {
       height: 30px; /* 25px에서 30px로 살짝 증가 */
     }
@@ -246,6 +231,11 @@
     .dongbukLogo {
       height: 33px !important; /* 28px에서 33px로 살짝 증가 */
       max-width: 170px !important; /* 150px에서 170px로 살짝 증가 */
+    }
+
+    .investmentLogo {
+      height: 18px !important;
+      max-width: 96px !important;
     }
 
     .copyright {

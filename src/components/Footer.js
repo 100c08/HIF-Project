@@ -25,7 +25,16 @@ export default function Footer() {
             </svg>
           </Link>
           <div className={styles.logoContainer}>
-            <div className={`${styles.logoWrapper} ${styles.left}`}>
+            <div className={styles.logoWrapper}>
+              <Image
+                src="/한투로고.png"
+                alt="한국투자증권 로고"
+                width={180}
+                height={34}
+                className={`${styles.footerLogo} ${styles.investmentLogo}`}
+              />
+            </div>
+            <div className={styles.logoWrapper}>
               <Image
                 src="/sb_img1.png"
                 alt="SB Logo"
@@ -38,26 +47,23 @@ export default function Footer() {
                 }}
               />
             </div>
-            <div className={`${styles.logoWrapper} ${styles.center}`}>
-          <Image
-            src="/White_O.svg"
-            alt="HIF Logo"
+            <div className={styles.logoWrapper}>
+              <Image
+                src="/White_O.svg"
+                alt="HIF Logo"
                 width={70}
-            height={70}
-            className={styles.footerLogo}
+                height={70}
+                className={styles.footerLogo}
                 style={{ filter: 'brightness(0) invert(0.8)' }}
               />
             </div>
-            <div className={`${styles.logoWrapper} ${styles.right}`}>
+            <div className={styles.logoWrapper}>
               <Image
                 src="/김준기문화재단.png"
-                alt="김준기문화재단 Logo"
+                alt="김준기문화재단 로고"
                 width={180}
                 height={60}
                 className={`${styles.footerLogo} ${styles.dongbukLogo}`}
-                style={{ 
-                  objectFit: 'contain'
-                }}
               />
             </div>
           </div>
